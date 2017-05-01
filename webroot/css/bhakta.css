@@ -1,7 +1,56 @@
+.departments {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.departments h3 {
+    width: 100%;
+}
+
 .department{
     width: 30%;
     float: left;
     margin: 1%;
-    padding: 1em;
+    padding: 0.4em;
     border: 1px solid #be140b;
+}
+
+.department h4 {
+    padding-bottom: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+
+.departments-total {
+    border-top: 1px solid #be140b;
+    padding: 0.5em;
+    width: 100%;
+}
+
+@media print {
+    body {
+        font-size: 75%;
+    }
+
+    nav, h3, a {
+        display: none;
+    }
+
+/*    a[href]:after {
+        content: none !important;
+    }*/
+
+    .departments {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .department {
+        display: inline-block;
+        vertical-align: top;
+        page-break-inside: avoid;
+    }
+
+    .department h4 {
+        font-weight: bold;
+    }
 }

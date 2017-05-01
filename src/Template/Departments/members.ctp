@@ -33,8 +33,10 @@
                 ?>
             <?php endforeach; ?>
     <?php
-    print '<hr>';
-    print 'Önkéntesek: ' . $volunteers . '<br>';
-    print 'Missizonáriusok: ' . $missionaries;
+    print '<div class="departments-total">';
+    print 'Önkéntesek: ' . $volunteers . ', ' .
+        'Missizonáriusok: ' . $missionaries . ', ' .
+        'Összesen: ' . ($volunteers+$missionaries);
+    print '</div>';
     ?>
 </div>
