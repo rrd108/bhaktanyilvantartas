@@ -4,6 +4,7 @@
   */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <?= $this->Html->image('bhaktas/' . $bhakta->kep) ?>
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Bhakta'), ['action' => 'edit', $bhakta->id]) ?> </li>
@@ -33,7 +34,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Gurus') ?></th>
-            <td><?= $bhakta->has('gurus') ? $this->Html->link($bhakta->gurus->id, ['controller' => 'Gurus', 'action' => 'view', $bhakta->gurus->id]) : '' ?></td>
+            <td><?= $bhakta->has('gurus') ? $this->Html->link($bhakta->gurus->nev_rovid, ['controller' => 'Gurus', 'action' => 'view', $bhakta->gurus->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Cim Allando') ?></th>
@@ -101,7 +102,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Tb') ?></th>
-            <td><?= h($bhakta->tb) ?></td>
+            <td><?= h($bhakta->tbs->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Statusz Jogi') ?></th>
@@ -210,8 +211,7 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Bhakta Id') ?></th>
-                <th scope="col"><?= __('Osztaly Id') ?></th>
+                <th scope="col"><?= __('Osztaly') ?></th>
                 <th scope="col"><?= __('Szolgalat') ?></th>
                 <th scope="col"><?= __('Szolgalat Kezdete') ?></th>
                 <th scope="col"><?= __('Szolgalat Vege') ?></th>
@@ -221,8 +221,7 @@
             <?php foreach ($bhakta->services as $services): ?>
             <tr>
                 <td><?= h($services->id) ?></td>
-                <td><?= h($services->bhakta_id) ?></td>
-                <td><?= h($services->osztaly_id) ?></td>
+                <td><?= h($services->department->osztaly) ?></td>
                 <td><?= h($services->szolgalat) ?></td>
                 <td><?= h($services->szolgalat_kezdete) ?></td>
                 <td><?= h($services->szolgalat_vege) ?></td>

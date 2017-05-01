@@ -11,6 +11,12 @@ use App\Controller\AppController;
 class BhaktasController extends AppController
 {
 
+    public $paginate = [
+        'order' => [
+            'Bhaktas.nev_avatott' => 'asc'
+        ]
+    ];
+
     /**
      * Index method
      *
@@ -18,9 +24,6 @@ class BhaktasController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Gurus', 'Hazastars']
-        ];
         $bhaktas = $this->paginate($this->Bhaktas);
 
         $this->set(compact('bhaktas'));
@@ -37,7 +40,14 @@ class BhaktasController extends AppController
     public function view($id = null)
     {
         $bhakta = $this->Bhaktas->get($id, [
-            'contain' => ['Gurus', 'Hazastars', 'Services']
+            'contain' => [
+                'Gurus',
+                'Tbs',
+                'Services' => [
+                    'sort' => ['Services.szolgalat_kezdete']
+                ],
+                'Services.Departments'
+            ]
         ]);
 
         $this->set('bhakta', $bhakta);
@@ -62,8 +72,9 @@ class BhaktasController extends AppController
             $this->Flash->error(__('The bhakta could not be saved. Please, try again.'));
         }
         $gurus = $this->Bhaktas->Gurus->find('list', ['limit' => 200]);
+        $tbs = $this->Bhaktas->Tbs->find('list', ['limit' => 200]);
         $hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
-        $this->set(compact('bhakta', 'gurus', 'hazastars'));
+        $this->set(compact('bhakta', 'gurus', 'hazastars', 'tbs'));
         $this->set('_serialize', ['bhakta']);
     }
 
@@ -89,8 +100,9 @@ class BhaktasController extends AppController
             $this->Flash->error(__('The bhakta could not be saved. Please, try again.'));
         }
         $gurus = $this->Bhaktas->Gurus->find('list', ['limit' => 200]);
+        $tbs = $this->Bhaktas->Tbs->find('list', ['limit' => 200]);
         $hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
-        $this->set(compact('bhakta', 'gurus', 'hazastars'));
+        $this->set(compact('bhakta', 'gurus', 'hazastars', 'tbs'));
         $this->set('_serialize', ['bhakta']);
     }
 

@@ -34,8 +34,8 @@
             <?php endforeach; ?>
     <?php
     print '<div class="departments-total">';
-    print 'Önkéntesek: ' . $volunteers . ', ' .
-        'Missizonáriusok: ' . $missionaries . ', ' .
+    print $volunteers . ' önkéntes, ' .
+        $missionaries . ' missizonárius, ' .
         'Összesen: ' . ($volunteers+$missionaries);
     print '</div>';
     ?>

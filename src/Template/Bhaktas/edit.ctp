@@ -24,7 +24,7 @@
     <fieldset>
         <legend><?= __('Edit Bhakta') ?></legend>
         <?php
-            echo $this->Form->control('neme');
+            echo $this->Form->control('neme', ['label' => 'férfi']);
             echo $this->Form->control('nev_szuletesi');
             echo $this->Form->control('nev_polgari');
             echo $this->Form->control('nev_avatott');
@@ -50,7 +50,7 @@
             echo $this->Form->control('datum_masodikavatas');
             echo $this->Form->control('asram');
             echo $this->Form->control('hazastars_id');
-            echo $this->Form->control('tb');
+            echo $this->Form->control('tb_id');
             echo $this->Form->control('statusz_jogi');
             echo $this->Form->control('statusz_tagsag');
             echo $this->Form->control('vegzettseg');

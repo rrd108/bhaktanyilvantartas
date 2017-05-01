@@ -42,6 +42,10 @@ class BhaktasTable extends Table
             'foreignKey' => 'guru_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Tbs', [
+            'foreignKey' => 'tb_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Hazastars', [
             'className' => 'Bhaktas',
             'foreignKey' => 'hazastars_id',
@@ -64,7 +68,7 @@ class BhaktasTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
-        $validator
+        /*$validator
             ->boolean('neme')
             ->requirePresence('neme', 'create')
             ->notEmpty('neme');
@@ -238,7 +242,7 @@ class BhaktasTable extends Table
 
         $validator
             ->requirePresence('kep', 'create')
-            ->notEmpty('kep');
+            ->notEmpty('kep');*/
 
         return $validator;
     }
