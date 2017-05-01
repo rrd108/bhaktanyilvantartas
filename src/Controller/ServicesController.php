@@ -61,9 +61,13 @@ class ServicesController extends AppController
             }
             $this->Flash->error(__('The service could not be saved. Please, try again.'));
         }
-        $bhaktas = $this->Services->Bhaktas->find('list', ['limit' => 200]);
-        $Departments = $this->Services->Departments->find('list', ['limit' => 200]);
-        $this->set(compact('service', 'bhaktas', 'Departments'));
+        $bhaktas = $this->Services->Bhaktas->find('list', ['limit' => 200])
+            ->where(['Bhaktas.statusz_tagsag IN' => [1,2]])
+            ->order(['Bhaktas.nev_avatott']);
+        $departments = $this->Services->Departments->find('list', ['limit' => 200])
+            ->where(['Departments.aktiv' => 1])
+            ->order(['Departments.osztaly']);
+        $this->set(compact('service', 'bhaktas', 'departments'));
         $this->set('_serialize', ['service']);
     }
 

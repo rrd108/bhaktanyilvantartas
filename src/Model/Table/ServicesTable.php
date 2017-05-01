@@ -60,20 +60,15 @@ class ServicesTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('szolgalat', 'create')
-            ->notEmpty('szolgalat');
+            ->requirePresence('bhakta_id', 'create');
 
         $validator
+            ->requirePresence('osztaly_id', 'create');
+
+        $validator
+            ->requirePresence('szolgalat_kezdete', 'create')
             ->date('szolgalat_kezdete')
-            ->allowEmpty('szolgalat_kezdete');
-
-        $validator
-            ->date('szolgalat_vege')
-            ->allowEmpty('szolgalat_vege');
-
-        $validator
-            ->requirePresence('szolg_megjegyzes', 'create')
-            ->notEmpty('szolg_megjegyzes');
+            ->notEmpty('szolgalat_kezdete');
 
         return $validator;
     }
@@ -88,7 +83,7 @@ class ServicesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['bhakta_id'], 'Bhaktas'));
-        $rules->add($rules->existsIn(['osztaly_id'], 'Osztalies'));
+        $rules->add($rules->existsIn(['osztaly_id'], 'Departments'));
 
         return $rules;
     }

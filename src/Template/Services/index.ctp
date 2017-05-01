@@ -30,8 +30,8 @@
             <?php foreach ($services as $service): ?>
             <tr>
                 <td><?= $this->Number->format($service->id) ?></td>
-                <td><?= $service->has('bhakta') ? $this->Html->link($service->bhakta->id, ['controller' => 'Bhaktas', 'action' => 'view', $service->bhakta->id]) : '' ?></td>
-                <td><?= $this->Number->format($service->osztaly_id) ?></td>
+                <td><?= $service->has('bhakta') ? $this->Html->link($service->bhakta->nev_avatott, ['controller' => 'Bhaktas', 'action' => 'view', $service->bhakta->id]) : '' ?></td>
+                <td><?= h($service->department->osztaly) ?></td>
                 <td><?= h($service->szolgalat) ?></td>
                 <td><?= h($service->szolgalat_kezdete) ?></td>
                 <td><?= h($service->szolgalat_vege) ?></td>

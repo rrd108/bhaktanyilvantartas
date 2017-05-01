@@ -11,6 +11,12 @@ use App\Controller\AppController;
 class DepartmentsController extends AppController
 {
 
+    public $paginate = [
+        'order' => [
+            'Departments.osztaly' => 'asc'
+        ]
+    ];
+
     public function members()
     {
         $departments = $this->Departments->find('members');
