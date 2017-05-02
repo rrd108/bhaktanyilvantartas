@@ -41,8 +41,7 @@ class BhaktasController extends AppController
     {
         $bhakta = $this->Bhaktas->get($id, [
             'contain' => [
-                'Gurus',
-                'Tbs',
+                'Gurus', 'Tbs', 'Legalstatuses', 'Asrams', 'Communityroles',
                 'Services' => [
                     'sort' => ['Services.szolgalat_kezdete']
                 ],
@@ -52,6 +51,8 @@ class BhaktasController extends AppController
 
         $this->set('bhakta', $bhakta);
         $this->set('_serialize', ['bhakta']);
+
+        //debug($bhakta);
     }
 
     /**
@@ -88,7 +89,9 @@ class BhaktasController extends AppController
     public function edit($id = null)
     {
         $bhakta = $this->Bhaktas->get($id, [
-            'contain' => []
+            'contain' => [
+                'Gurus', 'Tbs', 'Legalstatuses', 'Asrams', 'Communityroles',
+            ]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $bhakta = $this->Bhaktas->patchEntity($bhakta, $this->request->getData());
@@ -101,8 +104,11 @@ class BhaktasController extends AppController
         }
         $gurus = $this->Bhaktas->Gurus->find('list', ['limit' => 200]);
         $tbs = $this->Bhaktas->Tbs->find('list', ['limit' => 200]);
-        $hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
-        $this->set(compact('bhakta', 'gurus', 'hazastars', 'tbs'));
+        $legalstatuses = $this->Bhaktas->Legalstatuses->find('list', ['limit' => 200]);
+        $asrams = $this->Bhaktas->Asrams->find('list', ['limit' => 200]);
+        $communityroles = $this->Bhaktas->Communityroles->find('list', ['limit' => 200]);
+        //$hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
+        $this->set(compact('bhakta', 'gurus', 'tbs', 'legalstatuses', 'asrams', 'communityroles'));
         $this->set('_serialize', ['bhakta']);
     }
 

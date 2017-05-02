@@ -24,7 +24,7 @@
             <?php foreach ($gurus as $gurus): ?>
             <tr>
                 <td><?= $this->Number->format($gurus->id) ?></td>
-                <td><?= h($gurus->nev_rovid) ?></td>
+                <td><?= h($gurus->name) ?></td>
                 <td><?= h($gurus->nev_full) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $gurus->id]) ?>

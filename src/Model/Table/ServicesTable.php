@@ -42,7 +42,7 @@ class ServicesTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Departments', [
-            'foreignKey' => 'osztaly_id',
+            'foreignKey' => 'department_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -63,7 +63,7 @@ class ServicesTable extends Table
             ->requirePresence('bhakta_id', 'create');
 
         $validator
-            ->requirePresence('osztaly_id', 'create');
+            ->requirePresence('department_id', 'create');
 
         $validator
             ->requirePresence('szolgalat_kezdete', 'create')
@@ -83,7 +83,7 @@ class ServicesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['bhakta_id'], 'Bhaktas'));
-        $rules->add($rules->existsIn(['osztaly_id'], 'Departments'));
+        $rules->add($rules->existsIn(['department_id'], 'Departments'));
 
         return $rules;
     }

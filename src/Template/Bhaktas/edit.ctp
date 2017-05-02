@@ -48,11 +48,11 @@
             echo $this->Form->control('datum_elfogadas');
             echo $this->Form->control('datum_elsoavatas');
             echo $this->Form->control('datum_masodikavatas');
-            echo $this->Form->control('asram');
-            echo $this->Form->control('hazastars_id');
+            echo $this->Form->control('asram_id', ['options' => $asrams]);
+            //echo $this->Form->control('hazastars_id');
             echo $this->Form->control('tb_id');
-            echo $this->Form->control('statusz_jogi');
-            echo $this->Form->control('statusz_tagsag');
+            echo $this->Form->control('legalstatus_id');
+            echo $this->Form->control('communityrole_id');
             echo $this->Form->control('vegzettseg');
             echo $this->Form->control('szakma');
             echo $this->Form->control('vegakarat');

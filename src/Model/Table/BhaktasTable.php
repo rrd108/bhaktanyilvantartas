@@ -46,6 +46,18 @@ class BhaktasTable extends Table
             'foreignKey' => 'tb_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Legalstatuses', [
+            'foreignKey' => 'legalstatus_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Communityroles', [
+            'foreignKey' => 'communityrole_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Asrams', [
+            'foreignKey' => 'asram_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Hazastars', [
             'className' => 'Bhaktas',
             'foreignKey' => 'hazastars_id',
@@ -163,21 +175,21 @@ class BhaktasTable extends Table
             ->notEmpty('datum_masodikavatas');
 
         $validator
-            ->integer('asram')
-            ->requirePresence('asram', 'create')
-            ->notEmpty('asram');
+            ->integer('asram_id')
+            ->requirePresence('asram_id', 'create')
+            ->notEmpty('asram_id');
 
         $validator
             ->requirePresence('tb', 'create')
             ->notEmpty('tb');
 
         $validator
-            ->requirePresence('statusz_jogi', 'create')
-            ->notEmpty('statusz_jogi');
+            ->requirePresence('legalstatus_id', 'create')
+            ->notEmpty('legalstatus_id');
 
         $validator
-            ->requirePresence('statusz_tagsag', 'create')
-            ->notEmpty('statusz_tagsag');
+            ->requirePresence('communityrole_id', 'create')
+            ->notEmpty('communityrole_id');
 
         $validator
             ->requirePresence('vegzettseg', 'create')

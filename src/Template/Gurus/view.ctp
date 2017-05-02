@@ -17,7 +17,7 @@
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Nev Rovid') ?></th>
-            <td><?= h($gurus->nev_rovid) ?></td>
+            <td><?= h($gurus->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Nev Full') ?></th>

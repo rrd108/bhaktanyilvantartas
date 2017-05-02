@@ -15,7 +15,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('osztaly') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('aktiv') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -24,7 +24,7 @@
             <?php foreach ($departments as $department): ?>
             <tr>
                 <td><?= $this->Number->format($department->id) ?></td>
-                <td><?= h($department->osztaly) ?></td>
+                <td><?= h($department->name) ?></td>
                 <td><?= h($department->aktiv) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $department->id]) ?>

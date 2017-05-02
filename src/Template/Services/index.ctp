@@ -18,7 +18,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('bhakta_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('osztaly_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('department_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('szolgalat') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('szolgalat_kezdete') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('szolgalat_vege') ?></th>
@@ -31,7 +31,7 @@
             <tr>
                 <td><?= $this->Number->format($service->id) ?></td>
                 <td><?= $service->has('bhakta') ? $this->Html->link($service->bhakta->nev_avatott, ['controller' => 'Bhaktas', 'action' => 'view', $service->bhakta->id]) : '' ?></td>
-                <td><?= h($service->department->osztaly) ?></td>
+                <td><?= h($service->department->name) ?></td>
                 <td><?= h($service->szolgalat) ?></td>
                 <td><?= h($service->szolgalat_kezdete) ?></td>
                 <td><?= h($service->szolgalat_vege) ?></td>

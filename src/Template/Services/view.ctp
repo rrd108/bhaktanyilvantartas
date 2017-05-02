@@ -22,7 +22,7 @@
             <td><?= $service->has('bhakta') ? $this->Html->link($service->bhakta->id, ['controller' => 'Bhaktas', 'action' => 'view', $service->bhakta->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Szolgalat') ?></th>
+            <th scope="row"><?= 'Szolgálat' ?></th>
             <td><?= h($service->szolgalat) ?></td>
         </tr>
         <tr>
@@ -35,7 +35,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Osztaly Id') ?></th>
-            <td><?= $this->Number->format($service->osztaly_id) ?></td>
+            <td><?= $this->Number->format($service->department_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Szolgalat Kezdete') ?></th>

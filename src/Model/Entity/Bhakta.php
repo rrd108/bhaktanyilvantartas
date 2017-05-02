@@ -34,8 +34,8 @@ use Cake\ORM\Entity;
  * @property int $asram
  * @property int $hazastars_id
  * @property string $tb
- * @property string $statusz_jogi
- * @property string $statusz_tagsag
+ * @property string $legalstatus_id
+ * @property string $communityrole_id
  * @property string $vegzettseg
  * @property string $szakma
  * @property string $vegakarat

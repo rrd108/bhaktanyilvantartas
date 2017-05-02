@@ -8,14 +8,14 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $bhakta_id
- * @property int $osztaly_id
+ * @property int $department_id
  * @property string $szolgalat
  * @property \Cake\I18n\Time $szolgalat_kezdete
  * @property \Cake\I18n\Time $szolgalat_vege
  * @property string $szolg_megjegyzes
  *
  * @property \App\Model\Entity\Bhakta $bhakta
- * @property \App\Model\Entity\Osztaly $osztaly
+ * @property \App\Model\Entity\Department $department
  */
 class Service extends Entity
 {

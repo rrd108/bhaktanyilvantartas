@@ -14,7 +14,7 @@
     <fieldset>
         <legend><?= __('Add Department') ?></legend>
         <?php
-            echo $this->Form->control('osztaly');
+            echo $this->Form->control('name');
             echo $this->Form->control('aktiv');
         ?>
     </fieldset>

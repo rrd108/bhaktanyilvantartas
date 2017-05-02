@@ -7,7 +7,7 @@ use Cake\ORM\Entity;
  * Department Entity
  *
  * @property int $id
- * @property string $osztaly
+ * @property string $name
  * @property bool $aktiv
  */
 class Department extends Entity

@@ -31,11 +31,11 @@ class DepartmentsTable extends Table
         parent::initialize($config);
 
         $this->setTable('departments');
-        $this->setDisplayField('osztaly');
+        $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Services', [
-            'foreignKey' => 'osztaly_id',
+            'foreignKey' => 'department_id',
             'strategy' => 'subquery'
         ]);
     }
@@ -53,8 +53,8 @@ class DepartmentsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('osztaly', 'create')
-            ->notEmpty('osztaly');
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         $validator
             ->boolean('aktiv')
@@ -69,7 +69,7 @@ class DepartmentsTable extends Table
         return $query
             ->select(
                 [
-                    'Departments.id', 'Departments.osztaly',
+                    'Departments.id', 'Departments.name',
                 ]
             )
             ->contain(
@@ -79,7 +79,7 @@ class DepartmentsTable extends Table
                         ->contain(
                             [
                                 'Bhaktas' => function ($q) {
-                                    return $q->where(['Bhaktas.statusz_tagsag IN' => [1, 2]]);
+                                    return $q->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
                                     }
                             ]
                         )->order('Bhaktas.nev_avatott');

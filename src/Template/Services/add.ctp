@@ -17,7 +17,7 @@
         <legend><?= __('Add Service') ?></legend>
         <?php
             echo $this->Form->control('bhakta_id', ['options' => $bhaktas, 'empty' => true]);
-            echo $this->Form->control('osztaly_id', ['options' => $departments, 'empty' => true]);
+            echo $this->Form->control('department_id', ['options' => $departments, 'empty' => true]);
             echo $this->Form->control('szolgalat');
             echo $this->Form->control('szolgalat_kezdete', ['empty' => true]);
             echo $this->Form->control('szolgalat_vege', ['empty' => true]);

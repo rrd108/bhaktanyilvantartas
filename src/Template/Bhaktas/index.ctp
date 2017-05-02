@@ -26,8 +26,8 @@
                 <th scope="col"><?= $this->Paginator->sort('szul_hely') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('szul_date') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('tb_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('statusz_jogi') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('statusz_tagsag') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('legalstatus_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('communityrole_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -42,8 +42,8 @@
                 <td><?= h($bhakta->szul_hely) ?></td>
                 <td><?= h($bhakta->szul_date) ?></td>
                 <td><?= h($bhakta->tb_id) ?></td>
-                <td><?= h($bhakta->statusz_jogi) ?></td>
-                <td><?= h($bhakta->statusz_tagsag) ?></td>
+                <td><?= h($bhakta->legalstatus_id) ?></td>
+                <td><?= h($bhakta->communityrole_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $bhakta->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $bhakta->id]) ?>

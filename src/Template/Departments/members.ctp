@@ -6,12 +6,12 @@
                 //debug($department);die();
                     if ($department->manpower) {
                         print '<div class="department">';
-                        print '<h4>' . $department->osztaly . ' (' . $department->manpower . ')</h4>';
+                        print '<h4>' . $department->name . ' (' . $department->manpower . ')</h4>';
                         print '<ol>';
                         foreach ($department->services as $service) {
-                            if ($service->bhakta->statusz_tagsag == 2) {
+                            if ($service->bhakta->communityrole_id == 2) {
                                 $volunteers++;
-                            } elseif ($service->bhakta->statusz_tagsag == 1) {
+                            } elseif ($service->bhakta->communityrole_id == 1) {
                                 $missionaries++;
                             }
                             print '<li>' .

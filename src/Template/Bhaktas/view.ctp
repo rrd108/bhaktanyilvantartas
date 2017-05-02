@@ -34,7 +34,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Gurus') ?></th>
-            <td><?= $bhakta->has('gurus') ? $this->Html->link($bhakta->gurus->nev_rovid, ['controller' => 'Gurus', 'action' => 'view', $bhakta->gurus->id]) : '' ?></td>
+            <td><?= $bhakta->has('gurus') ? $this->Html->link($bhakta->gurus->name, ['controller' => 'Gurus', 'action' => 'view', $bhakta->gurus->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Cim Allando') ?></th>
@@ -102,15 +102,19 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Tb') ?></th>
-            <td><?= h($bhakta->tbs->id) ?></td>
+            <td><?= h($bhakta->tb->name) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= 'EU egészségbiztosítás' ?></th>
+            <td><?= $bhakta->eu_card_expiry; ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Statusz Jogi') ?></th>
-            <td><?= h($bhakta->statusz_jogi) ?></td>
+            <td><?= h($bhakta->legalstatus->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Statusz Tagsag') ?></th>
-            <td><?= h($bhakta->statusz_tagsag) ?></td>
+            <td><?= h($bhakta->communityrole->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Vegzettseg') ?></th>
@@ -165,16 +169,12 @@
             <td><?= h($bhakta->kep) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($bhakta->id) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Katonasag') ?></th>
             <td><?= $this->Number->format($bhakta->katonasag) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Asram') ?></th>
-            <td><?= $this->Number->format($bhakta->asram) ?></td>
+            <th scope="row"><?= __('asram_id') ?></th>
+            <td><?= h($bhakta->asram->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Hazastars Id') ?></th>
@@ -189,7 +189,7 @@
             <td><?= h($bhakta->szul_time) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Neme') ?></th>
+            <th scope="row"><?= 'Férfi' ?></th>
             <td><?= $bhakta->neme ? __('Yes') : __('No'); ?></td>
         </tr>
         <tr>
@@ -206,13 +206,12 @@
         <?= $this->Text->autoParagraph(h($bhakta->megjegyzes)); ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Services') ?></h4>
+        <h4><?= 'Szolgálati történet' ?></h4>
         <?php if (!empty($bhakta->services)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Osztaly') ?></th>
-                <th scope="col"><?= __('Szolgalat') ?></th>
+                <th scope="col"><?= 'Osztály' ?></th>
+                <th scope="col"><?= 'Szolgálat' ?></th>
                 <th scope="col"><?= __('Szolgalat Kezdete') ?></th>
                 <th scope="col"><?= __('Szolgalat Vege') ?></th>
                 <th scope="col"><?= __('Szolg Megjegyzes') ?></th>
@@ -220,8 +219,7 @@
             </tr>
             <?php foreach ($bhakta->services as $services): ?>
             <tr>
-                <td><?= h($services->id) ?></td>
-                <td><?= h($services->department->osztaly) ?></td>
+                <td><?= h($services->department->name) ?></td>
                 <td><?= h($services->szolgalat) ?></td>
                 <td><?= h($services->szolgalat_kezdete) ?></td>
                 <td><?= h($services->szolgalat_vege) ?></td>

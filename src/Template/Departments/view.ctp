@@ -16,8 +16,8 @@
     <h3><?= h($department->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Osztaly') ?></th>
-            <td><?= h($department->osztaly) ?></td>
+            <th scope="row"><?= __('name') ?></th>
+            <td><?= h($department->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

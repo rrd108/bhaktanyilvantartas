@@ -13,7 +13,7 @@ class DepartmentsController extends AppController
 
     public $paginate = [
         'order' => [
-            'Departments.osztaly' => 'asc'
+            'Departments.name' => 'asc'
         ]
     ];
 
