@@ -1,3 +1,8 @@
+.title-area h1 {
+    color: #fff;
+    font-size: 150%
+}
+
 .departments {
     display: flex;
     flex-wrap: wrap;

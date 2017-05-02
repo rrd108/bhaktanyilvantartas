@@ -34,12 +34,15 @@
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="title-area large-3 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
+        <div class="title-area large-3 medium-4 columns">
+            <h1><?= $this->fetch('title') ?></h1>
+        </div>
         <div class="top-bar-section">
+            <ul class="left">
+                <li><?= $this->Html->link('Átírós lista', ['controller' => 'departments', 'action' => 'members']) ?></li>
+                <li><?= $this->Html->link('Új bhakta', ['controller' => 'bhaktas', 'action' => 'add']) ?></li>
+                <li><?= $this->Html->link('Szolgálat változás', ['controller' => 'services', 'action' => 'add']) ?></li>
+            </ul>
             <ul class="right">
                 <li><?= $this->User->welcome() ?></li>
                 <li><?= $this->User->logout() ?></li>
