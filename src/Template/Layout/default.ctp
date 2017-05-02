@@ -39,6 +39,7 @@
         </div>
         <div class="top-bar-section">
             <ul class="left">
+                <li><?= $this->Html->link('Bhakták', ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'index']) ?></li>
                 <li><?= $this->Html->link('Átírós lista', ['plugin' => false, 'controller' => 'departments', 'action' => 'members']) ?></li>
                 <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
                     <li><?= $this->Html->link('Új bhakta', ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add']) ?></li>
