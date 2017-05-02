@@ -24,7 +24,13 @@ class BhaktasController extends AppController
      */
     public function index()
     {
-        $bhaktas = $this->paginate($this->Bhaktas);
+        $bhaktas = $this->Bhaktas->find()
+            ->where(
+                [
+                    'Bhaktas.communityrole_id IN' => [1,2]
+                ]
+            );
+        $bhaktas = $this->paginate($bhaktas);
 
         $this->set(compact('bhaktas'));
         $this->set('_serialize', ['bhaktas']);

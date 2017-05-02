@@ -3,6 +3,17 @@
     font-size: 150%
 }
 
+.top-bar-section span.welcome {
+    color: #fff;
+}
+.top-bar-section a {
+    color: #c2ac12;
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    color: #56b9c2;
+    background: none;
+}
+
 .departments {
     display: flex;
     flex-wrap: wrap;

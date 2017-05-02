@@ -51,6 +51,7 @@
             echo $this->Form->control('asram_id', ['options' => $asrams]);
             //echo $this->Form->control('hazastars_id');
             echo $this->Form->control('tb_id');
+            echo $this->Form->control('eu_card_expiry');
             echo $this->Form->control('legalstatus_id');
             echo $this->Form->control('communityrole_id');
             echo $this->Form->control('vegzettseg');
@@ -66,7 +67,9 @@
             echo $this->Form->control('india');
             echo $this->Form->control('rs_szerz');
             echo $this->Form->control('aktiv');
-            echo $this->Form->control('bizalmas_info');
+            if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'igazgato'])) {
+                echo $this->Form->control('bizalmas_info');
+            }
             echo $this->Form->control('megjegyzes');
             echo $this->Form->control('kep');
         ?>

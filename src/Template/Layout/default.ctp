@@ -39,9 +39,15 @@
         </div>
         <div class="top-bar-section">
             <ul class="left">
-                <li><?= $this->Html->link('Átírós lista', ['controller' => 'departments', 'action' => 'members']) ?></li>
-                <li><?= $this->Html->link('Új bhakta', ['controller' => 'bhaktas', 'action' => 'add']) ?></li>
-                <li><?= $this->Html->link('Szolgálat változás', ['controller' => 'services', 'action' => 'add']) ?></li>
+                <li><?= $this->Html->link('Átírós lista', ['plugin' => false, 'controller' => 'departments', 'action' => 'members']) ?></li>
+                <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
+                    <li><?= $this->Html->link('Új bhakta', ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add']) ?></li>
+                    <li><?= $this->Html->link('Szolgálat változás', ['plugin' => false, 'controller' => 'services', 'action' => 'add']) ?></li>
+                <?php endif; ?>
+                <?php if ($this->request->session()->read('Auth.User.is_superuser')
+                    && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
+                    <li><?= $this->Html->link('Users', ['plugin' => false, 'controller' => 'users', 'action' => 'index']) ?></li>
+                <?php endif; ?>
             </ul>
             <ul class="right">
                 <li><?= $this->User->welcome() ?></li>

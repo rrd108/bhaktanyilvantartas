@@ -197,10 +197,12 @@
             <td><?= $bhakta->aktiv ? __('Yes') : __('No'); ?></td>
         </tr>
     </table>
+    <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'igazgato'])) : ?>
     <div class="row">
         <h4><?= __('Bizalmas Info') ?></h4>
         <?= $this->Text->autoParagraph(h($bhakta->bizalmas_info)); ?>
     </div>
+    <?php endif; ?>
     <div class="row">
         <h4><?= __('Megjegyzes') ?></h4>
         <?= $this->Text->autoParagraph(h($bhakta->megjegyzes)); ?>

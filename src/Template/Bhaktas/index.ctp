@@ -20,6 +20,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nev_avatott') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('nev_polgari') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('cim_allando') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('adoazonosito') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('taj') ?></th>
@@ -36,6 +37,7 @@
             <tr>
                 <td><?= $this->Number->format($bhakta->id) ?></td>
                 <td><?= h($bhakta->nev_avatott) ?></td>
+                <td><?= h($bhakta->nev_polgari) ?></td>
                 <td><?= h($bhakta->cim_allando) ?></td>
                 <td><?= h($bhakta->adoazonosito) ?></td>
                 <td><?= h($bhakta->taj) ?></td>
