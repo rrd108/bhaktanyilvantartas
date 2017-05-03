@@ -24,6 +24,10 @@
         echo $this->Form->control('email', ['label' => __d('CakeDC/Users', 'Email')]);
         echo $this->Form->control('password', ['label' => __d('CakeDC/Users', 'Password')]);
         echo $this->Form->control('role', ['label' => __d('CakeDC/Users', 'Role')]);
+        echo $this->Form->control('active', [
+            'type' => 'checkbox',
+            'label' => __d('CakeDC/Users', 'Active')
+        ]);
         ?>
     </fieldset>
     <?= $this->Form->button(__d('CakeDC/Users', 'Submit')) ?>
