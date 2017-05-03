@@ -18,7 +18,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nev_avatott') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nev_polgari') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('cim_allando') ?></th>
@@ -26,16 +25,13 @@
                 <th scope="col"><?= $this->Paginator->sort('taj') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('szul_hely') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('szul_date') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('tb_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('legalstatus_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('communityrole_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('csalad_nev_anya') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($bhaktas as $bhakta): ?>
             <tr>
-                <td><?= $this->Number->format($bhakta->id) ?></td>
                 <td><?= h($bhakta->nev_avatott) ?></td>
                 <td><?= h($bhakta->nev_polgari) ?></td>
                 <td><?= h($bhakta->cim_allando) ?></td>
@@ -43,9 +39,7 @@
                 <td><?= h($bhakta->taj) ?></td>
                 <td><?= h($bhakta->szul_hely) ?></td>
                 <td><?= h($bhakta->szul_date) ?></td>
-                <td><?= h($bhakta->tb_id) ?></td>
-                <td><?= h($bhakta->legalstatus_id) ?></td>
-                <td><?= h($bhakta->communityrole_id) ?></td>
+                <td><?= h($bhakta->csalad_nev_anya) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $bhakta->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $bhakta->id]) ?>
