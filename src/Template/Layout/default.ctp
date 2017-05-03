@@ -47,7 +47,7 @@
                 <?php endif; ?>
                 <?php if ($this->request->session()->read('Auth.User.is_superuser')
                     && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
-                    <li><?= $this->Html->link('Users', ['plugin' => false, 'controller' => 'users', 'action' => 'index']) ?></li>
+                    <li><?= $this->Html->link('Users', ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index']) ?></li>
                 <?php endif; ?>
             </ul>
             <ul class="right">
