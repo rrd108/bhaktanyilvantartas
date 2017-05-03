@@ -26,6 +26,7 @@
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('foundation-icons.css') ?>
     <?= $this->Html->css('bhakta.css') ?>
 
     <?= $this->fetch('meta') ?>
@@ -39,15 +40,43 @@
         </div>
         <div class="top-bar-section">
             <ul class="left">
-                <li><?= $this->Html->link('Bhakták', ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'index']) ?></li>
-                <li><?= $this->Html->link('Átírós lista', ['plugin' => false, 'controller' => 'departments', 'action' => 'members']) ?></li>
-                <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
-                    <li><?= $this->Html->link('Új bhakta', ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add']) ?></li>
-                    <li><?= $this->Html->link('Szolgálat változás', ['plugin' => false, 'controller' => 'services', 'action' => 'add']) ?></li>
-                <?php endif; ?>
-                <?php if ($this->request->session()->read('Auth.User.is_superuser')
-                    && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
-                    <li><?= $this->Html->link('Users', ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index']) ?></li>
+                <?php if ($this->request->session()->read('Auth.User')) : ?>
+                    <li><?= $this->Html->link(
+                            ' Bhakták',
+                            [
+                                'plugin' => false,
+                                'controller' => 'bhaktas',
+                                'action' => 'index'
+                            ],
+                            [
+                                'class' => 'fi-torsos'
+                            ]
+                        ) ?></li>
+                    <li><?= $this->Html->link(
+                            ' Átírós lista',
+                            ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
+                            ['class' => 'fi-page-edit']
+                        ) ?></li>
+                    <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
+                        <li><?= $this->Html->link(
+                                ' Új bhakta',
+                                ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add'],
+                                ['class' => 'fi-torso']
+                                ) ?></li>
+                        <li><?= $this->Html->link(
+                                ' Szolgálat változás',
+                                ['plugin' => false, 'controller' => 'services', 'action' => 'add'],
+                                ['class' => 'fi-megaphone']
+                            ) ?></li>
+                    <?php endif; ?>
+                    <?php if ($this->request->session()->read('Auth.User.is_superuser')
+                        && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
+                        <li><?= $this->Html->link(
+                                ' Users',
+                                ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
+                                ['class' => 'fi-torso-business']
+                            ) ?></li>
+                    <?php endif; ?>
                 <?php endif; ?>
             </ul>
             <ul class="right">
