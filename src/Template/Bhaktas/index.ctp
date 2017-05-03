@@ -23,6 +23,9 @@
                 <th scope="col"><?= $this->Paginator->sort('cim_allando') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('adoazonosito') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('taj') ?></th>
+            </tr>
+            <tr>
+                <th scope="col"></th>
                 <th scope="col"><?= $this->Paginator->sort('szul_hely') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('szul_date') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('csalad_nev_anya') ?></th>
@@ -32,11 +35,14 @@
         <tbody>
             <?php foreach ($bhaktas as $bhakta): ?>
             <tr>
-                <td><?= h($bhakta->nev_avatott) ?></td>
+                <td class="<?= ($bhakta->neme ? 'fi-torso' : 'fi-torso-female')?>"> <strong><?= h($bhakta->nev_avatott) ?></strong></td>
                 <td><?= h($bhakta->nev_polgari) ?></td>
                 <td><?= h($bhakta->cim_allando) ?></td>
                 <td><?= h($bhakta->adoazonosito) ?></td>
                 <td><?= h($bhakta->taj) ?></td>
+            </tr>
+            <tr>
+                <td></td>
                 <td><?= h($bhakta->szul_hely) ?></td>
                 <td><?= h($bhakta->szul_date) ?></td>
                 <td><?= h($bhakta->csalad_nev_anya) ?></td>
