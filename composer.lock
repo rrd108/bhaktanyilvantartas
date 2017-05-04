@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "79e9bdebeb9b359adb3233ced442055c",
-    "content-hash": "0df27ff783fbb758eec1a69eb5c2e0c3",
+    "hash": "b2176cca8570553880d526f66b1df0e3",
+    "content-hash": "e02e9dda1da358e3f647bc2d6185da35",
     "packages": [
         {
             "name": "aura/intl",
@@ -399,6 +399,53 @@
             ],
             "description": "A composer installer for CakePHP 3.0+ plugins.",
             "time": "2017-03-21 13:48:47"
+        },
+        {
+            "name": "friendsofcake/search",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfCake/search.git",
+                "reference": "737fd36f0abe7586080483b7aba2fcf52be10181"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfCake/search/zipball/737fd36f0abe7586080483b7aba2fcf52be10181",
+                "reference": "737fd36f0abe7586080483b7aba2fcf52be10181",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "~3.0"
+            },
+            "require-dev": {
+                "friendsofcake/cakephp-test-utilities": "dev-master"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Search\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Winther",
+                    "homepage": "http://cakephp.nu/",
+                    "role": "Author"
+                }
+            ],
+            "description": "CakePHP Search plugin using PRG pattern",
+            "homepage": "https://github.com/FriendsOfCake/search",
+            "keywords": [
+                "cake3",
+                "cakephp",
+                "cakephp3",
+                "search"
+            ],
+            "time": "2017-04-29 21:50:18"
         },
         {
             "name": "mobiledetect/mobiledetectlib",

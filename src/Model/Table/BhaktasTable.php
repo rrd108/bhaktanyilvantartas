@@ -5,6 +5,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use Search\Manager;
 
 /**
  * Bhaktas Model
@@ -38,6 +39,8 @@ class BhaktasTable extends Table
         $this->setDisplayField('nev_avatott');
         $this->setPrimaryKey('id');
 
+        $this->addBehavior('Search.Search');
+
         $this->belongsTo('Gurus', [
             'foreignKey' => 'guru_id',
             'joinType' => 'INNER'
@@ -66,6 +69,17 @@ class BhaktasTable extends Table
         $this->hasMany('Services', [
             'foreignKey' => 'bhakta_id'
         ]);
+
+        $this->searchManager()
+            ->add('q', 'Search.Like', [
+                'before' => true,
+                'after' => true,
+                'fieldMode' => 'OR',
+                'comparison' => 'LIKE',
+                'wildcardAny' => '*',
+                'wildcardOne' => '?',
+                'field' => ['nev_avatott', 'nev_szuletesi', 'nev_polgari']
+            ]);
     }
 
     /**
@@ -273,4 +287,15 @@ class BhaktasTable extends Table
 
         return $rules;
     }
+
+    /*public function searchConfiguration()
+    {
+
+        $search = new Manager($this);
+        $search->like('nev_avatott')
+            ->like('nev_szuletesi')
+            ->like('nev_polgari');
+        return $search;
+
+    }*/
 }

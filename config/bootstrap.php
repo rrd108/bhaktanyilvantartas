@@ -226,3 +226,5 @@ Configure::write('Auth.authenticate.Form.fields.username', 'email');
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+Plugin::load('Search');

@@ -17,6 +17,15 @@ class BhaktasController extends AppController
         ]
     ];
 
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent(
+            'Search.Prg',
+            ['actions' => ['index']]
+        );
+    }
+
     /**
      * Index method
      *
@@ -24,12 +33,10 @@ class BhaktasController extends AppController
      */
     public function index()
     {
-        $bhaktas = $this->Bhaktas->find()
-            ->where(
-                [
-                    'Bhaktas.communityrole_id IN' => [1,2]
-                ]
-            );
+        $bhaktas = $this->Bhaktas->find('search', ['search' => $this->request->getQuery()]);
+        if (!$this->request->getQuery('q')) {
+            $bhaktas->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
+        }
         $bhaktas = $this->paginate($bhaktas);
 
         $this->set(compact('bhaktas'));

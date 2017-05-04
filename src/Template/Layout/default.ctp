@@ -44,7 +44,8 @@
                     <ul class="dropdown menu" data-dropdown-menu>
                         <li class="menu-text"><?= $this->fetch('title') ?></li>
                         <?php if ($this->request->session()->read('Auth.User')) : //TODO add .active to li?>
-                            <li><?= $this->Html->link(
+                            <li>
+                                <?= $this->Html->link(
                                     '<i class="fi-torsos"></i> <span>Bhakták</span>',
                                     [
                                         'plugin' => false,
@@ -54,24 +55,38 @@
                                     [
                                         'escape' => false
                                     ]
-                                ) ?></li>
-                            <li><?= $this->Html->link(
-                                    '<i class="fi-page-edit"></i> <span>Átírós lista</span>',
-                                    ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
-                                    ['escape' => false]
-                                ) ?></li>
-                            <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
-                                <li><?= $this->Html->link(
-                                        '<i class="fi-torso"></i> <span>Új bhakta</span>',
-                                        ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add'],
-                                        ['escape' => false]
+                                ) ?>
+                                <ul class="nested vertical menu">
+                                    <li><?= $this->Html->link(
+                                            '<i class="fi-torsos"></i> <span>Bhakták</span>',
+                                            [
+                                                'plugin' => false,
+                                                'controller' => 'bhaktas',
+                                                'action' => 'index'
+                                            ],
+                                            [
+                                                'escape' => false
+                                            ]
                                         ) ?></li>
-                                <li><?= $this->Html->link(
-                                        '<i class="fi-megaphone"></i> <span>Szolgálat változás</span>',
-                                        ['plugin' => false, 'controller' => 'services', 'action' => 'add'],
-                                        ['escape' => false]
-                                    ) ?></li>
-                            <?php endif; ?>
+                                    <li><?= $this->Html->link(
+                                            '<i class="fi-page-edit"></i> <span>Átírós lista</span>',
+                                            ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
+                                            ['escape' => false]
+                                        ) ?></li>
+                                    <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
+                                        <li><?= $this->Html->link(
+                                                '<i class="fi-torso"></i> <span>Új bhakta</span>',
+                                                ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add'],
+                                                ['escape' => false]
+                                            ) ?></li>
+                                        <li><?= $this->Html->link(
+                                                '<i class="fi-megaphone"></i> <span>Szolgálat változás</span>',
+                                                ['plugin' => false, 'controller' => 'services', 'action' => 'add'],
+                                                ['escape' => false]
+                                            ) ?></li>
+                                    <?php endif; ?>
+                                </ul>
+                            </li>
                             <?php if ($this->request->session()->read('Auth.User.is_superuser')
                                 && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
                                 <li><?= $this->Html->link(
@@ -86,6 +101,21 @@
 
                 <div class="top-bar-right">
                     <ul class="menu">
+                        <li class="input-group">
+                            <span class="input-group-label fi-magnifying-glass"></span>
+                            <?php
+                            echo $this->Form->create();
+                            echo $this->Form->input(
+                                'q',
+                                [
+                                    'label' => false,
+                                    'class' => 'input-group-field',
+                                    'title' => 'Keresés avatott névre, polgári névre, születési névre'
+                                ]
+                            );
+                            echo $this->Form->end();
+                            ?>
+                        </li>
                         <li><?= $this->User->welcome() ?></li>
                         <li><?= $this->User->logout() ?></li>
                     </ul>
