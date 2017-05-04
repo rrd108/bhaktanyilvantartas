@@ -3,9 +3,9 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<nav class="small-3 medium-2 large-2 columns" id="actions-sidebar">
+    <ul class="menu vertical">
+        <li class="menu-text"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Service'), ['action' => 'edit', $service->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Service'), ['action' => 'delete', $service->id], ['confirm' => __('Are you sure you want to delete # {0}?', $service->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Services'), ['action' => 'index']) ?> </li>
@@ -14,7 +14,7 @@
         <li><?= $this->Html->link(__('New Bhakta'), ['controller' => 'Bhaktas', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="services view large-9 medium-8 columns content">
+<div class="services view small-9 medium-10 large-10 columns content">
     <h3><?= h($service->id) ?></h3>
     <table class="vertical-table">
         <tr>

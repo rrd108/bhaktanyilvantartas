@@ -11,7 +11,7 @@
 ?>
 <div class="actions columns large-2 medium-3">
     <h3><?= __d('CakeDC/Users', 'Actions') ?></h3>
-    <ul class="side-nav">
+    <ul class="menu vertical">
         <li><?= $this->Html->link(__d('CakeDC/Users', 'List Users'), ['action' => 'index']) ?></li>
     </ul>
 </div>

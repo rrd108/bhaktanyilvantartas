@@ -1,17 +1,18 @@
-.title-area h1 {
-    color: #fff;
-    font-size: 150%
+.row {
+    max-width: none;
 }
 
-.top-bar-section span.welcome {
-    color: #fff;
+.top-bar, .top-bar ul {
+    background-color: #060;
+    color: #eee;
 }
-.top-bar-section a {
-    color: #c2ac12;
+
+.top-bar .menu a {
+    color: #dfd;
 }
-.top-bar-section li:not(.has-form) a:not(.button):hover {
-    color: #56b9c2;
-    background: none;
+
+.nowrap {
+    white-space: nowrap;
 }
 
 .departments {
@@ -42,9 +43,9 @@
     width: 100%;
 }
 
-tr:nth-child(1n) {
+/*tr:nth-child(1n) {
     background-color: #eee;
-}
+}*/
 
 @media print {
     body {

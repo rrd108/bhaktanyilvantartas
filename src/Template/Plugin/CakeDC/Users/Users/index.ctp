@@ -11,7 +11,7 @@
 ?>
 <div class="actions columns large-2 medium-3">
     <h3><?= __d('CakeDC/Users', 'Actions') ?></h3>
-    <ul class="side-nav">
+    <ul class="menu vertical">
         <li><?= $this->Html->link(__d('CakeDC/Users', 'New {0}', $tableAlias), ['action' => 'add']) ?></li>
     </ul>
 </div>
@@ -43,11 +43,11 @@
         </tbody>
     </table>
     <div class="paginator">
-        <ul class="pagination">
+        <ul class="pagination text-center">
             <?= $this->Paginator->prev('< ' . __d('CakeDC/Users', 'previous')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__d('CakeDC/Users', 'next') . ' >') ?>
         </ul>
-        <p><?= $this->Paginator->counter() ?></p>
+        <p class="text-center"><?= $this->Paginator->counter() ?></p>
     </div>
 </div>

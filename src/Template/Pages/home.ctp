@@ -1,5 +1,5 @@
 <?= $this->assign('title', 'Bhakta nyilvántartás') ?>
 
-<div class="pages large-9 medium-8 columns content">
+<div class="pages small-9 medium-10 large-10 columns content">
     <?= $this->User->welcome() ?>
 </div>

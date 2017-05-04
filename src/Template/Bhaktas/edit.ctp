@@ -3,9 +3,9 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<nav class="small-3 medium-2 large-2 columns" id="actions-sidebar">
+    <ul class="menu vertical">
+        <li class="menu-text"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $bhakta->id],
@@ -19,7 +19,7 @@
         <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="bhaktas form large-9 medium-8 columns content">
+<div class="bhaktas form small-9 medium-10 large-10 columns content">
     <?= $this->Form->create($bhakta) ?>
     <fieldset>
         <legend><?= __('Edit Bhakta') ?></legend>
@@ -74,6 +74,6 @@
             echo $this->Form->control('kep');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'), ['class' => 'button']) ?>
     <?= $this->Form->end() ?>
 </div>

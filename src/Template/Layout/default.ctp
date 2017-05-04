@@ -24,72 +24,88 @@
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('foundation.min.css') ?>
     <?= $this->Html->css('foundation-icons.css') ?>
     <?= $this->Html->css('bhakta.css') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
 </head>
 <body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <div class="title-area large-3 medium-4 columns">
-            <h1><?= $this->fetch('title') ?></h1>
+    <nav>
+        <div class="title-bar" data-responsive-toggle="navbar" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle="navbar"></button>
+            <div class="title-bar-title">Menü</div>
         </div>
-        <div class="top-bar-section">
-            <ul class="left">
-                <?php if ($this->request->session()->read('Auth.User')) : ?>
-                    <li><?= $this->Html->link(
-                            ' Bhakták',
-                            [
-                                'plugin' => false,
-                                'controller' => 'bhaktas',
-                                'action' => 'index'
-                            ],
-                            [
-                                'class' => 'fi-torsos'
-                            ]
-                        ) ?></li>
-                    <li><?= $this->Html->link(
-                            ' Átírós lista',
-                            ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
-                            ['class' => 'fi-page-edit']
-                        ) ?></li>
-                    <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
-                        <li><?= $this->Html->link(
-                                ' Új bhakta',
-                                ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add'],
-                                ['class' => 'fi-torso']
+
+        <div data-sticky-container>
+            <div class="top-bar" id="navbar" data-sticky data-options="marginTop:0;" style="width:100%">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li class="menu-text"><?= $this->fetch('title') ?></li>
+                        <?php if ($this->request->session()->read('Auth.User')) : //TODO add .active to li?>
+                            <li><?= $this->Html->link(
+                                    '<i class="fi-torsos"></i> <span>Bhakták</span>',
+                                    [
+                                        'plugin' => false,
+                                        'controller' => 'bhaktas',
+                                        'action' => 'index'
+                                    ],
+                                    [
+                                        'escape' => false
+                                    ]
                                 ) ?></li>
-                        <li><?= $this->Html->link(
-                                ' Szolgálat változás',
-                                ['plugin' => false, 'controller' => 'services', 'action' => 'add'],
-                                ['class' => 'fi-megaphone']
-                            ) ?></li>
-                    <?php endif; ?>
-                    <?php if ($this->request->session()->read('Auth.User.is_superuser')
-                        && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
-                        <li><?= $this->Html->link(
-                                ' Users',
-                                ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
-                                ['class' => 'fi-torso-business']
-                            ) ?></li>
-                    <?php endif; ?>
-                <?php endif; ?>
-            </ul>
-            <ul class="right">
-                <li><?= $this->User->welcome() ?></li>
-                <li><?= $this->User->logout() ?></li>
-            </ul>
+                            <li><?= $this->Html->link(
+                                    '<i class="fi-page-edit"></i> <span>Átírós lista</span>',
+                                    ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
+                                    ['escape' => false]
+                                ) ?></li>
+                            <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
+                                <li><?= $this->Html->link(
+                                        '<i class="fi-torso"></i> <span>Új bhakta</span>',
+                                        ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add'],
+                                        ['escape' => false]
+                                        ) ?></li>
+                                <li><?= $this->Html->link(
+                                        '<i class="fi-megaphone"></i> <span>Szolgálat változás</span>',
+                                        ['plugin' => false, 'controller' => 'services', 'action' => 'add'],
+                                        ['escape' => false]
+                                    ) ?></li>
+                            <?php endif; ?>
+                            <?php if ($this->request->session()->read('Auth.User.is_superuser')
+                                && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
+                                <li><?= $this->Html->link(
+                                        '<i class="fi-torso-business"></i> <span>Users</span>',
+                                        ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
+                                        ['escape' => false]
+                                    ) ?></li>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+
+                <div class="top-bar-right">
+                    <ul class="menu">
+                        <li><?= $this->User->welcome() ?></li>
+                        <li><?= $this->User->logout() ?></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
+
     <?= $this->Flash->render() ?>
-    <div class="container clearfix">
+    <div class="container clearfix row">
         <?= $this->fetch('content') ?>
     </div>
     <footer>
     </footer>
+
+    <?= $this->Html->script('vendor/jquery.js') ?>
+    <?= $this->Html->script('vendor/what-input.js') ?>
+    <?= $this->Html->script('vendor/foundation.js') ?>
+    <?= $this->Html->script('app.js') ?>
+    <?= $this->fetch('script') ?>
+
 </body>
 </html>

@@ -3,15 +3,15 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<nav class="small-3 medium-2 large-2 columns" id="actions-sidebar">
+    <ul class="menu vertical">
+        <li class="menu-text"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Legalstatus'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Bhaktas'), ['controller' => 'Bhaktas', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Bhakta'), ['controller' => 'Bhaktas', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="legalstatuses index large-9 medium-8 columns content">
+<div class="legalstatuses index small-9 medium-10 large-10 columns content">
     <h3><?= __('Legalstatuses') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
@@ -36,13 +36,13 @@
         </tbody>
     </table>
     <div class="paginator">
-        <ul class="pagination">
+        <ul class="pagination text-center">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('next') . ' >') ?>
             <?= $this->Paginator->last(__('last') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        <p class="text-center"><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>
