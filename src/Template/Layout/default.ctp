@@ -101,6 +101,7 @@
 
                 <div class="top-bar-right">
                     <ul class="menu">
+                        <?php if ($this->request->session()->read('Auth.User')) : ?>
                         <li class="input-group">
                             <span class="input-group-label fi-magnifying-glass"></span>
                             <?php
@@ -116,6 +117,7 @@
                             echo $this->Form->end();
                             ?>
                         </li>
+                        <?php endif; ?>
                         <li><?= $this->User->welcome() ?></li>
                         <li><?= $this->User->logout() ?></li>
                     </ul>
