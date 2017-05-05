@@ -13,10 +13,10 @@
     </ul>
 </nav>
 <div class="gurus view small-9 medium-10 large-10 columns content">
-    <h3><?= h($gurus->id) ?></h3>
+    <h3><?= h($gurus->name) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Nev Rovid') ?></th>
+            <th scope="row"><?= __('Name') ?></th>
             <td><?= h($gurus->name) ?></td>
         </tr>
         <tr>

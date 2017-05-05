@@ -4,15 +4,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Guru Entity
+ * Gurus Entity
  *
  * @property int $id
- * @property string $nev_rovid
+ * @property string $name
  * @property string $nev_full
- *
- * @property \App\Model\Entity\Bhaktum[] $bhakta
  */
-class Guru extends Entity
+class Gurus extends Entity
 {
 
     /**

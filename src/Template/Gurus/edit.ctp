@@ -20,10 +20,10 @@
     <fieldset>
         <legend><?= __('Edit Gurus') ?></legend>
         <?php
-            echo $this->Form->control('nev_rovid');
+            echo $this->Form->control('name');
             echo $this->Form->control('nev_full');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit'), ['class' => 'button']) ?>
+    <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>

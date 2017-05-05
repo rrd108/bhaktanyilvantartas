@@ -15,7 +15,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('nev_rovid') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nev_full') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>

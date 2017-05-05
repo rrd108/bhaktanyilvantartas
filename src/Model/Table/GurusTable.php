@@ -31,7 +31,7 @@ class GurusTable extends Table
         parent::initialize($config);
 
         $this->setTable('gurus');
-        $this->setDisplayField('nev_full');
+        $this->setDisplayField('name');
         $this->setPrimaryKey('id');
     }
 
@@ -48,8 +48,8 @@ class GurusTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('nev_rovid', 'create')
-            ->notEmpty('nev_rovid');
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         $validator
             ->requirePresence('nev_full', 'create')
