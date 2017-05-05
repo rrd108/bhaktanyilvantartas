@@ -25,9 +25,9 @@ if (isset($modelObject) && $modelObject->hasBehavior('Tree')) {
     });
 }
 %>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<nav class="small-3 medium-2 large-2 columns" id="actions-sidebar">
+    <ul class="menu vertical">
+        <li class="menu-text"><?= __('Actions') ?></li>
 <% if (strpos($action, 'add') === false): %>
         <li><?= $this->Form->postLink(
                 __('Delete'),
@@ -53,7 +53,7 @@ if (isset($modelObject) && $modelObject->hasBehavior('Tree')) {
 %>
     </ul>
 </nav>
-<div class="<%= $pluralVar %> form large-9 medium-8 columns content">
+<div class="<%= $pluralVar %> form small-9 medium-10 large-10 columns content">
     <?= $this->Form->create($<%= $singularVar %>) ?>
     <fieldset>
         <legend><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>') ?></legend>
