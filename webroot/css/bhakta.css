@@ -11,6 +11,11 @@
     color: #dfd;
 }
 
+.top-bar .menu a:hover {
+    background-color: #dfd;
+    color: #060;
+}
+
 .input-group {
     width: auto;
     margin: 0 1em 0 0;
