@@ -105,7 +105,7 @@
                         <li class="input-group">
                             <span class="input-group-label fi-magnifying-glass"></span>
                             <?php
-                            echo $this->Form->create();
+                            echo $this->Form->create('bhaktas', ['url' => ['controller' => 'bhaktas', 'action' => 'index']]);
                             echo $this->Form->input(
                                 'q',
                                 [
