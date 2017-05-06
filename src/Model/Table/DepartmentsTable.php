@@ -64,7 +64,7 @@ class DepartmentsTable extends Table
         return $validator;
     }
 
-    public function findMembers(Query $query, array $options)
+    public function findMembers(Query $query, array $options = [])
     {
         return $query
             ->select(
@@ -74,8 +74,8 @@ class DepartmentsTable extends Table
             )
             ->contain(
             [
-                'Services' => function ($q) {
-                    return $q->find('current')
+                'Services' => function ($q) use ($options) {
+                    return $q->find('current', $options)
                         ->contain(
                             [
                                 'Bhaktas' => function ($q) {

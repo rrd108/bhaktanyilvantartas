@@ -17,9 +17,10 @@ class DepartmentsController extends AppController
         ]
     ];
 
-    public function members()
+    public function members($date = null)
     {
-        $departments = $this->Departments->find('members');
+
+        $departments = $this->Departments->find('members', ['date' => $date]);
 
         $this->set(compact('departments'));
         $this->set('_serialize', ['departments']);

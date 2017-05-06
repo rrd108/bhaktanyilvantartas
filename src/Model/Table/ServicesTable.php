@@ -90,13 +90,14 @@ class ServicesTable extends Table
     
     public function findCurrent(Query $query, array $options)
     {
+        $date = $options['date'] ?: date('Y-m-d');
         $bhaktasLastServiceStarts = $this->find()
             ->select(
                 [
                     'bhid' => 'Services.bhakta_id',
                     'last_service_start' => $query->func()->max('Services.szolgalat_kezdete')
                 ]
-            )
+            )->where(['Services.szolgalat_kezdete <= ' => $date])
             ->group(['Services.bhakta_id']);
 
         $bhaktasServiceIdsForLastServiceStarts = $this->find()
