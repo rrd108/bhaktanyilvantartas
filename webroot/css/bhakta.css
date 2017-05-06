@@ -29,26 +29,8 @@ div.date select {
     width: auto;
 }
 
-.departments {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.departments h3 {
-    width: 100%;
-}
-
-.department{
-    width: 30%;
-    float: left;
-    margin: 1%;
-    padding: 0.4em;
-    border: 1px solid #be140b;
-}
-
 .department h4 {
-    padding-bottom: 0.1rem;
-    margin-bottom: 0.1rem;
+    border-bottom: 1px solid #be140b;
 }
 
 .departments-total {
@@ -57,35 +39,35 @@ div.date select {
     width: 100%;
 }
 
-/*tr:nth-child(1n) {
-    background-color: #eee;
-}*/
-
 @media print {
     body {
-        font-size: 75%;
+        font-size: 90%;
     }
 
-    nav, h3, a, .departments-total {
-        display: none;
-    }
-
-/*    a[href]:after {
-        content: none !important;
-    }*/
-
-    .departments {
-        display: inline-block;
-        vertical-align: top;
+    .column, .columns {
+        position: relative;
+        display: block;
     }
 
     .department {
-        display: inline-block;
-        vertical-align: top;
+        position: relative;
+        display: block;
         page-break-inside: avoid;
+        margin-bottom: 2rem;
+    }
+
+    nav, h3, a {
+        display: none;
     }
 
     .department h4 {
         font-weight: bold;
+        font-size: 125%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .department li {
+        border-bottom: 1px solid #999;
     }
 }

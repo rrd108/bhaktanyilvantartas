@@ -1,42 +1,46 @@
-<div class="departments index large-12 medium-8 columns content">
+<div class="departments index large-12 medium-8 column content">
     <h3>Bhakta lista</h3>
+    <div class="row">
             <?php
                 $volunteers = $missionaries = 0;
                 foreach ($departments as $department):
                 //debug($department);die();
                     if ($department->manpower) {
-                        print '<div class="department">';
-                        print '<h4>' . $department->name . ' (' . $department->manpower . ')</h4>';
-                        print '<ol>';
-                        foreach ($department->services as $service) {
-                            if ($service->bhakta->communityrole_id == 2) {
-                                $volunteers++;
-                            } elseif ($service->bhakta->communityrole_id == 1) {
-                                $missionaries++;
-                            }
-                            print '<li>' .
-                                $this->Html->link(
-                                    '➤',
-                                    [
-                                        'controller' => 'bhaktas',
-                                        'action' => 'edit', $service->bhakta->id
-                                    ]
-                                ) . ' ' .
-                                ($service->bhakta->nev_avatott
-                                    ? $service->bhakta->nev_avatott
-                                    : $service->bhakta->nev_polgari) .
-                                '</li>';
-                        }
-                        print '</ol>';
+                        print '<div class="small-4 column">';
+                            print '<div class="department">';
+                                print '<h4>' . $department->name . ' (' . $department->manpower . ')</h4>';
+                                print '<ol>';
+                                foreach ($department->services as $service) {
+                                    if ($service->bhakta->communityrole_id == 2) {
+                                        $volunteers++;
+                                    } elseif ($service->bhakta->communityrole_id == 1) {
+                                        $missionaries++;
+                                    }
+                                    print '<li>' .
+                                        $this->Html->link(
+                                            '➤',
+                                            [
+                                                'controller' => 'bhaktas',
+                                                'action' => 'edit', $service->bhakta->id
+                                            ]
+                                        ) . ' ' .
+                                        ($service->bhakta->nev_avatott
+                                            ? $service->bhakta->nev_avatott
+                                            : $service->bhakta->nev_polgari) .
+                                        '</li>';
+                                }
+                                print '</ol>';
+                            print '</div>';
                         print '</div>';
                     }
                 ?>
             <?php endforeach; ?>
-    <?php
-    print '<div class="departments-total">';
-    print $volunteers . ' önkéntes, ' .
-        $missionaries . ' missizonárius, ' .
-        'Összesen: ' . ($volunteers+$missionaries);
-    print '</div>';
-    ?>
+    </div>
+    <p class="departments-total row">
+        <?php
+        print $volunteers . ' önkéntes, ' .
+            $missionaries . ' missizonárius, ' .
+            'Összesen: ' . ($volunteers+$missionaries);
+        ?>
+    </p>
 </div>
