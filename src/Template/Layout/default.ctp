@@ -45,7 +45,7 @@
                         <li class="menu-text"><?= $this->fetch('title') ?></li>
                         <?php if ($this->request->session()->read('Auth.User')) : //TODO add .active to li?>
                             <li>
-                                <?= $this->Html->link(
+                                <?= $this->Html->menuLink(
                                     '<i class="fi-torsos"></i> <span>Bhakták</span>',
                                     [
                                         'plugin' => false,
@@ -57,7 +57,7 @@
                                     ]
                                 ) ?>
                                 <ul class="nested vertical menu">
-                                    <li><?= $this->Html->link(
+                                    <li><?= $this->Html->menuLink(
                                             '<i class="fi-torsos"></i> <span>Bhakták</span>',
                                             [
                                                 'plugin' => false,
