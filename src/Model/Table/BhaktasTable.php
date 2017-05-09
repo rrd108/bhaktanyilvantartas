@@ -43,28 +43,28 @@ class BhaktasTable extends Table
 
         $this->belongsTo('Gurus', [
             'foreignKey' => 'guru_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->belongsTo('Tbs', [
             'foreignKey' => 'tb_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->belongsTo('Legalstatuses', [
             'foreignKey' => 'legalstatus_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->belongsTo('Communityroles', [
             'foreignKey' => 'communityrole_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->belongsTo('Asrams', [
             'foreignKey' => 'asram_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->belongsTo('Hazastars', [
             'className' => 'Bhaktas',
             'foreignKey' => 'hazastars_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->hasMany('Services', [
             'foreignKey' => 'bhakta_id'
