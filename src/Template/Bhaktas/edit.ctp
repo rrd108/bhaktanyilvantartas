@@ -52,8 +52,8 @@
             //echo $this->Form->control('hazastars_id');
             echo $this->Form->control('tb_id');
             echo $this->Form->control('eu_card_expiry');
-            echo $this->Form->control('legalstatus_id');
-            echo $this->Form->control('communityrole_id');
+            echo $this->Form->control('legalstatus_id', ['empty' => true]);
+            echo $this->Form->control('communityrole_id', ['empty' => true]);
             echo $this->Form->control('vegzettseg');
             echo $this->Form->control('szakma');
             echo $this->Form->control('vegakarat');
