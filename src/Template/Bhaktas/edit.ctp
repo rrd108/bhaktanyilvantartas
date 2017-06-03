@@ -50,8 +50,8 @@
             echo $this->Form->control('datum_masodikavatas');
             echo $this->Form->control('asram_id', ['options' => $asrams]);
             //echo $this->Form->control('hazastars_id');
-            echo $this->Form->control('tb_id');
-            echo $this->Form->control('eu_card_expiry');
+            echo $this->Form->control('tb_id', ['empty' => true]);
+            echo $this->Form->control('eu_card_expiry', ['empty' => true]);
             echo $this->Form->control('legalstatus_id', ['empty' => true]);
             echo $this->Form->control('communityrole_id', ['empty' => true]);
             echo $this->Form->control('vegzettseg');
