@@ -16,8 +16,14 @@
                                     } elseif ($service->bhakta->communityrole_id == 1) {
                                         $missionaries++;
                                     }
-                                    print '<li>' .
-                                        $this->Html->link(
+                                    print '<li>';
+                                    //if service started recently
+                                    $icon = '';
+                                    if ($service->szolgalat_kezdete->wasWithinLast('1 months')
+                                        || $service->szolgalat_kezdete->isWithinNext('2 weeks')) {
+                                        $icon = ' ✩';
+                                    }
+                                    print $this->Html->link(
                                             '➤',
                                             [
                                                 'controller' => 'bhaktas',
@@ -27,6 +33,7 @@
                                         ($service->bhakta->nev_avatott
                                             ? $service->bhakta->nev_avatott
                                             : $service->bhakta->nev_polgari) .
+                                            $icon .
                                         '</li>';
                                 }
                                 print '</ol>';
