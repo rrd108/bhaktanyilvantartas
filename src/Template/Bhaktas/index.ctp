@@ -35,7 +35,11 @@
         <tbody>
             <?php foreach ($bhaktas as $bhakta): ?>
             <tr>
-                <td class="nowrap <?= ($bhakta->neme ? 'fi-torso' : 'fi-torso-female')?>"> <strong><?= h($bhakta->nev_avatott) ?></strong></td>
+                <td class="nowrap <?= ($bhakta->neme ? 'fi-torso' : 'fi-torso-female')?>">
+                    <strong>
+                        <?= $this->Html->link(h($bhakta->nev_avatott), ['action' => 'view', $bhakta->id]) ?>
+                    </strong>
+                </td>
                 <td><?= h($bhakta->nev_polgari) ?></td>
                 <td><?= h($bhakta->cim_allando) ?></td>
                 <td><?= h($bhakta->adoazonosito) ?></td>
@@ -47,7 +51,6 @@
                 <td><?= h($bhakta->szul_date) ?></td>
                 <td><?= h($bhakta->csalad_nev_anya) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $bhakta->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $bhakta->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $bhakta->id], ['confirm' => __('Are you sure you want to delete # {0}?', $bhakta->id)]) ?>
                 </td>
