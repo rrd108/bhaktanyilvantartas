@@ -16,7 +16,8 @@
     "require-dev": {
         "psy/psysh": "@stable",
         "cakephp/debug_kit": "~3.2",
-        "cakephp/bake": "~1.1"
+        "cakephp/bake": "~1.1",
+        "phpunit/phpunit": "^6.2"
     },
     "suggest": {
         "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",
@@ -25,13 +26,15 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src"
+            "App\\": "src",
+            "MenuLink\\": "./plugins/MenuLink/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "App\\Test\\": "tests",
-            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests",
+            "MenuLink\\Test\\": "./plugins/MenuLink/tests"
         }
     },
     "scripts": {
