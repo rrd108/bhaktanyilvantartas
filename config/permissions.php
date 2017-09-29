@@ -8,6 +8,7 @@ return [
         ],
         [
             'role' => '*',
+            'plugin' => 'CakeDC/Users',
             'controller' => 'Users',
             'action' => ['profile', 'logout'],
         ],

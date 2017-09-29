@@ -45,8 +45,8 @@
             echo $this->Form->control('asram_id');
             echo $this->Form->control('hazastars_id');
             echo $this->Form->control('tb_id', ['options' => $tbs]);
-            echo $this->Form->control('legalstatus_id');
-            echo $this->Form->control('communityrole_id');
+            echo $this->Form->control('legalstatus_id', ['options' => $legalstatuses]);
+            echo $this->Form->control('communityrole_id', ['options' => $communityroles]);
             echo $this->Form->control('vegzettseg');
             echo $this->Form->control('szakma');
             echo $this->Form->control('vegakarat');

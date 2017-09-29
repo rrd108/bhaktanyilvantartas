@@ -2,7 +2,8 @@
     max-width: none;
 }
 
-.top-bar, .top-bar ul {
+.top-bar,
+.top-bar ul {
     background-color: #060;
     color: #eee;
 }
@@ -11,7 +12,8 @@
     color: #dfd;
 }
 
-.top-bar .menu a:hover {
+.top-bar .menu a:hover,
+.menu a.active {
     background-color: #dfd;
     color: #060;
 }
@@ -43,30 +45,28 @@ div.date select {
     body {
         font-size: 90%;
     }
-
-    .column, .columns {
+    .column,
+    .columns {
         position: relative;
         display: block;
     }
-
     .department {
         position: relative;
         display: block;
         page-break-inside: avoid;
         margin-bottom: 2rem;
     }
-
-    nav, h3, a {
+    nav,
+    h3,
+    a {
         display: none;
     }
-
     .department h4 {
         font-weight: bold;
         font-size: 125%;
         text-align: center;
         width: 100%;
     }
-
     .department li {
         border-bottom: 1px solid #999;
     }

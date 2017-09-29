@@ -66,6 +66,7 @@ class BhaktasController extends AppController
         $this->set('_serialize', ['bhakta']);
 
         //debug($bhakta);
+
     }
 
     /**
@@ -88,7 +89,11 @@ class BhaktasController extends AppController
         $gurus = $this->Bhaktas->Gurus->find('list', ['limit' => 200]);
         $tbs = $this->Bhaktas->Tbs->find('list', ['limit' => 200]);
         $hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
-        $this->set(compact('bhakta', 'gurus', 'hazastars', 'tbs'));
+        $legalstatuses = $this->Bhaktas->Legalstatus->find('list', ['limit' => 200]);
+        $communityroles = $this->Bhaktas->Communityrole->find('list', ['limit' => 200]);
+        $this->set(
+            compact('bhakta', 'gurus', 'hazastars', 'tbs', 'legalstatuses', 'communityroles')
+        );
         $this->set('_serialize', ['bhakta']);
     }
 
@@ -121,6 +126,7 @@ class BhaktasController extends AppController
         $asrams = $this->Bhaktas->Asrams->find('list', ['limit' => 200]);
         $communityroles = $this->Bhaktas->Communityroles->find('list', ['limit' => 200]);
         //$hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
+
         $this->set(compact('bhakta', 'gurus', 'tbs', 'legalstatuses', 'asrams', 'communityroles'));
         $this->set('_serialize', ['bhakta']);
     }
@@ -138,7 +144,8 @@ class BhaktasController extends AppController
         $bhakta = $this->Bhaktas->get($id);
         if ($this->Bhaktas->delete($bhakta)) {
             $this->Flash->success(__('The bhakta has been deleted.'));
-        } else {
+        }
+        else {
             $this->Flash->error(__('The bhakta could not be deleted. Please, try again.'));
         }
 
