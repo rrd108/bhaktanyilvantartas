@@ -24,17 +24,17 @@
                                         $icon = ' ✩';
                                     }
                                     print $this->Html->link(
-                                            '➤',
-                                            [
-                                                'controller' => 'bhaktas',
-                                                'action' => 'edit', $service->bhakta->id
-                                            ]
-                                        ) . ' ' .
-                                        ($service->bhakta->nev_avatott
-                                            ? $service->bhakta->nev_avatott
-                                            : $service->bhakta->nev_polgari) .
-                                            $icon .
-                                        '</li>';
+                                        ($service->bhakta->communityrole_id == 1) ? '✔' : '➤',
+                                        [
+                                            'controller' => 'bhaktas',
+                                            'action' => 'edit', $service->bhakta->id
+                                        ]
+                                    ) . ' ' .
+                                    ($service->bhakta->nev_avatott
+                                        ? $service->bhakta->nev_avatott
+                                        : $service->bhakta->nev_polgari) .
+                                        $icon .
+                                    '</li>';
                                 }
                                 print '</ol>';
                             print '</div>';
@@ -46,7 +46,7 @@
     <p class="departments-total row">
         <?php
         print $volunteers . ' önkéntes, ' .
-            $missionaries . ' missizonárius, ' .
+            $missionaries . ' misszionárius, ' .
             'Összesen: ' . ($volunteers+$missionaries);
         ?>
     </p>
