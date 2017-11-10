@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "55fa8b6ff78870198746bac8ee9b6a4a",
+    "content-hash": "d35294b7a7c177188d0af8c53eb83336",
     "packages": [
         {
             "name": "aura/intl",
@@ -676,6 +676,39 @@
                 "phinx"
             ],
             "time": "2017-06-05T13:30:19+00:00"
+        },
+        {
+            "name": "rrd108/cakephp-menulink",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rrd108/cakephp-menulink.git",
+                "reference": "e6f4b47fcdd601a352990b5dd693d6387aea0b65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rrd108/cakephp-menulink/zipball/e6f4b47fcdd601a352990b5dd693d6387aea0b65",
+                "reference": "e6f4b47fcdd601a352990b5dd693d6387aea0b65",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7|^6.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "MenuLink\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "MenuLink plugin for CakePHP",
+            "time": "2017-07-18T14:15:15+00:00"
         },
         {
             "name": "symfony/config",
