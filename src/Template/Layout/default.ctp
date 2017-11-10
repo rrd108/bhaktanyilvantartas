@@ -68,18 +68,18 @@
                                                 'escape' => false
                                             ]
                                         ) ?></li>
-                                    <li><?= $this->Html->link(
+                                    <li><?= $this->Html->menuLink(
                                             '<i class="fi-page-edit"></i> <span>Átírós lista</span>',
                                             ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
                                             ['escape' => false]
                                         ) ?></li>
                                     <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
-                                        <li><?= $this->Html->link(
+                                        <li><?= $this->Html->menuLink(
                                                 '<i class="fi-torso"></i> <span>Új bhakta</span>',
                                                 ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add'],
                                                 ['escape' => false]
                                             ) ?></li>
-                                        <li><?= $this->Html->link(
+                                        <li><?= $this->Html->menuLink(
                                                 '<i class="fi-megaphone"></i> <span>Szolgálat változás</span>',
                                                 ['plugin' => false, 'controller' => 'services', 'action' => 'add'],
                                                 ['escape' => false]
@@ -89,7 +89,7 @@
                             </li>
                             <?php if ($this->request->session()->read('Auth.User.is_superuser')
                                 && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
-                                <li><?= $this->Html->link(
+                                <li><?= $this->Html->menuLink(
                                         '<i class="fi-torso-business"></i> <span>Users</span>',
                                         ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
                                         ['escape' => false]
