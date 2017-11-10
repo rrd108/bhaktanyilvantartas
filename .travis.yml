@@ -8,29 +8,31 @@ php:
   - 5.6
   - 7.0
   - 7.1
+  
+env:
+  - DB=mysql db_dsn='mysql://root@127.0.0.1/cakephp_test'
+  
+services:
+  - mysql
+  - docker
 
 matrix:
   fast_finish: true
 
-  include:
-    - php: 7.0
-      env: PHPCS=1
-      
-services:
-  - docker
+
 before_install:
   - sudo service mysql stop || sudo service mysql-5.6 stop || sudo stop mysql-5.6 || sudo stop mysql || echo "failed to stop mysql"
   - sudo docker run -d -p 3306:3306 mysql:5.7
+  - mysql -u root -e 'CREATE DATABASE cakephp_test;';
 
 before_script:
-  - if [[ $PHPCS = 1 ]]; then composer require cakephp/cakephp-codesniffer:~2.1; fi
-  - if [[ $PHPCS != 1 ]]; then composer install; fi
-  - if [[ $PHPCS != 1 ]]; then composer require phpunit/phpunit:"^5.7|^6.0"; fi
-  - if [[ $PHPCS != 1 ]]; then composer run-script post-install-cmd --no-interaction; fi
+  - composer install;
+  - composer require phpunit/phpunit:"^5.7|^6.0";
+  - composer run-script post-install-cmd --no-interaction;
 
 script:
-  - if [[ $PHPCS != 1 ]]; then vendor/bin/phpunit; fi
-  - if [[ $PHPCS = 1 ]]; then vendor/bin/phpcs -p --extensions=php --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests ./config ./webroot; fi
+  - vendor/bin/phpunit;
 
 notifications:
   email: false
+
