@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -54,7 +55,11 @@ class BhaktasController extends AppController
     {
         $bhakta = $this->Bhaktas->get($id, [
             'contain' => [
-                'Gurus', 'Tbs', 'Legalstatuses', 'Asrams', 'Communityroles',
+                'Gurus',
+                'Tbs',
+                'Legalstatuses',
+                'Asrams',
+                'Communityroles',
                 'Services' => [
                     'sort' => ['Services.szolgalat_kezdete']
                 ],
@@ -86,14 +91,14 @@ class BhaktasController extends AppController
             }
             $this->Flash->error(__('The bhakta could not be saved. Please, try again.'));
         }
-        $asrams = $this->Bhaktas->Asrams->find('list',['limit' => 200]);
+        $asrams = $this->Bhaktas->Asrams->find('list', ['limit' => 200]);
         $gurus = $this->Bhaktas->Gurus->find('list', ['limit' => 200]);
         $tbs = $this->Bhaktas->Tbs->find('list', ['limit' => 200]);
         $hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
         $legalstatuses = $this->Bhaktas->Legalstatuses->find('list', ['limit' => 200]);
         $communityroles = $this->Bhaktas->Communityroles->find('list', ['limit' => 200]);
         $this->set(
-            compact('bhakta', 'asrams','gurus', 'hazastars', 'tbs', 'legalstatuses', 'communityroles')
+            compact('bhakta', 'asrams', 'gurus', 'hazastars', 'tbs', 'legalstatuses', 'communityroles')
         );
         $this->set('_serialize', ['bhakta']);
     }
@@ -109,7 +114,11 @@ class BhaktasController extends AppController
     {
         $bhakta = $this->Bhaktas->get($id, [
             'contain' => [
-                'Gurus', 'Tbs', 'Legalstatuses', 'Asrams', 'Communityroles',
+                'Gurus',
+                'Tbs',
+                'Legalstatuses',
+                'Asrams',
+                'Communityroles',
             ]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -145,8 +154,7 @@ class BhaktasController extends AppController
         $bhakta = $this->Bhaktas->get($id);
         if ($this->Bhaktas->delete($bhakta)) {
             $this->Flash->success(__('The bhakta has been deleted.'));
-        }
-        else {
+        } else {
             $this->Flash->error(__('The bhakta could not be deleted. Please, try again.'));
         }
 
@@ -155,6 +163,16 @@ class BhaktasController extends AppController
 
     public function endVolunteer(int $id = null)
     {
-
+        $bhakta = $this->Bhaktas->get($id);
+        $bhakta->communityrole_id = 4;
+        $bhakta->legalstatus_id = null;
+        if ($this->Bhaktas->save($bhakta)) {
+            $status = 'success';
+        } else {
+            $status = 'fail';
+        }
+        $this->set(compact('status',$status));
+        $this->set('_jsonOptions', JSON_FORCE_OBJECT);
+        return $this->set('_serialize','status');
     }
 }
