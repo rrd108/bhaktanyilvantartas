@@ -27,8 +27,6 @@ class ServicesTableTest extends TestCase
         'app.services',
         'app.bhaktas',
         'app.gurus',
-        'app.hazastars',
-        'app.osztalies'
     ];
 
     /**

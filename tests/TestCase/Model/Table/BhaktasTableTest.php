@@ -26,7 +26,6 @@ class BhaktasTableTest extends TestCase
     public $fixtures = [
         'app.bhaktas',
         'app.gurus',
-        'app.hazastars',
         'app.services'
     ];
 
