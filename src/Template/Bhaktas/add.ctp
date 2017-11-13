@@ -22,7 +22,7 @@
             echo $this->Form->control('nev_szuletesi');
             echo $this->Form->control('nev_polgari');
             echo $this->Form->control('nev_avatott');
-            echo $this->Form->control('guru_id', ['options' => $gurus]);
+            echo $this->Form->control('guru_id', ['options' => $gurus, 'empty' => true]);
             echo $this->Form->control('cim_allando');
             echo $this->Form->control('cim_ideiglenes');
             echo $this->Form->control('cim_szallas');
@@ -31,7 +31,7 @@
             echo $this->Form->control('adoazonosito');
             echo $this->Form->control('taj');
             echo $this->Form->control('szul_hely');
-            echo $this->Form->control('szul_date', ['empty' => true]);
+            echo $this->Form->control('szul_date', ['empty' => true, 'minYear' => date('Y')-120, 'maxYear' => date('Y')]);
             echo $this->Form->control('szul_time', ['empty' => true]);
             echo $this->Form->control('allampolgarsag');
             echo $this->Form->control('katonasag');
@@ -43,10 +43,10 @@
             echo $this->Form->control('datum_elsoavatas');
             echo $this->Form->control('datum_masodikavatas');
             echo $this->Form->control('asram_id');
-            echo $this->Form->control('hazastars_id');
-            echo $this->Form->control('tb_id', ['options' => $tbs]);
-            echo $this->Form->control('legalstatus_id', ['options' => $legalstatuses]);
-            echo $this->Form->control('communityrole_id', ['options' => $communityroles]);
+            echo $this->Form->control('hazastars_id', ['empty' => true]);
+            echo $this->Form->control('tb_id', ['options' => $tbs, 'empty' => true]);
+            echo $this->Form->control('legalstatus_id', ['options' => $legalstatuses, 'empty' => true]);
+            echo $this->Form->control('communityrole_id', ['options' => $communityroles, 'empty' => true]);
             echo $this->Form->control('vegzettseg');
             echo $this->Form->control('szakma');
             echo $this->Form->control('vegakarat');
