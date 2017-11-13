@@ -86,13 +86,14 @@ class BhaktasController extends AppController
             }
             $this->Flash->error(__('The bhakta could not be saved. Please, try again.'));
         }
+        $asrams = $this->Bhaktas->Asrams->find('list',['limit' => 200]);
         $gurus = $this->Bhaktas->Gurus->find('list', ['limit' => 200]);
         $tbs = $this->Bhaktas->Tbs->find('list', ['limit' => 200]);
         $hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
         $legalstatuses = $this->Bhaktas->Legalstatuses->find('list', ['limit' => 200]);
         $communityroles = $this->Bhaktas->Communityroles->find('list', ['limit' => 200]);
         $this->set(
-            compact('bhakta', 'gurus', 'hazastars', 'tbs', 'legalstatuses', 'communityroles')
+            compact('bhakta', 'asrams','gurus', 'hazastars', 'tbs', 'legalstatuses', 'communityroles')
         );
         $this->set('_serialize', ['bhakta']);
     }
