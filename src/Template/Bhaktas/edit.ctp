@@ -23,6 +23,10 @@
     <?= $this->Form->create($bhakta) ?>
     <fieldset>
         <legend><?= __('Edit Bhakta') ?></legend>
+        <?php if ($bhakta->communityrole_id == 1 || $bhakta->communityrole_id == 2): ?>
+            <?= $this->Form->hidden('bhakta_id',['value' => $bhakta->id]) ?>
+            <?= $this->Form->button(__('End volunteering'),['class' => 'button','type' => 'button', 'id' => 'endvolbtn']) ?>
+        <?php endif; ?>
         <?php
             echo $this->Form->control('neme', ['label' => 'férfi']);
             echo $this->Form->control('nev_szuletesi');
