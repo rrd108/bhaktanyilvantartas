@@ -51,7 +51,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
-    $routes->connect('/bhaktas/endvolunteer/:id', ['controller' => 'Bhaktas', 'action' => 'endVolunteer']);
+    $routes->connect('/bhaktas/endvolunteer/*', ['controller' => 'Bhaktas', 'action' => 'endVolunteer']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
