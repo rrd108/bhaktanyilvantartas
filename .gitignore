@@ -4,3 +4,5 @@
 /logs/*
 .idea
 /webroot/img/bhaktas
+/webroot/.htaccess
+.htaccess
