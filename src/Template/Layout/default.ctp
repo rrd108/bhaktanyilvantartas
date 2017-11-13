@@ -137,6 +137,7 @@
     <?= $this->Html->script('vendor/what-input.js') ?>
     <?= $this->Html->script('vendor/foundation.js') ?>
     <?= $this->Html->script('app.js') ?>
+    <?= $this->Html->script('scripts.js') ?>
     <?= $this->fetch('script') ?>
 
 </body>
