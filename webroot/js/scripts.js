@@ -11,6 +11,7 @@ var endvolunteer = function () {
         $.ajax({
             url: url,
             method: "post",
+            data: "enddate=" +enddate ,
             success: function (result) {
                 var response = JSON.parse(result);
                 if(response["status"] == "success"){
