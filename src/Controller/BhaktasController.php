@@ -164,6 +164,7 @@ class BhaktasController extends AppController
 
     public function endVolunteer(int $id = null)
     {
+        $this->request->allowMethod(['post']);
         $bhakta = $this->Bhaktas->get($id);
         $bhakta->communityrole_id = 4;
         $bhakta->legalstatus_id = null;
