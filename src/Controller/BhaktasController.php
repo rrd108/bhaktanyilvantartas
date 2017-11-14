@@ -162,16 +162,20 @@ class BhaktasController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function endVolunteer(int $id = null)
+    public function endVolunteer(int $bhakta_id = null)
     {
         $this->request->allowMethod(['post']);
-        $bhakta = $this->Bhaktas->get($id);
+        $enddate = $this->request->getData('enddate');
+        $bhakta = $this->Bhaktas->get($bhakta_id);
+        $service = $this->Bhaktas->Services->find('lastBeginedServiceByBhakta',
+            ['bhakta_id' => $bhakta_id])->where(['Services.bhakta_id = ' => $bhakta_id])->all();
+        $service = $this->Bhaktas->Services->get($service->service_id);
         $bhakta->communityrole_id = 4;
         $bhakta->legalstatus_id = null;
         if ($this->Bhaktas->save($bhakta)) {
-            $status = array('status'=>'success');
+            $status = array('status' => 'success');
         } else {
-            $status = array('status'=>'fail');
+            $status = array('status' => 'fail');
         }
         $response = json_encode($status);
         return $this->response->withStringBody($response);
