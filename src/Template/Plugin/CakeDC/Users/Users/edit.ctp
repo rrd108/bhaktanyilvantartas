@@ -34,12 +34,17 @@ $Users = ${$tableAlias};
         <?php
         echo $this->Form->control('username', ['label' => __d('CakeDC/Users', 'Username')]);
         echo $this->Form->control('email', ['label' => __d('CakeDC/Users', 'Email')]);
-        echo $this->Form->control('role', ['label' => __d('CakeDC/Users', 'Role')]);
+        if($Users->role == 'user'){
+            echo $this->Form->control(__d('CakeDC/Users', 'Role'),['options' => ['user', 'superuser']]);
+        }
+        if($Users->role == 'superuser'){
+            echo $this->Form->control(__d('CakeDC/Users', 'Role'),['options' => ['superuser', 'user']]);
+        }
         echo $this->Form->control('active', [
             'label' => __d('CakeDC/Users', 'Active')
         ]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__d('CakeDC/Users', 'Submit')) ?>
+    <?= $this->Form->button(__d('CakeDC/Users', 'Submit'),['class' => 'button']) ?>
     <?= $this->Form->end() ?>
 </div>
