@@ -1,6 +1,10 @@
 var endvolunteer = function () {
     $("#endvolbtn").on("click", function () {
         var bhakta_id = $("input[name=bhakta_id]").val();
+        var enddate = new Date($("#szolgalat-vege").val());
+        var year = enddate.getFullYear();
+        var month = enddate.getMonth() +1;
+        var day = enddate.getDate();
         var host = $(location).attr("origin");
         var baseUrl = $($("script")[1]).attr("src").replace(/\/js\/.*/, '');
         var url = host + baseUrl + "/bhaktas/endvolunteer/" + bhakta_id;
