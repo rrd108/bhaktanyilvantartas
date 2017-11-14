@@ -25,6 +25,7 @@ class BhaktasController extends AppController
             'Search.Prg',
             ['actions' => ['index']]
         );
+        $this->loadComponent('RequestHandler');
     }
 
     /**
@@ -167,12 +168,11 @@ class BhaktasController extends AppController
         $bhakta->communityrole_id = 4;
         $bhakta->legalstatus_id = null;
         if ($this->Bhaktas->save($bhakta)) {
-            $status = 'success';
+            $status = array('status'=>'success');
         } else {
-            $status = 'fail';
+            $status = array('status'=>'fail');
         }
-        $this->set(compact('status',$status));
-        $this->set('_jsonOptions', JSON_FORCE_OBJECT);
-        return $this->set('_serialize','status');
+        $response = json_encode($status);
+        return $this->response->withStringBody($response);
     }
 }
