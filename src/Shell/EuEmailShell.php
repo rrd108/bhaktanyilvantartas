@@ -32,12 +32,11 @@ class EuEmailShell extends Shell
         ])->all();
         $message = '';
         foreach ($bhaktas as $bhakta) {
-            $message .= 'id: ' . $bhakta->id . ' nev_szuletesi: ' . $bhakta->nev_szuletesi . ' nev_polgari ' . $bhakta->nev_polgary . ' eu_card_expiry' . $bhakta->eu_card_expiry . '\n';
+            $message .= 'nev_szuletesi: ' . $bhakta->nev_szuletesi . ' nev_avatott ' . $bhakta->nev_avatott . ' eu_card_expiry' . $bhakta->eu_card_expiry . '\n';
+            $email = new Email('default');
+            $email->setSubject('bhaktas with experied eu card')
+                ->setTo('proba@proba.hu');
+            $email->send($message);
         }
-        debug($message);
-        $email = new Email('default');
-        $email->setSubject('bhaktas with experied eu card')
-            ->setTo('proba@proba.hu');
-        $email->send($message);
     }
 }
