@@ -304,7 +304,6 @@ class BhaktasTable extends Table
     {
         $time = new Time();
         $time->addMonth(1);
-        debug($time->timestamp);
         $bhaktas = $this->find()->where(['eu_card_expiry <=' => $time]);
         return $bhaktas;
     }
