@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -87,7 +88,7 @@ class ServicesTable extends Table
 
         return $rules;
     }
-    
+
     public function findCurrent(Query $query, array $options)
     {
         $date = $options['date'] ?: date('Y-m-d');
@@ -123,5 +124,19 @@ class ServicesTable extends Table
             );
 
         return $currentServices;
+    }
+
+    public function findLastBeginedServiceByBhakta(Query $query, array $options)
+    {
+        $bhakta_id = $options['bhakta_id'];
+        $bhaktasLastServiceStarts = $this->find()
+            ->select(
+                [
+                    'service_id' => $query->func()->max('Services.id'),
+                    'last_service_start' => $query->func()->max('Services.szolgalat_kezdete')
+                ]
+            )->group(['Services.bhakta_id']);
+        return $bhaktasLastServiceStarts;
+
     }
 }
