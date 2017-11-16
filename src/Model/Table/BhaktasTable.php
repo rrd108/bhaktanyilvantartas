@@ -6,6 +6,7 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Search\Manager;
+use Cake\I18n\Time;
 
 /**
  * Bhaktas Model
@@ -298,4 +299,12 @@ class BhaktasTable extends Table
         return $search;
 
     }*/
+
+    public function findEuCardExperiendInCurrentMonth()
+    {
+        $time = new Time();
+        $time->addMonth(1);
+        $bhaktas = $this->find()->where(['eu_card_expiry <=' => $time]);
+        return $bhaktas;
+    }
 }
