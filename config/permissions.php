@@ -25,7 +25,7 @@ return [
         [
             'role' => 'admin',
             'controller' => 'Bhaktas',
-            'action' => ['edit'],
+            'action' => ['edit','endVolunteer'],
         ],
         [
             'role' => 'admin',

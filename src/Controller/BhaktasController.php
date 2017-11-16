@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -24,6 +25,7 @@ class BhaktasController extends AppController
             'Search.Prg',
             ['actions' => ['index']]
         );
+        $this->loadComponent('RequestHandler');
     }
 
     /**
@@ -54,7 +56,11 @@ class BhaktasController extends AppController
     {
         $bhakta = $this->Bhaktas->get($id, [
             'contain' => [
-                'Gurus', 'Tbs', 'Legalstatuses', 'Asrams', 'Communityroles',
+                'Gurus',
+                'Tbs',
+                'Legalstatuses',
+                'Asrams',
+                'Communityroles',
                 'Services' => [
                     'sort' => ['Services.szolgalat_kezdete']
                 ],
@@ -86,14 +92,14 @@ class BhaktasController extends AppController
             }
             $this->Flash->error(__('The bhakta could not be saved. Please, try again.'));
         }
-        $asrams = $this->Bhaktas->Asrams->find('list',['limit' => 200]);
+        $asrams = $this->Bhaktas->Asrams->find('list', ['limit' => 200]);
         $gurus = $this->Bhaktas->Gurus->find('list', ['limit' => 200]);
         $tbs = $this->Bhaktas->Tbs->find('list', ['limit' => 200]);
         $hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
         $legalstatuses = $this->Bhaktas->Legalstatuses->find('list', ['limit' => 200]);
         $communityroles = $this->Bhaktas->Communityroles->find('list', ['limit' => 200]);
         $this->set(
-            compact('bhakta', 'asrams','gurus', 'hazastars', 'tbs', 'legalstatuses', 'communityroles')
+            compact('bhakta', 'asrams', 'gurus', 'hazastars', 'tbs', 'legalstatuses', 'communityroles')
         );
         $this->set('_serialize', ['bhakta']);
     }
@@ -109,7 +115,11 @@ class BhaktasController extends AppController
     {
         $bhakta = $this->Bhaktas->get($id, [
             'contain' => [
-                'Gurus', 'Tbs', 'Legalstatuses', 'Asrams', 'Communityroles',
+                'Gurus',
+                'Tbs',
+                'Legalstatuses',
+                'Asrams',
+                'Communityroles',
             ]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -145,11 +155,33 @@ class BhaktasController extends AppController
         $bhakta = $this->Bhaktas->get($id);
         if ($this->Bhaktas->delete($bhakta)) {
             $this->Flash->success(__('The bhakta has been deleted.'));
-        }
-        else {
+        } else {
             $this->Flash->error(__('The bhakta could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function endVolunteer(int $bhakta_id = null)
+    {
+        $this->request->allowMethod(['post']);
+        $year = $this->request->getData('year');
+        $month = $this->request->getData('month');
+        $day = $this->request->getData('day');
+        $bhakta = $this->Bhaktas->get($bhakta_id);
+        $service = $this->Bhaktas->Services->find('lastBeginedServiceByBhakta',
+            ['bhakta_id' => $bhakta_id])->where(['Services.bhakta_id = ' => $bhakta_id])->first();
+        $service = $this->Bhaktas->Services->get($service->service_id);
+        $bhakta->communityrole_id = 4;
+        $bhakta->legalstatus_id = null;
+        $service->szolgalat_vege = $year . '-' . $month . '-' . $day;
+        $bhakta->services = [$service];
+        if ($this->Bhaktas->save($bhakta)) {
+            $status = array('status' => 'success');
+        } else {
+            $status = array('status' => 'fail');
+        }
+        $response = json_encode($status);
+        return $this->response->withStringBody($response);
     }
 }
