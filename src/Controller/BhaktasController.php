@@ -162,23 +162,21 @@ class BhaktasController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    //TODO refactor to JSON view, make transactional
     public function endVolunteer(int $bhakta_id = null)
     {
-        //$this->request->allowMethod(['post']);
-        $enddate = $this->request->getData('enddate');
-        $enddate = date('Y-m-d',$enddate);
+        $this->request->allowMethod(['post']);
+        $year = $this->request->getData('year');
+        $month = $this->request->getData('month');
+        $day = $this->request->getData('day');
         $bhakta = $this->Bhaktas->get($bhakta_id);
         $service = $this->Bhaktas->Services->find('lastBeginedServiceByBhakta',
             ['bhakta_id' => $bhakta_id])->where(['Services.bhakta_id = ' => $bhakta_id])->first();
         $service = $this->Bhaktas->Services->get($service->service_id);
         $bhakta->communityrole_id = 4;
         $bhakta->legalstatus_id = null;
-        debug($enddate);
-        $service->szolgalat_vege = $enddate;
-        debug($service);
-        //debug($service);
-        if ($this->Bhaktas->Services->save($service)) {
+        $service->szolgalat_vege = $year . '-' . $month . '-' . $day;
+        $bhakta->services = [$service];
+        if ($this->Bhaktas->save($bhakta)) {
             $status = array('status' => 'success');
         } else {
             $status = array('status' => 'fail');
