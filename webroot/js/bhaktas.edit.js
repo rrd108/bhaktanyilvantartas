@@ -11,11 +11,12 @@ var endvolunteer = function () {
         $.ajax({
             url: url,
             method: "post",
-            data: "enddate=" +enddate ,
+            data: {year: year, month: month, day: day},
             success: function (result) {
                 var response = JSON.parse(result);
                 if(response["status"] == "success"){
-                    $("#endvolbtn").remove();
+                    alert("Státusz státusz sikeresen módisítva");
+                    $("#endvolform").remove();
                     $("#communityrole-id").val("4");
                     $("#legalstatus-id").val("");
                 }
