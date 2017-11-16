@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  */
+echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
 ?>
 <nav class="small-3 medium-2 large-2 columns" id="actions-sidebar">
     <ul class="menu vertical">
@@ -19,9 +20,9 @@
         <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?></li>
     </ul>
     <?php if ($bhakta->communityrole_id == 1 || $bhakta->communityrole_id == 2): ?>
-        <?= $this->Form->create($bhakta) ?>
+        <?= $this->Form->create($bhakta, ['id' => 'endvolform']) ?>
         <?= $this->Form->hidden('bhakta_id', ['value' => $bhakta->id]) ?>
-        <?= $this->Form->control('szolgalat_vege', ['value' => date('Y-m-d',time()+3600)]); ?>
+        <?= $this->Form->control('szolgalat_vege', ['value' => date('Y-m-d', timez())]); ?>
         <?= $this->Form->button(__('End volunteering'),
             ['class' => 'button', 'type' => 'button', 'id' => 'endvolbtn']) ?>
         <?= $this->Form->end() ?>
@@ -85,4 +86,3 @@
     <?= $this->Form->button(__('Submit'), ['class' => 'button']) ?>
     <?= $this->Form->end() ?>
 </div>
-<?= $this->Html->script('bhaktas.edit.js') ?>
