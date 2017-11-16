@@ -32,7 +32,7 @@ class EuEmailShell extends Shell
         ])->all();
         $message = '';
         foreach ($bhaktas as $bhakta) {
-            $message .= 'id: ' . $bhakta->id . ' nev_szuletesi: ' . $bhakta->nev_szuletesi . ' nev_polgari ' . $bhakta->nev_polgary . ' eu_card_expiry' . $bhakta->eu_card_expiry . '<br>';
+            $message .= 'id: ' . $bhakta->id . ' nev_szuletesi: ' . $bhakta->nev_szuletesi . ' nev_polgari ' . $bhakta->nev_polgary . ' eu_card_expiry' . $bhakta->eu_card_expiry . '\n';
         }
         debug($message);
         $email = new Email('default');
