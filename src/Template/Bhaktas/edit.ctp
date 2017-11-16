@@ -22,7 +22,7 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
     <?php if ($bhakta->communityrole_id == 1 || $bhakta->communityrole_id == 2): ?>
         <?= $this->Form->create($bhakta, ['id' => 'endvolform']) ?>
         <?= $this->Form->hidden('bhakta_id', ['value' => $bhakta->id]) ?>
-        <?= $this->Form->control('szolgalat_vege', ['value' => date('Y-m-d', timez())]); ?>
+        <?= $this->Form->control('szolgalat_vege', ['value' => date('Y-m-d', time())]); ?>
         <?= $this->Form->button(__('End volunteering'),
             ['class' => 'button', 'type' => 'button', 'id' => 'endvolbtn']) ?>
         <?= $this->Form->end() ?>
