@@ -27,16 +27,16 @@ class EuEmailShell extends Shell
         $bhaktas = $this->Bhaktas->findEuCardExperiendInCurrentMonth()->select([
             'Bhaktas.id',
             'Bhaktas.nev_szuletesi',
-            'Bhaktas.nev_polgari',
+            'Bhaktas.nev_avatott',
             'Bhaktas.eu_card_expiry'
         ])->all();
         $message = '';
         foreach ($bhaktas as $bhakta) {
-            $message .= 'nev_szuletesi: ' . $bhakta->nev_szuletesi . ' nev_avatott ' . $bhakta->nev_avatott . ' eu_card_expiry' . $bhakta->eu_card_expiry . '\n';
-            $email = new Email('default');
-            $email->setSubject('bhaktas with experied eu card')
-                ->setTo('proba@proba.hu');
-            $email->send($message);
+            $message .= 'nev_szuletesi: ' . $bhakta->nev_szuletesi . ', nev_avatott: ' . $bhakta->nev_avatott . ', eu_card_expiry' . $bhakta->eu_card_expiry . '\n';
         }
+        $email = new Email('default');
+        $email->setSubject('bhaktas with experied eu card')
+            ->setTo('proba@proba.hu');
+        $email->send($message);
     }
 }
