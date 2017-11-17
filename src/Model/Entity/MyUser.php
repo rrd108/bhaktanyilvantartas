@@ -5,6 +5,7 @@
  * Date: 2017.11.17.
  * Time: 13:25
  */
+
 namespace App\Model\Entity;
 
 

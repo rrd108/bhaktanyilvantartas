@@ -20,6 +20,7 @@ class EuEmailShell extends Shell
     {
         parent::initialize();
         $this->loadModel('Bhaktas');
+        $this->loadModel('MyUser');
     }
 
     public function main()
@@ -34,6 +35,8 @@ class EuEmailShell extends Shell
         foreach ($bhaktas as $bhakta) {
             $message .= 'nev_szuletesi: ' . $bhakta->nev_szuletesi . ', nev_avatott: ' . $bhakta->nev_avatott . ', eu_card_expiry' . $bhakta->eu_card_expiry . '\n';
         }
+        $users = $this->MyUsers->findSuperUser()->all();
+        debug($users);
         $email = new Email('default');
         $email->setSubject('bhaktas with experied eu card')
             ->setTo('proba@proba.hu');

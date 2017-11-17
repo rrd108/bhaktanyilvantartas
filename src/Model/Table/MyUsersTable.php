@@ -12,5 +12,8 @@ use CakeDC\Users\Model\Table\UsersTable;
 
 class MyUsersTable
 {
-
+    public function findSuperUser(Query $query, array $oprions)
+    {
+        return $query->select(['User.username','User.email'])->where(['is_sueperuser',1]);
+    }
 }
