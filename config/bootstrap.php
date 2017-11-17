@@ -213,6 +213,7 @@ Type::build('timestamp')
  *
  */
 Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
+Configure::write('Users.config', ['users']);
 Configure::write('Users.Email.validate', false);
 Configure::write('Users.Registration.active', false);
 Configure::write('Users.Tos.required', false);
