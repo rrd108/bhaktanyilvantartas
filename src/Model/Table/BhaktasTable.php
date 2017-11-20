@@ -87,7 +87,6 @@ class BhaktasTable extends Table
                     'kep' => [
                         'path' => '/img/bhaktas/:id:md5'
                     ],
-                    'suffix' => ''
                 ]
             ]
         );

@@ -80,7 +80,7 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
             echo $this->Form->control('bizalmas_info');
         }
         echo $this->Form->control('megjegyzes');
-        echo $this->Form->control('kep',['type'=>'file']);
+        echo $this->Form->control('kep_file',['type'=>'file']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit'), ['class' => 'button']) ?>
