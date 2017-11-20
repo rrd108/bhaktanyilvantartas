@@ -12,6 +12,7 @@ use Cake\Console\ConsoleOptionParser;
 use Cake\Console\Shell;
 use Cake\Log\Log;
 use Cake\Mailer\Email;
+use Cake\ORM\TableRegistry;
 
 class EuEmailShell extends Shell
 {
@@ -20,7 +21,7 @@ class EuEmailShell extends Shell
     {
         parent::initialize();
         $this->loadModel('Bhaktas');
-        $this->loadModel('MyUser');
+        $this->loadModel('CakeDC.Users');
     }
 
     public function main()
@@ -35,7 +36,7 @@ class EuEmailShell extends Shell
         foreach ($bhaktas as $bhakta) {
             $message .= 'nev_szuletesi: ' . $bhakta->nev_szuletesi . ', nev_avatott: ' . $bhakta->nev_avatott . ', eu_card_expiry' . $bhakta->eu_card_expiry . '\n';
         }
-        $users = $this->MyUsers->findSuperUser()->all();
+        $users = $this->Users->find('all')->select(['User.username','User.email'])->where(['is_sueperuser',1])->all();
         debug($users);
         $email = new Email('default');
         $email->setSubject('bhaktas with experied eu card')
