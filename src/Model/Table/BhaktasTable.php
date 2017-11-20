@@ -85,8 +85,9 @@ class BhaktasTable extends Table
         $this->addBehavior('Xety/Cake3Upload.Upload', [
                 'fields' => [
                     'kep' => [
-                        'path' => 'bhaktas/:id:md5'
-                    ]
+                        'path' => '/img/bhaktas/:id:md5'
+                    ],
+                    'suffix' => ''
                 ]
             ]
         );
