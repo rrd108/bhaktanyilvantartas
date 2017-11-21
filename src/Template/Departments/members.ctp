@@ -12,7 +12,7 @@ echo $this->Html->script('departments.members.js', ['block' => true]);
                 <div class="small-4 column">
                     <div class="department">
                         <h4><?= $department->name . ' (' . $department->manpower . ')' ?></h4>
-                        <ol>
+                        <ol id="ol-<?= $department->id ?>">
                             <?php foreach ($department->services as $service) : ?>
                                 <?php if ($service->bhakta->communityrole_id == 2) {
                                     $volunteers++;
@@ -49,8 +49,7 @@ echo $this->Html->script('departments.members.js', ['block' => true]);
         <?php endforeach; ?>
     </div>
     <p class="departments-total row">
-        <?php
-        print $volunteers . ' önkéntes, ' .
+        <?= $volunteers . ' önkéntes, ' .
             $missionaries . ' misszionárius, ' .
             'Összesen: ' . ($volunteers + $missionaries);
         ?>
