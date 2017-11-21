@@ -12,6 +12,26 @@ $(".drop").each(function (i, el) {
             var itemId = ui.draggable.attr("id");
             $("#" + itemId).appendTo("#" + targetListId);
             $("#"+targetListId+" li").last().css({"position": "relative","left": 0, "top": 0});
+            var host = $(location).attr("origin");
+            var baseUrl = $($("script")[1]).attr("src").replace(/\/js\/.*/, '');
+            var url = host + baseUrl + "/services/addbybhaktaanddepartment";
+            $.ajax({
+                url: url,
+                method: "post",
+                data: {bhaktaId: itemId, departmentId: targetListId},
+                success: function (result) {
+                    var response = JSON.parse(result);
+                    if(response["status"] == "success"){
+                        alert("Új szolgálat sikeresen hozzáadva");
+                    }
+                    if(response.status == "fail"){
+                        alert("Nem lehetett a szolgálatot hozzáadni, próbálja később");
+                    }
+                },
+                error: function (result) {
+                    alert("Nem lehetett a szolgálatot hozzáadni, próbálja később");
+                }
+            });
         }
     });
 });
