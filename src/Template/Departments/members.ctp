@@ -50,8 +50,8 @@ echo $this->Html->script('departments.members.js', ['block' => true]);
     </div>
     <p class="departments-total row">
         <?= $volunteers . ' önkéntes, ' .
-            $missionaries . ' misszionárius, ' .
-            'Összesen: ' . ($volunteers + $missionaries);
+        $missionaries . ' misszionárius, ' .
+        'Összesen: ' . ($volunteers + $missionaries);
         ?>
     </p>
 </div>
