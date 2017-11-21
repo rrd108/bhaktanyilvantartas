@@ -12,14 +12,14 @@ echo $this->Html->script('departments.members.js', ['block' => true]);
                 <div class="small-4 column">
                     <div class="department">
                         <h4><?= $department->name . ' (' . $department->manpower . ')' ?></h4>
-                        <ol id="ol-<?= $department->id ?>">
+                        <ol id="ol-<?= $department->id ?>" class="drop">
                             <?php foreach ($department->services as $service) : ?>
                                 <?php if ($service->bhakta->communityrole_id == 2) {
                                     $volunteers++;
                                 } elseif ($service->bhakta->communityrole_id == 1) {
                                     $missionaries++;
                                 } ?>
-                                <li id="li-<?= $service->bhakta_id ?>">
+                                <li id="li-<?= $service->bhakta_id ?>" class="drag">
                                     <?php
                                     //if service started recently
                                     $icon = '';
