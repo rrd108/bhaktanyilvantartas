@@ -11,6 +11,7 @@ $(".drop").each(function (i, el) {
             targetListId = $(this).attr("id");
             var itemId = ui.draggable.attr("id");
             $("#" + itemId).appendTo("#" + targetListId);
+            $("#"+targetListId+" li").last().css({"position": "relative","left": 0, "top": 0});
         }
     });
 });
