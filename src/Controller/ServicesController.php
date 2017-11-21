@@ -117,4 +117,9 @@ class ServicesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function addByBhaktaAndDepartment()
+    {
+        
+    }
 }
