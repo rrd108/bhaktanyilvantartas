@@ -1,3 +1,6 @@
+<?php
+echo $this->Html->script('departments.members.js', ['block' => true]);
+?>
 <div class="departments index large-12 medium-8 column content">
     <h3>Bhakta lista</h3>
     <div class="row">
