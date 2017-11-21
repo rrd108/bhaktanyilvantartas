@@ -19,7 +19,7 @@ echo $this->Html->script('departments.members.js', ['block' => true]);
                                 } elseif ($service->bhakta->communityrole_id == 1) {
                                     $missionaries++;
                                 } ?>
-                                <li>
+                                <li id="li-<?= $service->bhakta_id ?>">
                                     <?php
                                     //if service started recently
                                     $icon = '';
