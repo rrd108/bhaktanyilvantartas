@@ -123,7 +123,8 @@ class ServicesController extends AppController
     {
         $bhaktaId = $this->request->getData('bhaktaId');
         $departmentId = $this->request->getData('departmentId');
-        $beginServiceDate = Time::now();
+        $now = Time::now();
+        $beginServiceDate = $now->i18nFormat('yyyy-MM-dd');
         $service = $this->Services->newEntity();
         $service->bhakta_id = $bhaktaId;
         $service->department_id = $departmentId;
