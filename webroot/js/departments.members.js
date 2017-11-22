@@ -12,13 +12,15 @@ $(".drop").each(function (i, el) {
             var itemId = ui.draggable.attr("id");
             $("#" + itemId).appendTo("#" + targetListId);
             $("#"+targetListId+" li").last().css({"position": "relative","left": 0, "top": 0});
+            var bhaktaId = itemId.substring(3);
+            var departmentId = targetListId.substring(3);
             var host = $(location).attr("origin");
             var baseUrl = $($("script")[1]).attr("src").replace(/\/js\/.*/, '');
             var url = host + baseUrl + "/services/addbybhaktaanddepartment";
             $.ajax({
                 url: url,
                 method: "post",
-                data: {bhaktaId: itemId, departmentId: targetListId},
+                data: {bhaktaId: bhaktaId, departmentId: departmentId},
                 success: function (result) {
                     var response = JSON.parse(result);
                     if(response["status"] == "success"){
