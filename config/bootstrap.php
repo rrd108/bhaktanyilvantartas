@@ -230,3 +230,4 @@ if (Configure::read('debug')) {
 Plugin::load('Search');
 Plugin::load('MenuLink');
 Plugin::load('DebugKit');
+Plugin::load('Xety/Cake3Upload');

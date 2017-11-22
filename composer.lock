@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "59176f89384f9f41f1923fa6b8679fcc",
-    "content-hash": "a7fa005742a1f1df82c8f20c205148f5",
+    "hash": "2973cbc636976e095bd3100e2aef6244",
+    "content-hash": "9aecbde48b360a0d94f1f62760367112",
     "packages": [
         {
             "name": "aura/intl",
@@ -1059,6 +1059,58 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2017-10-05 14:43:42"
+        },
+        {
+            "name": "xety/cake3-upload",
+            "version": "v1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Xety/Cake3-Upload.git",
+                "reference": "47b7c9728ee907dbb4d9659939364fffce2e02f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Xety/Cake3-Upload/zipball/47b7c9728ee907dbb4d9659939364fffce2e02f5",
+                "reference": "47b7c9728ee907dbb4d9659939364fffce2e02f5",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/orm": "3.*",
+                "php": ">=5.4.16"
+            },
+            "require-dev": {
+                "cakephp/cakephp": "~3.0",
+                "cakephp/cakephp-codesniffer": "dev-master",
+                "phpunit/phpunit": "*"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Xety\\Cake3Upload\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Xety",
+                    "email": "zoro.fmt@gmail.com",
+                    "homepage": "https://github.com/Xety"
+                }
+            ],
+            "description": "Cake3 plugin to upload files.",
+            "homepage": "https://github.com/Xety/Cake3-Upload",
+            "keywords": [
+                "cake3",
+                "cakephp",
+                "file",
+                "orm",
+                "plugin",
+                "upload"
+            ],
+            "time": "2016-01-21 10:19:44"
         },
         {
             "name": "zendframework/zend-diactoros",
