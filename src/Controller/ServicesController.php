@@ -121,6 +121,7 @@ class ServicesController extends AppController
 
     public function addByBhaktaAndDepartment()
     {
+        $this->request->allowMethod(['post']);
         $bhaktaId = $this->request->getData('bhaktaId');
         $departmentId = $this->request->getData('departmentId');
         $now = Time::now();
