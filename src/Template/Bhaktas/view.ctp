@@ -1,14 +1,15 @@
 <?php
 /**
-  * @var \App\View\AppView $this
-  */
+ * @var \App\View\AppView $this
+ */
 ?>
 <nav class="small-3 medium-2 large-2 columns" id="actions-sidebar">
     <?= $this->Html->image('bhaktas/' . $bhakta->kep) ?>
     <ul class="menu vertical">
         <li class="menu-text"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Bhakta'), ['action' => 'edit', $bhakta->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Bhakta'), ['action' => 'delete', $bhakta->id], ['confirm' => __('Are you sure you want to delete # {0}?', $bhakta->id)]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Bhakta'), ['action' => 'delete', $bhakta->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $bhakta->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Bhaktas'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Bhakta'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Gurus'), ['controller' => 'Gurus', 'action' => 'index']) ?> </li>
@@ -35,7 +36,8 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Gurus') ?></th>
-            <td><?= $bhakta->has('gurus') ? $this->Html->link($bhakta->gurus->name, ['controller' => 'Gurus', 'action' => 'view', $bhakta->gurus->id]) : '' ?></td>
+            <td><?= $bhakta->has('gurus') ? $this->Html->link($bhakta->gurus->name,
+                    ['controller' => 'Gurus', 'action' => 'view', $bhakta->gurus->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Cim Allando') ?></th>
@@ -111,7 +113,10 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Statusz Jogi') ?></th>
-            <td><?= h($bhakta->legalstatus->name) ?></td>
+            <td><?php
+                if ($bhakta->legalstatus_id != null) {
+                    echo h($bhakta->legalstatus->name);
+                } ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Statusz Tagsag') ?></th>
@@ -199,10 +204,10 @@
         </tr>
     </table>
     <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'igazgato'])) : ?>
-    <div class="row">
-        <h4><?= __('Bizalmas Info') ?></h4>
-        <?= $this->Text->autoParagraph(h($bhakta->bizalmas_info)); ?>
-    </div>
+        <div class="row">
+            <h4><?= __('Bizalmas Info') ?></h4>
+            <?= $this->Text->autoParagraph(h($bhakta->bizalmas_info)); ?>
+        </div>
     <?php endif; ?>
     <div class="row">
         <h4><?= __('Megjegyzes') ?></h4>
@@ -211,30 +216,34 @@
     <div class="related">
         <h4><?= 'Szolgálati történet' ?></h4>
         <?php if (!empty($bhakta->services)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= 'Osztály' ?></th>
-                <th scope="col"><?= 'Szolgálat' ?></th>
-                <th scope="col"><?= __('Szolgalat Kezdete') ?></th>
-                <th scope="col"><?= __('Szolgalat Vege') ?></th>
-                <th scope="col"><?= __('Szolg Megjegyzes') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($bhakta->services as $services): ?>
-            <tr>
-                <td><?= h($services->department->name) ?></td>
-                <td><?= h($services->szolgalat) ?></td>
-                <td><?= h($services->szolgalat_kezdete) ?></td>
-                <td><?= h($services->szolgalat_vege) ?></td>
-                <td><?= h($services->szolg_megjegyzes) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Services', 'action' => 'view', $services->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Services', 'action' => 'edit', $services->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Services', 'action' => 'delete', $services->id], ['confirm' => __('Are you sure you want to delete # {0}?', $services->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th scope="col"><?= 'Osztály' ?></th>
+                    <th scope="col"><?= 'Szolgálat' ?></th>
+                    <th scope="col"><?= __('Szolgalat Kezdete') ?></th>
+                    <th scope="col"><?= __('Szolgalat Vege') ?></th>
+                    <th scope="col"><?= __('Szolg Megjegyzes') ?></th>
+                    <th scope="col" class="actions"><?= __('Actions') ?></th>
+                </tr>
+                <?php foreach ($bhakta->services as $services): ?>
+                    <tr>
+                        <td><?= h($services->department->name) ?></td>
+                        <td><?= h($services->szolgalat) ?></td>
+                        <td><?= h($services->szolgalat_kezdete) ?></td>
+                        <td><?= h($services->szolgalat_vege) ?></td>
+                        <td><?= h($services->szolg_megjegyzes) ?></td>
+                        <td class="actions">
+                            <?= $this->Html->link(__('View'),
+                                ['controller' => 'Services', 'action' => 'view', $services->id]) ?>
+                            <?= $this->Html->link(__('Edit'),
+                                ['controller' => 'Services', 'action' => 'edit', $services->id]) ?>
+                            <?= $this->Form->postLink(__('Delete'),
+                                ['controller' => 'Services', 'action' => 'delete', $services->id],
+                                ['confirm' => __('Are you sure you want to delete # {0}?', $services->id)]) ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
         <?php endif; ?>
     </div>
 </div>
