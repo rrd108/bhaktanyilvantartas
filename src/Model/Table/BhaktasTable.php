@@ -7,7 +7,6 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Search\Manager;
-use Cake\I18n\Time;
 
 /**
  * Bhaktas Model
@@ -309,11 +308,9 @@ class BhaktasTable extends Table
 
     }*/
 
-    public function findEuCardExperiendInCurrentMonth()
+    public function findEuCardExpiredBetweenDates(Query $query, array $options)
     {
-        $time = new Time();
-        $time->addMonth(1);
-        $bhaktas = $this->find()->where(['eu_card_expiry <=' => $time]);
+        $bhaktas = $query->find('all')->where(['eu_card_expiry <=' => $options["maxDate"]])->where(['eu_card_expiry >=' => $options["minDate"]]);
         return $bhaktas;
     }
 }

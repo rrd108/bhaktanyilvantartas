@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Bhaktas Controller
@@ -187,6 +188,14 @@ class BhaktasController extends AppController
 
     public function eucard()
     {
-        
+        $now = new Time();
+        $nextMonth = new Time();
+        $nextMonth->addMonth();
+        $bhaktas = $this->Bhaktas->find('EuCardExpiredBetweenDates',
+            ['minDate' => $now, 'maxDate' => $nextMonth])->select([
+            "Bhaktas.id",
+            "Bhaktas.nev_avatott",
+            "Bhaktas.eu_card_expiry"
+        ])->order("Bhaktas.eu_card_expiry")->all();
     }
 }
