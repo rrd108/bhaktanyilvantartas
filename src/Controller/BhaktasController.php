@@ -184,4 +184,9 @@ class BhaktasController extends AppController
         $response = json_encode($status);
         return $this->response->withStringBody($response);
     }
+
+    public function eucard()
+    {
+        
+    }
 }

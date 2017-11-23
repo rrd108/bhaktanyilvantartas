@@ -12,6 +12,7 @@
         <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?></li>
     </ul>
+    <?= $this->Html->link(__('Eu card expire'),['controller' => 'Bhaktas', 'action' => 'eucard'],['class' => 'button']) ?>
 </nav>
 <div class="bhaktas index small-9 medium-10 large-10 columns content">
     <h3><?= __('Bhaktas') ?></h3>
