@@ -188,14 +188,14 @@ class BhaktasController extends AppController
 
     public function eucard()
     {
-        $now = new Time();
-        $nextMonth = new Time();
-        $nextMonth->addMonth();
-        $bhaktas = $this->Bhaktas->find('EuCardExpiredBetweenDates',
-            ['minDate' => $now, 'maxDate' => $nextMonth])->select([
-            "Bhaktas.id",
-            "Bhaktas.nev_avatott",
-            "Bhaktas.eu_card_expiry"
-        ])->order("Bhaktas.eu_card_expiry")->all();
+        $bhaktas = $this->Bhaktas->find('EuCardExpired')->select([
+            'Bhaktas.id',
+            'Bhaktas.nev_avatott',
+            'Bhaktas.eu_card_expir'
+        ])->order(['Bhaktas.eu_card_expiry' => 'DESC']);
+        $bhaktas = $this->paginate($bhaktas, ['limit' => 10]);
+        $this->set('bhaktas', $bhaktas);
+        $this->set('_serialize', ['bhaktas']);
+
     }
 }
