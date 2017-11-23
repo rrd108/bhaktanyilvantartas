@@ -17,7 +17,9 @@
         <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?> </li>
     </ul>
-    <?= $this->Html->image($bhakta->kep) ?>
+    <?php if($bhakta->kep != null): ?>
+        <?= $this->Html->image($bhakta->kep) ?>
+    <?php endif; ?>
 </nav>
 <div class="bhaktas view small-9 medium-10 large-10 columns content">
     <h3><?= h($bhakta->id) ?></h3>
