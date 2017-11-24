@@ -135,6 +135,7 @@
 
     <?= $this->Html->script('vendor/jquery.js') ?>
     <?= $this->Html->script('vendor/jquery-ui.js') ?>
+    <?= $this->Html->script('vendor/jquery-noty.js') ?>
     <?= $this->Html->script('vendor/what-input.js') ?>
     <?= $this->Html->script('vendor/foundation.js') ?>
     <?= $this->Html->script('app.js') ?>
