@@ -37,11 +37,12 @@ class EuEmailShell extends Shell
             $message .= 'nev_szuletesi: ' . $bhakta->nev_szuletesi . ', nev_avatott: ' . $bhakta->nev_avatott . ', eu_card_expiry' . $bhakta->eu_card_expiry . '\n';
         }
         //$users = $this->Users->find('all')->select(['User.username','User.email'])->where(['is_sueperuser',1])->all();
-        $superusers = $this->MyUsers->find('superUsers');
-        debug($superusers->toArray());
+        $superusers = $this->MyUsers->find('superUsers')->select("email")->toArray();
         $email = new Email('default');
-        $email->setSubject('bhaktas with experied eu card')
-            ->setTo('proba@proba.hu');
+        $email->setSubject('bhaktas with experied eu card');
+        foreach ($superusers as $superuser){
+            $email->addTo($superuser["email"]);
+        }
         $email->send($message);
     }
 }
