@@ -191,7 +191,7 @@ class BhaktasController extends AppController
         $bhaktas = $this->Bhaktas->find('EuCardExpired')->select([
             'Bhaktas.id',
             'Bhaktas.nev_avatott',
-            'Bhaktas.eu_card_expir'
+            'Bhaktas.eu_card_expiry'
         ])->order(['Bhaktas.eu_card_expiry' => 'DESC']);
         $bhaktas = $this->paginate($bhaktas, ['limit' => 10]);
         $this->set('bhaktas', $bhaktas);
