@@ -135,6 +135,7 @@ class ServicesController extends AppController
         } else {
             $status = array('status' => 'fail');
         }
+        //TODO rrd
         $response = json_encode($status);
         return $this->response->withStringBody($response);
     }
