@@ -309,11 +309,21 @@ class BhaktasTable extends Table
 
     }*/
 
+
     public function findEuCardExperiendInCurrentMonth()
     {
         $time = new Time();
         $time->addMonth(1);
         $bhaktas = $this->find()->where(['eu_card_expiry <=' => $time]);
+        return $bhaktas;
+    }
+
+    public function findEuCardExpired(Query $query, array $options)
+    {
+        $bhaktas = $query->find('all')->where(function ($exp) {
+            $now = new Time();
+            return $exp->or(['eu_card_expiry <=' => Time::now()])->isNull('eu_card_expiry');
+        });
         return $bhaktas;
     }
 }
