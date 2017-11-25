@@ -57,9 +57,14 @@ div.date select {
         margin-bottom: 2rem;
     }
     nav,
-    h3,
-    a {
+    h3 {
         display: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    a[href]:after {
+        content: none
     }
     .department h4 {
         font-weight: bold;
