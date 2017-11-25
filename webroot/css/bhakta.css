@@ -40,6 +40,9 @@ div.date select {
     padding: 0.5em;
     width: 100%;
 }
+.drag:hover {
+    cursor: move;
+}
 
 @media print {
     body {
