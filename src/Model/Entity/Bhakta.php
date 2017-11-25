@@ -71,6 +71,7 @@ class Bhakta extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'id' => false
+        'id' => false,
+        'kep' => true
     ];
 }

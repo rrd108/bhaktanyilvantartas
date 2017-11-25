@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -6,6 +7,7 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Search\Manager;
+use Cake\I18n\Time;
 
 /**
  * Bhaktas Model
@@ -80,6 +82,14 @@ class BhaktasTable extends Table
                 'wildcardOne' => '?',
                 'field' => ['nev_avatott', 'nev_szuletesi', 'nev_polgari']
             ]);
+        $this->addBehavior('Xety/Cake3Upload.Upload', [
+                'fields' => [
+                    'kep' => [
+                        'path' => '/img/bhaktas/:id:md5'
+                    ],
+                ]
+            ]
+        );
     }
 
     /**
@@ -298,4 +308,12 @@ class BhaktasTable extends Table
         return $search;
 
     }*/
+
+    public function findEuCardExperiendInCurrentMonth()
+    {
+        $time = new Time();
+        $time->addMonth(1);
+        $bhaktas = $this->find()->where(['eu_card_expiry <=' => $time]);
+        return $bhaktas;
+    }
 }

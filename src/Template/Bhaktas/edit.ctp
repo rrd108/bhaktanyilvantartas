@@ -29,7 +29,7 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
     <?php endif; ?>
 </nav>
 <div class="bhaktas form small-9 medium-10 large-10 columns content">
-    <?= $this->Form->create($bhakta) ?>
+    <?= $this->Form->create($bhakta, ['type' => 'file', 'enctype' => 'multipart/form-data']) ?>
     <fieldset>
         <legend><?= __('Edit Bhakta') ?></legend>
         <?php
@@ -80,7 +80,7 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
             echo $this->Form->control('bizalmas_info');
         }
         echo $this->Form->control('megjegyzes');
-        echo $this->Form->control('kep');
+        echo $this->Form->control('kep_file',['type'=>'file','label' => __('Kep')]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit'), ['class' => 'button']) ?>

@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Services Controller
@@ -116,5 +117,26 @@ class ServicesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function addByBhaktaAndDepartment()
+    {
+        $this->request->allowMethod(['post']);
+        $bhaktaId = $this->request->getData('bhaktaId');
+        $departmentId = $this->request->getData('departmentId');
+        $now = Time::now();
+        $beginServiceDate = $now->i18nFormat('yyyy-MM-dd');
+        $service = $this->Services->newEntity();
+        $service->bhakta_id = $bhaktaId;
+        $service->department_id = $departmentId;
+        $service->szolgalat_kezdete = $beginServiceDate;
+        if ($this->Services->save($service)) {
+            $status = array('status' => 'success');
+        } else {
+            $status = array('status' => 'fail');
+        }
+        //TODO rrd
+        $response = json_encode($status);
+        return $this->response->withStringBody($response);
     }
 }
