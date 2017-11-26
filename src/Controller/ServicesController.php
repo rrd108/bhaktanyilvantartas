@@ -131,12 +131,11 @@ class ServicesController extends AppController
         $service->department_id = $departmentId;
         $service->szolgalat_kezdete = $beginServiceDate;
         if ($this->Services->save($service)) {
-            $status = array('status' => 'success');
+            $status = 'success';
         } else {
-            $status = array('status' => 'fail');
+            $status = 'fail';
         }
-        //TODO rrd
-        $response = json_encode($status);
-        return $this->response->withStringBody($response);
+        $this->set(compact('status'));
+        $this->set('_serialize', ['status']);
     }
 }

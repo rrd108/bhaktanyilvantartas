@@ -26,7 +26,6 @@ class BhaktasController extends AppController
             'Search.Prg',
             ['actions' => ['index']]
         );
-        $this->loadComponent('RequestHandler');
     }
 
     /**

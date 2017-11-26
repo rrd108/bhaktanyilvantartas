@@ -40,6 +40,9 @@ div.date select {
     padding: 0.5em;
     width: 100%;
 }
+.drag:hover {
+    cursor: move;
+}
 
 @media print {
     body {
@@ -57,9 +60,14 @@ div.date select {
         margin-bottom: 2rem;
     }
     nav,
-    h3,
-    a {
+    h3 {
         display: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    a[href]:after {
+        content: none
     }
     .department h4 {
         font-weight: bold;
