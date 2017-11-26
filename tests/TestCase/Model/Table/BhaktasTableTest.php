@@ -25,8 +25,6 @@ class BhaktasTableTest extends TestCase
      */
     public $fixtures = [
         'app.bhaktas',
-        'app.gurus',
-        'app.services'
     ];
 
     /**
@@ -53,33 +51,11 @@ class BhaktasTableTest extends TestCase
         parent::tearDown();
     }
 
-    /**
-     * Test initialize method
-     *
-     * @return void
-     */
-    public function testInitialize()
+    public function testFindEuCardExpireInMonth()
     {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
 
-    /**
-     * Test validationDefault method
-     *
-     * @return void
-     */
-    public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
+        $actual = $this->Bhaktas->find('euCardExpireInMonth');
+        $expected = [2];
+        $this->assertEquals($expected, $actual->extract('id')->toArray());
     }
 }
