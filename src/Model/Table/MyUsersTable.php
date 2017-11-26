@@ -15,6 +15,7 @@ class MyUsersTable extends UsersTable
 {
     public function findSuperUsers(Query $query, array $options)
     {
-        return $query->select(['MyUsers.username', 'MyUsers.email'])->where(['MyUsers.is_superuser', 1]);
+        return $query->select(['MyUsers.username', 'MyUsers.email'])
+            ->where(['MyUsers.is_superuser', 1]);
     }
 }
