@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Bhaktas Controller
@@ -184,5 +185,18 @@ class BhaktasController extends AppController
         //TODO rrd
         $response = json_encode($status);
         return $this->response->withStringBody($response);
+    }
+
+    public function eucard()
+    {
+        $bhaktas = $this->Bhaktas->find('EuCardExpired')->select([
+            'Bhaktas.id',
+            'Bhaktas.nev_avatott',
+            'Bhaktas.eu_card_expiry'
+        ])->order(['Bhaktas.eu_card_expiry' => 'DESC']);
+        $bhaktas = $this->paginate($bhaktas, ['limit' => 10]);
+        $this->set('bhaktas', $bhaktas);
+        $this->set('_serialize', ['bhaktas']);
+
     }
 }
