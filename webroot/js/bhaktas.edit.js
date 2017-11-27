@@ -12,7 +12,8 @@ var endvolunteer = function () {
             success: function (result) {
                 if(result.status == 'success'){
                     new Noty({
-                        text: 'Státusz státusz sikeresen módisítva'
+                        text: 'Státusz státusz sikeresen módisítva',
+                        type: 'success'
                     }).show();
                     $("#endvolform").remove();
                     $("#communityrole-id").val('4');
@@ -20,13 +21,15 @@ var endvolunteer = function () {
                 }
                 if(result.status == 'fail'){
                     new Noty({
-                        text: 'Nem lehetett a státuszt visszaállítani, próbálja később'
+                        text: 'Nem lehetett a státuszt visszaállítani, próbálja később',
+                        type: 'error'
                     }).show();
                 }
             },
             error: function (result) {
                 new Noty({
-                    text: 'Nem lehetett a státuszt visszaállítani, próbálja később'
+                    text: 'Nem lehetett a státuszt visszaállítani, próbálja később',
+                    type: 'error'
                 }).show();
             }
         });
