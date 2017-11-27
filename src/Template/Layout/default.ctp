@@ -26,6 +26,7 @@
 
     <?= $this->Html->css('foundation.min.css') ?>
     <?= $this->Html->css('foundation-icons.css') ?>
+    <?= $this->Html->css('noty.css') ?>
     <?= $this->Html->css('bhakta.css') ?>
 
     <?= $this->fetch('meta') ?>
@@ -135,7 +136,7 @@
 
     <?= $this->Html->script('vendor/jquery.js') ?>
     <?= $this->Html->script('vendor/jquery-ui.js') ?>
-    <?= $this->Html->script('vendor/jquery-noty.js') ?>
+    <?= $this->Html->script('vendor/noty.js') ?>
     <?= $this->Html->script('vendor/what-input.js') ?>
     <?= $this->Html->script('vendor/foundation.js') ?>
     <?= $this->Html->script('app.js') ?>
