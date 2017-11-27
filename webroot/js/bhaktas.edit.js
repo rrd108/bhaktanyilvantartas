@@ -1,31 +1,33 @@
 var endvolunteer = function () {
     $("#endvolbtn").on('click', function () {
-        var bhakta_id = $('input[name=bhakta_id]').val();
-        var enddate = new Date($('#szolgalat-vege').val());
-        var year = enddate.getFullYear();
-        var month = enddate.getMonth() +1;
-        var day = enddate.getDate();
+        var bhaktaId = $('input[name=bhakta_id]').val();
+        var endDate = new Date($('#szolgalat-vege').val());
         var host = $(location).attr('origin');
         var baseUrl = $($('script')[1]).attr('src').replace(/\/js\/.*/, '');
-        var url = host + baseUrl + '/bhaktas/endvolunteer/' + bhakta_id;
+        var url = host + baseUrl + '/bhaktas/endvolunteer/' + bhaktaId + '.json';
         $.ajax({
             url: url,
             method: 'post',
-            data: {year: year, month: month, day: day},
+            data: {endDate: endDate},
             success: function (result) {
-                var response = JSON.parse(result);
-                if(response['status'] == 'success'){
-                    alert('Státusz státusz sikeresen módisítva');
+                if(result.status == 'success'){
+                    new Noty({
+                        text: 'Státusz státusz sikeresen módisítva'
+                    }).show();
                     $("#endvolform").remove();
                     $("#communityrole-id").val('4');
                     $("#legalstatus-id").val('');
                 }
-                if(response.status == 'fail'){
-                    alert('Nem lehetett a státuszt visszaállítani, próbálja később');
+                if(result.status == 'fail'){
+                    new Noty({
+                        text: 'Nem lehetett a státuszt visszaállítani, próbálja később'
+                    }).show();
                 }
             },
             error: function (result) {
-                alert('Nem lehetett a státuszt visszaállítani, próbálja később');
+                new Noty({
+                    text: 'Nem lehetett a státuszt visszaállítani, próbálja később'
+                }).show();
             }
         });
     });

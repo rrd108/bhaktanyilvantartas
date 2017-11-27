@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\I18n\Time;
+use Cake\I18n\Date;
 
 /**
  * Bhaktas Controller
@@ -164,26 +165,22 @@ class BhaktasController extends AppController
 
     public function endVolunteer(int $bhakta_id = null)
     {
-        $this->request->allowMethod(['post']);
-        $year = $this->request->getData('year');
-        $month = $this->request->getData('month');
-        $day = $this->request->getData('day');
+        //$this->request->allowMethod(['post']);
         $bhakta = $this->Bhaktas->get($bhakta_id);
         $service = $this->Bhaktas->Services->find('lastBeginedServiceByBhakta',
             ['bhakta_id' => $bhakta_id])->where(['Services.bhakta_id = ' => $bhakta_id])->first();
         $service = $this->Bhaktas->Services->get($service->service_id);
         $bhakta->communityrole_id = 4;
         $bhakta->legalstatus_id = null;
-        $service->szolgalat_vege = $year . '-' . $month . '-' . $day;
+        $service->szolgalat_vege = new Date($this->request->getData('endDate'));
         $bhakta->services = [$service];
         if ($this->Bhaktas->save($bhakta)) {
-            $status = array('status' => 'success');
+            $status = 'success';
         } else {
-            $status = array('status' => 'fail');
+            $status = 'fail';
         }
-        //TODO rrd
-        $response = json_encode($status);
-        return $this->response->withStringBody($response);
+        $this->set(compact('status'));
+        $this->set('_serialize',['status']);
     }
 
     public function eucard()
