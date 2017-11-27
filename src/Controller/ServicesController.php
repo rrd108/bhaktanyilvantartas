@@ -120,6 +120,12 @@ class ServicesController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+
+    /**
+     * Add Service by given bhaktaId, and departmentId
+     *
+     * @return \Cake\Network\Response|null
+     */
     public function addByBhaktaAndDepartment()
     {
         $this->request->allowMethod(['post']);
