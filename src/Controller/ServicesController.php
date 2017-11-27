@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Date;
 use Cake\I18n\Time;
 
 /**
@@ -119,13 +120,18 @@ class ServicesController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+
+    /**
+     * Add Service by given bhaktaId, and departmentId
+     *
+     * @return \Cake\Network\Response|null
+     */
     public function addByBhaktaAndDepartment()
     {
         $this->request->allowMethod(['post']);
         $bhaktaId = $this->request->getData('bhaktaId');
         $departmentId = $this->request->getData('departmentId');
-        $now = Time::now();
-        $beginServiceDate = $now->i18nFormat('yyyy-MM-dd');
+        $beginServiceDate = new Date($this->request->getData('beginDate'));
         $service = $this->Services->newEntity();
         $service->bhakta_id = $bhaktaId;
         $service->department_id = $departmentId;
