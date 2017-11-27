@@ -35,10 +35,10 @@ $Users = ${$tableAlias};
         echo $this->Form->control('username', ['label' => __d('CakeDC/Users', 'Username')]);
         echo $this->Form->control('email', ['label' => __d('CakeDC/Users', 'Email')]);
         if($Users->role == 'user'){
-            echo $this->Form->control(__d('CakeDC/Users', 'Role'),['options' => ['user', 'superuser']]);
+            echo $this->Form->control('role',['label' => __d('CakeDC/Users', 'Role'),'options' => ['user', 'superuser']]);
         }
         if($Users->role == 'superuser'){
-            echo $this->Form->control(__d('CakeDC/Users', 'Role'),['options' => ['superuser', 'user']]);
+            echo $this->Form->control('role',['label' => __d('CakeDC/Users', 'Role'), 'options' => ['superuser', 'user']]);
         }
         echo $this->Form->control('active', [
             'label' => __d('CakeDC/Users', 'Active')
