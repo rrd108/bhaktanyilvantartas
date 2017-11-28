@@ -180,12 +180,13 @@ class BhaktasController extends AppController
             $status = 'fail';
         }
         $this->set(compact('status'));
-        $this->set('_serialize',['status']);
+        $this->set('_serialize', ['status']);
     }
 
     public function eucard()
     {
-        $bhaktas = $this->Bhaktas->find('EuCardExpired')->select([
+        $bhaktas = $this->Bhaktas->find('EuCardExpired', ['minDate' => null, 'maxDate' => Time::now()])
+            ->orWhere('Bhaktas.eu_card_expiry IS NULL')->select([
             'Bhaktas.id',
             'Bhaktas.nev_avatott',
             'Bhaktas.eu_card_expiry'
