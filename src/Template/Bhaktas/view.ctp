@@ -4,7 +4,6 @@
  */
 ?>
 <nav class="small-3 medium-2 large-2 columns" id="actions-sidebar">
-    <?= $this->Html->image('bhaktas/' . $bhakta->kep) ?>
     <ul class="menu vertical">
         <li class="menu-text"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Bhakta'), ['action' => 'edit', $bhakta->id]) ?> </li>
@@ -17,10 +16,10 @@
         <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?> </li>
     </ul>
-    <?php if($bhakta->kep != null): ?>
-        <?= $this->Html->image($bhakta->kep) ?>
-    <?php endif; ?>
+    <img src="<?= $imageURL ?>">
 </nav>
+<?php if($bhakta->kep != null): ?>
+<?php endif; ?>
 <div class="bhaktas view small-9 medium-10 large-10 columns content">
     <h3><?= h($bhakta->id) ?></h3>
     <table class="vertical-table">
