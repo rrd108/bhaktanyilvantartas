@@ -314,19 +314,21 @@ class BhaktasTable extends Table
      * find Bhaktas whose eu card will expire / was expired in a given time
      *
      * @param \Cake\ORM\Query $query
-     * @param array           $options
+     * @param array $options => minDate, maxDate
      *      expirity : the gicen time
      * @return \Cake\ORM\Query
      */
-    public function findEuCardExpireInMonth(Query $query, array $options)
+    public function findEuCardExpired(Query $query, array $options)
     {
         //TODO refactor into this the next method and change name
-        $time = new Time();
-        $time->addMonth(1);
-        return $query->where(['eu_card_expiry <=' => $time]);
+        if($options['minDate'] != null) {
+            return $query->where(['eu_card_expiry <=' => $options['maxDate']])->where(['eu_card_expiry >= ' => $options['minDate']]);
+        } else {
+            return $query->where(['eu_card_expiry <=' => $options['maxDate']]);
+        }
     }
 
-    public function findEuCardExpired(Query $query, array $options)
+    /*public function findEuCardExpired(Query $query, array $options)
     {
         //TODO refactior into the EuCardExpireInMonth method
         return $query->where(
@@ -336,5 +338,12 @@ class BhaktasTable extends Table
                 )->isNull('eu_card_expiry');
             }
         );
+    }*/
+
+    public function findEuCardIsNull(Query $query, array $options)
+    {
+        return $query->where(function ($exp, $q) {
+            return $exp->isNull('eu_card_expiry');
+        });
     }
 }
