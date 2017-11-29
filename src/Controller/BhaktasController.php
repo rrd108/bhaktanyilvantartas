@@ -68,7 +68,9 @@ class BhaktasController extends AppController
                 'Services.Departments'
             ]
         ]);
+        $imageURL = substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'],'bhaktas/')).$bhakta->kep;
 
+        $this->set('imageURL',$imageURL);
         $this->set('bhakta', $bhakta);
         $this->set('_serialize', ['bhakta']);
 
@@ -138,7 +140,9 @@ class BhaktasController extends AppController
         $asrams = $this->Bhaktas->Asrams->find('list', ['limit' => 200]);
         $communityroles = $this->Bhaktas->Communityroles->find('list', ['limit' => 200]);
         //$hazastars = $this->Bhaktas->Hazastars->find('list', ['limit' => 200]);
+        $imageURL = substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'],'bhaktas/')).$bhakta->kep;
 
+        $this->set('imageURL',$imageURL);
         $this->set(compact('bhakta', 'gurus', 'tbs', 'legalstatuses', 'asrams', 'communityroles'));
         $this->set('_serialize', ['bhakta']);
     }
