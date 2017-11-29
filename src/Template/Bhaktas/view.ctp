@@ -16,10 +16,10 @@
         <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?> </li>
     </ul>
-    <img src="<?= $imageURL ?>">
+    <?php if ($bhakta->kep != null): ?>
+        <img src="<?= $imageURL ?>" alt="">
+    <?php endif; ?>
 </nav>
-<?php if($bhakta->kep != null): ?>
-<?php endif; ?>
 <div class="bhaktas view small-9 medium-10 large-10 columns content">
     <h3><?= h($bhakta->id) ?></h3>
     <table class="vertical-table">
