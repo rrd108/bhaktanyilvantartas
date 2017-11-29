@@ -320,26 +320,24 @@ class BhaktasTable extends Table
      */
     public function findEuCardExpired(Query $query, array $options)
     {
-        //TODO refactor into this the next method and change name
-        if($options['minDate'] != null) {
-            return $query->where(['eu_card_expiry <=' => $options['maxDate']])->where(['eu_card_expiry >= ' => $options['minDate']]);
-        } else {
-            return $query->where(['eu_card_expiry <=' => $options['maxDate']]);
+        if ($options['minDate'] != null) {
+            return $query->where(
+                [
+                    'eu_card_expiry <=' => $options['maxDate'],
+                    'eu_card_expiry >= ' => $options['minDate']
+                ]
+            );
         }
+        return $query->where(['eu_card_expiry <=' => $options['maxDate']]);
     }
 
-    /*public function findEuCardExpired(Query $query, array $options)
-    {
-        //TODO refactior into the EuCardExpireInMonth method
-        return $query->where(
-            function ($exp) {
-                return $exp->or_(
-                    ['eu_card_expiry <=' => Time::now()]
-                )->isNull('eu_card_expiry');
-            }
-        );
-    }*/
-
+    /**
+     * Find where there is no expirity info
+     *
+     * @param \Cake\ORM\Query $query
+     * @param array           $options
+     * @return \Cake\ORM\Query
+     */
     public function findEuCardIsNull(Query $query, array $options)
     {
         return $query->where(function ($exp, $q) {
