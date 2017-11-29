@@ -37,18 +37,21 @@ $('.drop').each(function (i, el) {
                         success: function (result) {
                             if (result.status == 'success') {
                                 new Noty({
-                                    text: 'Szolgálat sikeresen hozzáadva!'
+                                    text: 'Szolgálat sikeresen hozzáadva!',
+                                    type : 'success'
                                 }).show();
                             }
                             if (result.status == 'fail') {
                                 new Noty({
-                                    text: 'Nem lehetett a szolgálatot hozzáadni, próbálja később!'
+                                    text: 'Nem lehetett a szolgálatot hozzáadni, próbálja később!',
+                                    type: 'error'
                                 }).show();
                             }
                         },
                         error: function (result) {
                             new Noty({
-                                text: 'Nem lehetett a szolgálatot hozzáadni, próbálja később!'
+                                text: 'Nem lehetett a szolgálatot hozzáadni, próbálja később!',
+                                type: 'error'
                             }).show();
                         }
                     });
