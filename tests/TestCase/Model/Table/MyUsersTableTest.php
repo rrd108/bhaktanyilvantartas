@@ -1,12 +1,12 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\MyUsersTable;
+use App\Model\Table\AppUsersTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\MyUsersTable Test Case
+ * App\Model\Table\AppUsersTable Test Case
  */
 class MyUsersTableTest extends TestCase
 {
@@ -14,7 +14,7 @@ class MyUsersTableTest extends TestCase
     /**
      * Test subject
      *
-     * @var \App\Model\Table\MyUsersTable
+     * @var \App\Model\Table\AppUsersTable
      */
     public $MyUsers;
 
@@ -35,7 +35,7 @@ class MyUsersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('MyUsers') ? [] : ['className' => MyUsersTable::class];
+        $config = TableRegistry::exists('MyUsers') ? [] : ['className' => AppUsersTable::class];
         $this->MyUsers = TableRegistry::get('MyUsers', $config);
     }
 

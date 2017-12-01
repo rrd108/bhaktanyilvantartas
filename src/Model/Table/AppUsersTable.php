@@ -11,7 +11,7 @@ namespace App\Model\Table;
 use Cake\ORM\Query;
 use CakeDC\Users\Model\Table\UsersTable;
 
-class MyUsersTable extends UsersTable
+class AppUsersTable extends UsersTable
 {
     public function findSuperUsers(Query $query, array $options)
     {

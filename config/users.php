@@ -6,5 +6,6 @@
  * Time: 13:30
  */
 return [
-    'Users.table' => 'MyUsers',
+    'Users.table' => 'AppUsers',
+    'controller' => 'AppUsersController'
 ];
