@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\MyUsersTable;
+use App\Model\Table\AppUsersTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\MyUsersTable Test Case
+ * App\Model\Table\AppUsersTable Test Case
  */
-class MyUsersTableTest extends TestCase
+class AppUsersTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\MyUsersTable
+     * @var \App\Model\Table\AppUsersTable
      */
-    public $MyUsers;
+    public $AppUsers;
 
     /**
      * Fixtures
@@ -35,8 +35,8 @@ class MyUsersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('MyUsers') ? [] : ['className' => MyUsersTable::class];
-        $this->MyUsers = TableRegistry::get('MyUsers', $config);
+        $config = TableRegistry::exists('AppUsers') ? [] : ['className' => AppUsersTable::class];
+        $this->AppUsers = TableRegistry::get('AppUsers', $config);
     }
 
     /**
@@ -46,7 +46,7 @@ class MyUsersTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->MyUsers);
+        unset($this->AppUsers);
 
         parent::tearDown();
     }
@@ -58,7 +58,7 @@ class MyUsersTableTest extends TestCase
      */
     public function testFindSuperUsers()
     {
-        $actual = $this->MyUsers->find('superUsers');
+        $actual = $this->AppUsers->find('superUsers');
         $expected = ['User 1'];
         $this->assertEquals($expected, $actual->extract('username')->toArray());
     }

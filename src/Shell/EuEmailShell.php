@@ -22,7 +22,7 @@ class EuEmailShell extends Shell
     {
         parent::initialize();
         $this->loadModel('Bhaktas');
-        $this->loadModel('MyUsers');
+        $this->loadModel('AppUsers');
     }
 
     public function main()
@@ -44,7 +44,7 @@ class EuEmailShell extends Shell
                 . ', nev_avatott: ' . $bhakta->nev_avatott
                 . ', eu_card_expiry: ' . $bhakta->eu_card_expiry . '\n';
         }
-        $superusers = $this->MyUsers->find('superUsers')->select("email")->toArray();
+        $superusers = $this->AppUsers->find('superUsers')->select("email")->toArray();
         $email = new Email('default');
         $email->setSubject('bhaktas with experied eu card');
         foreach ($superusers as $superuser){

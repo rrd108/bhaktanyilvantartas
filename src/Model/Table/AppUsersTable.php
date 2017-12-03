@@ -11,11 +11,11 @@ namespace App\Model\Table;
 use Cake\ORM\Query;
 use CakeDC\Users\Model\Table\UsersTable;
 
-class MyUsersTable extends UsersTable
+class AppUsersTable extends UsersTable
 {
     public function findSuperUsers(Query $query, array $options)
     {
-        return $query->select(['MyUsers.username', 'MyUsers.email'])
-            ->where(['MyUsers.is_superuser', 1]);
+        return $query->select(['AppUsers.username', 'AppUsers.email'])
+            ->where(['AppUsers.is_superuser', 1]);
     }
 }
