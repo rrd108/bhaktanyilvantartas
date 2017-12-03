@@ -12,9 +12,8 @@ class DepartmentsController extends AppController
 {
 
     public $paginate = [
-        'order' => [
-            'Departments.name' => 'asc'
-        ]
+        'order' => ['Departments.name' => 'asc'],
+        'contain' => ['Centers']
     ];
 
     public function members($date = null)
