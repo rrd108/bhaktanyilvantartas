@@ -90,11 +90,30 @@
                             </li>
                             <?php if ($this->request->session()->read('Auth.User.is_superuser')
                                 && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
-                                <li><?= $this->Html->menuLink(
-                                        '<i class="fi-torso-business"></i> <span>Users</span>',
-                                        ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
+                                <li>
+                                    <?= $this->Html->menuLink(
+                                        '<i class="fi-widget"></i> <span>Main data</span>',
+                                        ['plugin' => false, 'controller' => 'centers', 'action' => 'index'],
                                         ['escape' => false]
-                                    ) ?></li>
+                                    ) ?>
+                                    <ul class="nested vertical menu">
+                                        <li><?= $this->Html->menuLink(
+                                                '<i class="fi-marker"></i> <span>Centers</span>',
+                                                ['plugin' => false, 'controller' => 'centers', 'action' => 'index'],
+                                                ['escape' => false]
+                                            ) ?></li>
+                                        <li><?= $this->Html->menuLink(
+                                                '<i class="fi-flag"></i> <span>Departments</span>',
+                                                ['plugin' => false, 'controller' => 'departments', 'action' => 'index'],
+                                                ['escape' => false]
+                                            ) ?></li>
+                                        <li><?= $this->Html->menuLink(
+                                                '<i class="fi-torso-business"></i> <span>Users</span>',
+                                                ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
+                                                ['escape' => false]
+                                            ) ?></li>
+                                    </ul>
+                                </li>
                             <?php endif; ?>
                         <?php endif; ?>
                     </ul>
