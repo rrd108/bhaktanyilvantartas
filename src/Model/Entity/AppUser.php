@@ -15,5 +15,5 @@ use CakeDC\Users\Model\Entity\User;
 
 class AppUser extends User
 {
-
+    protected $_hidden = ['password'];
 }
