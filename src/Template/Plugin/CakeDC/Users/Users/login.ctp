@@ -10,12 +10,12 @@
  */
 
 use Cake\Core\Configure;
-
+echo $this->Html->script('users.login.min.js', ['block' => true]);
 ?>
-<div class="column">
+<div class="column entrance">
     <div class="row align-center">
-        <div class="column small-3"><?= $this->Html->image('logo.png') ?></div>
-        <div class="column small-5 users form">
+        <div class="column small-3 align-self-middle" id="logo"><?= $this->Html->image('logo.png') ?></div>
+        <div class="column small-5 users form login">
             <?= $this->Flash->render('auth') ?>
             <?= $this->Form->create() ?>
             <fieldset class="fieldset">

@@ -44,6 +44,31 @@ div.date select {
     cursor: move;
 }
 
+.entrance {
+    margin: 5em 0;
+}
+
+.login {
+    opacity: 0;
+}
+
+.login.active {
+    animation: popin 400ms ease-in-out forwards;
+}
+
+@keyframes popin {
+    0% {
+        transform: translateY(-200%) rotate(-90deg);
+    }
+    90% {
+        transform: rotate(20deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 @media print {
     body {
         font-size: 90%;
