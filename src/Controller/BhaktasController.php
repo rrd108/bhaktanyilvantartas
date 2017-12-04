@@ -169,7 +169,7 @@ class BhaktasController extends AppController
 
     public function endVolunteer(int $bhakta_id = null)
     {
-        //$this->request->allowMethod(['post']);
+        $this->request->allowMethod(['post']);
         $bhakta = $this->Bhaktas->get($bhakta_id);
         $service = $this->Bhaktas->Services->find('lastBeginedServiceByBhakta',
             ['bhakta_id' => $bhakta_id])->where(['Services.bhakta_id = ' => $bhakta_id])->first();
