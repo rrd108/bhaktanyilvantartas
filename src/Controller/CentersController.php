@@ -36,7 +36,7 @@ class CentersController extends AppController
     public function view($id = null)
     {
         $center = $this->Centers->get($id, [
-            'contain' => ['Users', 'Departments']
+            'contain' => ['AppUsers', 'Departments']
         ]);
 
         $this->set('center', $center);
@@ -60,7 +60,7 @@ class CentersController extends AppController
             }
             $this->Flash->error(__('The center could not be saved. Please, try again.'));
         }
-        $users = $this->Centers->Users->find('list', ['limit' => 200]);
+        $users = $this->Centers->AppUsers->find('list', ['limit' => 200]);
         $this->set(compact('center', 'users'));
         $this->set('_serialize', ['center']);
     }
