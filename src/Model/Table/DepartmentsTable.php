@@ -34,6 +34,11 @@ class DepartmentsTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
+        $this->belongsTo('Centers', [
+            'foreignKey' => 'center_id',
+            'joinType' => 'INNER'
+        ]);
+
         $this->hasMany('Services', [
             'foreignKey' => 'department_id',
             'strategy' => 'subquery'

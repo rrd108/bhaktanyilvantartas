@@ -13,7 +13,12 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
         <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?></li>
     </ul>
-    <img src="<?= $imageURL ?>">
+
+        <?php
+        $i = 1;
+        $this->Html->image(str_replace('img/', '', $bhakta->kep, $i));
+        ?>
+
     <?php if ($bhakta->communityrole_id == 1 || $bhakta->communityrole_id == 2): ?>
         <?= $this->Form->create($bhakta, ['id' => 'endvolform']) ?>
         <?= $this->Form->hidden('bhakta_id', ['value' => $bhakta->id]) ?>

@@ -2,6 +2,8 @@
 namespace App\Test\TestCase\Model\Table;
 
 use App\Model\Table\BhaktasTable;
+use Cake\I18n\Date;
+use Cake\I18n\Time;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
@@ -51,11 +53,21 @@ class BhaktasTableTest extends TestCase
         parent::tearDown();
     }
 
-    public function testFindEuCardExpireInMonth()
+    public function testFindEuCardExpired()
     {
+        $actual = $this->Bhaktas->find('euCardExpired');
+        $expected = [];
+        $this->assertEquals($expected, $actual->extract('id')->toArray());
 
-        $actual = $this->Bhaktas->find('euCardExpireInMonth');
+        $actual = $this->Bhaktas->find('euCardExpired', ['maxDate' => Time::now()]);
         $expected = [2];
+        $this->assertEquals($expected, $actual->extract('id')->toArray());
+
+        $actual = $this->Bhaktas->find(
+            'euCardExpired',
+            ['minDate' => Time::now(), 'maxDate' => (new Date())->modify('+5 months')]
+        );
+        $expected = [1];
         $this->assertEquals($expected, $actual->extract('id')->toArray());
     }
 }

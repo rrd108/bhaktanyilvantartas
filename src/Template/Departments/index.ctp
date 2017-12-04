@@ -7,6 +7,10 @@
     <ul class="menu vertical">
         <li class="menu-text"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Department'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Centers'), ['controller' => 'Centers', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Center'), ['controller' => 'Centers', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="departments index small-9 medium-10 large-10 columns content">
@@ -15,6 +19,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('center_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('aktiv') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -24,6 +29,7 @@
             <?php foreach ($departments as $department): ?>
             <tr>
                 <td><?= $this->Number->format($department->id) ?></td>
+                <td><?= $department->has('center') ? $this->Html->link($department->center->name, ['controller' => 'Centers', 'action' => 'view', $department->center->id]) : '' ?></td>
                 <td><?= h($department->name) ?></td>
                 <td><?= h($department->aktiv) ?></td>
                 <td class="actions">

@@ -7,15 +7,15 @@ use App\Controller\AppController;
  * Departments Controller
  *
  * @property \App\Model\Table\DepartmentsTable $Departments
+ *
+ * @method \App\Model\Entity\Department[] paginate($object = null, array $settings = [])
  */
 class DepartmentsController extends AppController
 {
 
     public $paginate = [
-        'order' => [
-            'Departments.name' => 'asc'
-        ]
-    ];
+        'order' => ['Departments.name' => 'asc'],
+        ];
 
     public function members($date = null)
     {
@@ -29,10 +29,13 @@ class DepartmentsController extends AppController
     /**
      * Index method
      *
-     * @return \Cake\Network\Response|null
+     * @return \Cake\Http\Response|void
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Centers']
+        ];
         $departments = $this->paginate($this->Departments);
 
         $this->set(compact('departments'));
@@ -43,13 +46,13 @@ class DepartmentsController extends AppController
      * View method
      *
      * @param string|null $id Department id.
-     * @return \Cake\Network\Response|null
+     * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
         $department = $this->Departments->get($id, [
-            'contain' => []
+            'contain' => ['Centers', 'Services']
         ]);
 
         $this->set('department', $department);
@@ -59,7 +62,7 @@ class DepartmentsController extends AppController
     /**
      * Add method
      *
-     * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
     public function add()
     {
@@ -73,7 +76,8 @@ class DepartmentsController extends AppController
             }
             $this->Flash->error(__('The department could not be saved. Please, try again.'));
         }
-        $this->set(compact('department'));
+        $centers = $this->Departments->Centers->find('list', ['limit' => 200]);
+        $this->set(compact('department', 'centers'));
         $this->set('_serialize', ['department']);
     }
 
@@ -81,7 +85,7 @@ class DepartmentsController extends AppController
      * Edit method
      *
      * @param string|null $id Department id.
-     * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
+     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function edit($id = null)
@@ -98,7 +102,8 @@ class DepartmentsController extends AppController
             }
             $this->Flash->error(__('The department could not be saved. Please, try again.'));
         }
-        $this->set(compact('department'));
+        $centers = $this->Departments->Centers->find('list', ['limit' => 200]);
+        $this->set(compact('department', 'centers'));
         $this->set('_serialize', ['department']);
     }
 
@@ -106,7 +111,7 @@ class DepartmentsController extends AppController
      * Delete method
      *
      * @param string|null $id Department id.
-     * @return \Cake\Network\Response|null Redirects to index.
+     * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)

@@ -8,7 +8,7 @@ use Cake\TestSuite\TestCase;
 /**
  * App\Model\Table\AppUsersTable Test Case
  */
-class MyUsersTableTest extends TestCase
+class AppUsersTableTest extends TestCase
 {
 
     /**
@@ -16,7 +16,7 @@ class MyUsersTableTest extends TestCase
      *
      * @var \App\Model\Table\AppUsersTable
      */
-    public $MyUsers;
+    public $AppUsers;
 
     /**
      * Fixtures
@@ -35,8 +35,8 @@ class MyUsersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('MyUsers') ? [] : ['className' => AppUsersTable::class];
-        $this->MyUsers = TableRegistry::get('MyUsers', $config);
+        $this->AppUsers = TableRegistry::get('AppUsers', $config);
+        $config = TableRegistry::exists('AppUsers') ? [] : ['className' => AppUsersTable::class];
     }
 
     /**
@@ -46,7 +46,7 @@ class MyUsersTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->MyUsers);
+        unset($this->AppUsers);
 
         parent::tearDown();
     }
@@ -58,7 +58,7 @@ class MyUsersTableTest extends TestCase
      */
     public function testFindSuperUsers()
     {
-        $actual = $this->MyUsers->find('superUsers');
+        $actual = $this->AppUsers->find('superUsers');
         $expected = ['User 1'];
         $this->assertEquals($expected, $actual->extract('username')->toArray());
     }
