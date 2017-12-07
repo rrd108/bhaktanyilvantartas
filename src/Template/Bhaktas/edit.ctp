@@ -7,12 +7,6 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
 <nav class="small-3 medium-2 large-2 columns" id="actions-sidebar">
     <ul class="menu vertical">
         <li class="menu-text"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $bhakta->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $bhakta->id)]
-            )
-            ?></li>
         <li><?= $this->Html->link(__('List Bhaktas'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Gurus'), ['controller' => 'Gurus', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Gurus'), ['controller' => 'Gurus', 'action' => 'add']) ?></li>

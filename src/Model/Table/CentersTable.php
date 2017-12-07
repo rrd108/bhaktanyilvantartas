@@ -40,7 +40,7 @@ class CentersTable extends Table
         $this->hasMany('Departments', [
             'foreignKey' => 'center_id'
         ]);
-        $this->belongsToMany('Users', [
+        $this->belongsToMany('AppUsers', [
             'foreignKey' => 'center_id',
             'targetForeignKey' => 'user_id',
             'joinTable' => 'centers_users'

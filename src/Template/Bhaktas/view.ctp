@@ -7,8 +7,6 @@
     <ul class="menu vertical">
         <li class="menu-text"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Bhakta'), ['action' => 'edit', $bhakta->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Bhakta'), ['action' => 'delete', $bhakta->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $bhakta->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Bhaktas'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Bhakta'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Gurus'), ['controller' => 'Gurus', 'action' => 'index']) ?> </li>
@@ -20,6 +18,7 @@
         <img src="<?= $imageURL ?>" alt="">
     <?php endif; ?>
 </nav>
+<div class="bhaktas view small-9 medium-10 large-10 columns content">
 <div class="bhaktas view small-9 medium-10 large-10 columns content">
     <h3><?= h($bhakta->id) ?></h3>
     <table class="vertical-table">

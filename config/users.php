@@ -7,4 +7,5 @@
  */
 return [
     'Users.table' => 'AppUsers',
+    'controller' => 'AppUsersController'
 ];

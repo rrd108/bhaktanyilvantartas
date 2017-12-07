@@ -1,19 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: mihaly
+ * Date: 2017.11.17.
+ * Time: 13:25
+ */
+
 namespace App\Model\Entity;
 
-use Cake\ORM\Entity;
 
-/**
- * AppUser Entity
- *
- * @property int $id
- * @property string $name
- *
- * @property \App\Model\Entity\Bhakta[] $bhaktas
- */
 use CakeDC\Users\Model\Entity\User;
 
 class AppUser extends User
 {
-    protected $_hidden = ['password'];
+
 }
