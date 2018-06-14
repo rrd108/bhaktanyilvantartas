@@ -32,7 +32,7 @@ echo $this->Html->script('departments.members.js', ['block' => true]);
                                         ($service->bhakta->communityrole_id == 1) ? '✔' : '➤',
                                         [
                                             'controller' => 'bhaktas',
-                                            'action' => 'edit',
+                                            'action' => 'view',
                                             $service->bhakta->id
                                         ]
                                     ) . ' ' .

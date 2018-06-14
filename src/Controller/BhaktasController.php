@@ -40,7 +40,12 @@ class BhaktasController extends AppController
         if (!$this->request->getQuery('q')) {
             $bhaktas->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
         }
-        $bhaktas = $this->paginate($bhaktas);
+        $bhaktas = $this->paginate($bhaktas->innerJoinWith(
+            'Services.Departments.Centers',
+            function ($q) {
+                return $q->find('accessible', $this->Auth->user());
+            }
+        ));
 
         $this->set(compact('bhaktas'));
         $this->set('_serialize', ['bhaktas']);
