@@ -69,52 +69,30 @@ class DepartmentsTable extends Table
         return $validator;
     }
 
-    public function findMembers(Query $query, array $options = [])
+    public function findMembers(Query $query, array $options)
     {
         return $query
             ->select(['Departments.id', 'Departments.name',])
             ->contain(
-            [
-                'Services' => function ($q) use ($options) {
-                    return $q->find('current', $options)
-                        ->contain(
-                            [
-                                'Bhaktas' => function ($q) {
-                                    return $q->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
+                [
+                    'Services' => function ($q) use ($options) {
+                        return $q->find('current', $options)
+                            ->contain(
+                                [
+                                    'Bhaktas' => function ($q) {
+                                        return $q->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
                                     }
-                            ]
-                        )->order('Bhaktas.nev_avatott');
-                }
-            ]
+                                ]
+                            )->order('Bhaktas.nev_avatott');
+                    }
+                ]
             )
-            ->formatResults(function (\Cake\Collection\CollectionInterface $results) {
+            /*->formatResults(function (\Cake\Collection\CollectionInterface $results) {
                 return $results->map(function ($row) {
                     $row['manpower'] = count($row->services);
                     return $row;
                 });
             })
-            ->sortBy('manpower');
-    }
-
-    public function findInCenter(Query $query, array $options = [])
-    {
-        return $query
-            ->select(['Departments.id', 'Departments.name', 'Centers.name'])
-            ->contain(['Centers'])
-            ->where(
-                [
-                    'Departments.center_id IN' => $options['center_id'],
-                    'Departments.active' => 1
-                ]
-            )
-            ->formatResults(function ($results) {
-                return $results->combine(
-                    'id',
-                    function ($row) {
-                        return $row->center->name . ' / ' . $row->name;
-                    }
-                );
-            }
-            );
+            ->sortBy('manpower')*/;
     }
 }

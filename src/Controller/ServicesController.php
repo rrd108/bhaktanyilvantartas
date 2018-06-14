@@ -70,12 +70,28 @@ class ServicesController extends AppController
         $centerIds = $this->Services->Departments->Centers->find(
             'accessible',
             $this->Auth->user()
-            )
+        )
             ->extract('id')
             ->toList();
 
-        $departments = $this->Services->Departments->find('inCenter', ['center_id' => $centerIds])
-            ->order(['Departments.name']);
+        $departments = $this->Services->Departments->find()
+            ->contain(
+                'Centers',
+                function ($q) {
+                    return $q->find('accessible', $this->Auth->user());
+                }
+            )
+            ->order(['Departments.name'])
+            ->formatResults(
+                function ($results) {
+                    return $results->combine(
+                        'id',
+                        function ($row) {
+                            return $row->center->name . ' / ' . $row->name;
+                        }
+                    );
+                }
+            );
 
         $this->set(compact('service', 'bhaktas', 'departments'));
         $this->set('_serialize', ['service']);

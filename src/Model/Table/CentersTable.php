@@ -73,10 +73,10 @@ class CentersTable extends Table
         }
 
         return $query
-            ->matching(
+            ->innerJoinWith(
                 'AppUsers',
                 function ($q) use ($options) {
-                    return $q->where(['AppUsers.id' => $options['user_id']]);
+                    return $q->where(['AppUsers.id' => $options['id']]);
                 }
             );
     }

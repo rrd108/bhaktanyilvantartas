@@ -63,7 +63,7 @@ class CentersTableTest extends TestCase
         $actual = $this->Centers->find(
             'accessible',
             [
-                'user_id' => '999aaa77-6c1c-49e2-9aeb-8acfcbd48520',
+                'id' => '999aaa77-6c1c-49e2-9aeb-8acfcbd48520',
                 'is_superuser' => false
             ]
         );
@@ -73,7 +73,7 @@ class CentersTableTest extends TestCase
         $actual = $this->Centers->find(
             'accessible',
             [
-                'user_id' => '137bac75-6c1c-49e2-9aeb-8acfcbd48520',
+                'id' => '137bac75-6c1c-49e2-9aeb-8acfcbd48520',
                 'is_superuser' => true
             ]
         );

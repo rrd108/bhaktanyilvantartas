@@ -20,7 +20,8 @@ class DepartmentsTableTest extends TestCase
 
     public $fixtures = [
         'app.departments',
-        'app.centers'
+        'app.services',
+        'app.bhaktas'
     ];
 
     /**
@@ -47,22 +48,13 @@ class DepartmentsTableTest extends TestCase
         parent::tearDown();
     }
 
-    /**
-     * Test initial setup
-     *
-     * @return void
-     */
-    public function testFindInCenter()
+    public function testFindMembers()
     {
-        $actual = $this->Departments->find('inCenter', ['center_id' => 1]);
-        $expected = [1 => 'KV / Department - 1 in Center - 1'];
-        $this->assertEquals($expected, $actual->toArray());
-
-        $actual = $this->Departments->find('inCenter', ['center_id' => [1,2]]);
-        $expected = [
-            1 => 'KV / Department - 1 in Center - 1',
-            2 => 'BP / Department - 1 in Center - 2'
-        ];
-        $this->assertEquals($expected, $actual->toArray());
+        $actual = $this->Departments->find(
+            'members',
+            ['date' => '2018-08-01']
+        );
+        $expected = [1, 2];
+        $this->assertEquals($expected, $actual->extract('id')->toArray());
     }
 }

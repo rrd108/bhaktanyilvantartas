@@ -35,8 +35,8 @@ class AppUsersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $this->AppUsers = TableRegistry::get('AppUsers', $config);
-        $config = TableRegistry::exists('AppUsers') ? [] : ['className' => AppUsersTable::class];
+        $config = TableRegistry::getTableLocator()->exists('AppUsers') ? [] : ['className' => AppUsersTable::class];
+        $this->AppUsers = TableRegistry::getTableLocator()->get('AppUsers', $config);
     }
 
     /**
