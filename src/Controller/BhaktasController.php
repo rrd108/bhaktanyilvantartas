@@ -37,15 +37,19 @@ class BhaktasController extends AppController
     public function index()
     {
         $bhaktas = $this->Bhaktas->find('search', ['search' => $this->request->getQuery()]);
+
         if (!$this->request->getQuery('q')) {
             $bhaktas->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
         }
-        $bhaktas = $this->paginate($bhaktas->innerJoinWith(
+
+        $bhaktas = $bhaktas->leftJoinWith(
             'Services.Departments.Centers',
             function ($q) {
                 return $q->find('accessible', $this->Auth->user());
             }
-        ));
+        );
+
+        $bhaktas = $this->paginate($bhaktas);
 
         $this->set(compact('bhaktas'));
         $this->set('_serialize', ['bhaktas']);
