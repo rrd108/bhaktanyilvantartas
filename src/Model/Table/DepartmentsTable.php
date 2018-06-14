@@ -72,11 +72,7 @@ class DepartmentsTable extends Table
     public function findMembers(Query $query, array $options = [])
     {
         return $query
-            ->select(
-                [
-                    'Departments.id', 'Departments.name',
-                ]
-            )
+            ->select(['Departments.id', 'Departments.name',])
             ->contain(
             [
                 'Services' => function ($q) use ($options) {
@@ -98,5 +94,27 @@ class DepartmentsTable extends Table
                 });
             })
             ->sortBy('manpower');
+    }
+
+    public function findInCenter(Query $query, array $options = [])
+    {
+        return $query
+            ->select(['Departments.id', 'Departments.name', 'Centers.name'])
+            ->contain(['Centers'])
+            ->where(
+                [
+                    'Departments.center_id' => $options['center_id'],
+                    'Departments.active' => 1
+                ]
+            )
+            ->formatResults(function ($results) {
+                return $results->combine(
+                    'id',
+                    function ($row) {
+                        return $row->center->name . ' / ' . $row->name;
+                    }
+                );
+            }
+            );
     }
 }

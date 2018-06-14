@@ -45,7 +45,13 @@ class DepartmentsFixture extends TestFixture
             'id' => 1,
             'center_id' => 1,
             'name' => 'Department - 1 in Center - 1',
-            'aktiv' => 1
+            'active' => 1
+        ],
+        [
+            'id' => 2,
+            'center_id' => 2,
+            'name' => 'Department - 1 in Center - 2',
+            'active' => 1
         ],
     ];
 }
