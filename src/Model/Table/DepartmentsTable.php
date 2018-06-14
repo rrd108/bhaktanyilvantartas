@@ -103,7 +103,7 @@ class DepartmentsTable extends Table
             ->contain(['Centers'])
             ->where(
                 [
-                    'Departments.center_id' => $options['center_id'],
+                    'Departments.center_id IN' => $options['center_id'],
                     'Departments.active' => 1
                 ]
             )

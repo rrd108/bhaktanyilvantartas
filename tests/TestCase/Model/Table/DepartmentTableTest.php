@@ -57,5 +57,12 @@ class DepartmentsTableTest extends TestCase
         $actual = $this->Departments->find('inCenter', ['center_id' => 1]);
         $expected = [1 => 'KV / Department - 1 in Center - 1'];
         $this->assertEquals($expected, $actual->toArray());
+
+        $actual = $this->Departments->find('inCenter', ['center_id' => [1,2]]);
+        $expected = [
+            1 => 'KV / Department - 1 in Center - 1',
+            2 => 'BP / Department - 1 in Center - 2'
+        ];
+        $this->assertEquals($expected, $actual->toArray());
     }
 }
