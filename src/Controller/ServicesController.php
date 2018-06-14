@@ -66,13 +66,13 @@ class ServicesController extends AppController
         }
         $bhaktas = $this->Services->Bhaktas->find('list', ['limit' => 200])
             ->where(['Bhaktas.communityrole_id IN' => [1,2]])
+            ->innerJoinWith(
+                'Services.Departments.Centers',
+                function ($q) {
+                    return $q->find('accessible', $this->Auth->user());
+                }
+            )
             ->order(['Bhaktas.nev_avatott']);
-        $centerIds = $this->Services->Departments->Centers->find(
-            'accessible',
-            $this->Auth->user()
-        )
-            ->extract('id')
-            ->toList();
 
         $departments = $this->Services->Departments->find()
             ->contain(
