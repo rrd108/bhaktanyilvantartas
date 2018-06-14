@@ -6,21 +6,21 @@
     "license": "MIT",
     "require": {
         "php": ">=5.6",
-        "cakephp/cakephp": "3.4.*",
+        "cakephp/cakephp": "3.6.*",
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
-        "cakedc/users": "^5.0",
         "friendsofcake/search": "^3.1",
         "rrd108/cakephp-menulink": "^1.0",
         "xety/cake3-upload": "1.*",
-        "needim/noty": "^3.1"
+        "needim/noty": "^3.1",
+        "cakedc/users": "^7.0"
     },
     "require-dev": {
         "psy/psysh": "@stable",
         "cakephp/bake": "~1.1",
         "phpunit/phpunit": "^5.7|^6.0",
-        "cakephp/debug_kit": "^3.11"
+        "cakephp/debug_kit": "~3.0"
     },
     "suggest": {
         "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",
