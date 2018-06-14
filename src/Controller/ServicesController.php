@@ -68,11 +68,13 @@ class ServicesController extends AppController
             ->where(['Bhaktas.communityrole_id IN' => [1,2]])
             ->order(['Bhaktas.nev_avatott']);
 
-        $centerIds = $this->Services->Departments->Centers->find()
-            ->matching('AppUsers', function ($q) {
-                return $q->where(['AppUsers.id' => $this->Auth->user('id')]);
-            })->extract('id')
+        $centerIds = $this->Services->Departments->Centers->find(
+            'accessible',
+            ['user_id' => $this->Auth->user('id')]
+            )
+            ->extract('id')
             ->toList();
+
         $departments = $this->Services->Departments->find('inCenter', ['center_id' => $centerIds])
             ->order(['Departments.name']);
 

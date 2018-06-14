@@ -65,4 +65,15 @@ class CentersTable extends Table
 
         return $validator;
     }
+
+    public function findAccessible(Query $query, array $options)
+    {
+        return $query
+            ->matching(
+                'AppUsers',
+                function ($q) use ($options) {
+                    return $q->where(['AppUsers.id' => $options['user_id']]);
+                }
+            );
+    }
 }

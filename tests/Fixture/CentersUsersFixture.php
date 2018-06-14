@@ -45,7 +45,12 @@ class CentersUsersFixture extends TestFixture
         [
             'id' => 1,
             'center_id' => 1,
-            'user_id' => '1037eaf7-5548-4477-bb31-f37b10ab8dfe'
+            'user_id' => '137bac75-6c1c-49e2-9aeb-8acfcbd48520' //is_superuser
+        ],
+        [
+            'id' => 2,
+            'center_id' => 2,
+            'user_id' => '999aaa77-6c1c-49e2-9aeb-8acfcbd48520'
         ],
     ];
 }
