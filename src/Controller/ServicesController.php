@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Collection\Collection;
 use Cake\I18n\Date;
 use Cake\I18n\Time;
 
@@ -66,9 +67,15 @@ class ServicesController extends AppController
         $bhaktas = $this->Services->Bhaktas->find('list', ['limit' => 200])
             ->where(['Bhaktas.communityrole_id IN' => [1,2]])
             ->order(['Bhaktas.nev_avatott']);
-        $departments = $this->Services->Departments->find('list', ['limit' => 200])
-            ->where(['Departments.aktiv' => 1])
+
+        $centerIds = $this->Services->Departments->Centers->find()
+            ->matching('AppUsers', function ($q) {
+                return $q->where(['AppUsers.id' => $this->Auth->user('id')]);
+            })->extract('id')
+            ->toList();
+        $departments = $this->Services->Departments->find('inCenter', ['center_id' => $centerIds])
             ->order(['Departments.name']);
+
         $this->set(compact('service', 'bhaktas', 'departments'));
         $this->set('_serialize', ['service']);
     }
