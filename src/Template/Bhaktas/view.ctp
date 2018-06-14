@@ -227,7 +227,7 @@
                 </tr>
                 <?php foreach ($bhakta->services as $services): ?>
                     <tr>
-                        <td><?= h($services->department->name) ?></td>
+                        <td><?= h($services->department->center->name) ?> / <?= h($services->department->name) ?></td>
                         <td><?= h($services->szolgalat) ?></td>
                         <td><?= h($services->szolgalat_kezdete) ?></td>
                         <td><?= h($services->szolgalat_vege) ?></td>

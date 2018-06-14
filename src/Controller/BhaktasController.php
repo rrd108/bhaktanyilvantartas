@@ -65,7 +65,7 @@ class BhaktasController extends AppController
                 'Services' => [
                     'sort' => ['Services.szolgalat_kezdete']
                 ],
-                'Services.Departments'
+                'Services.Departments.Centers'
             ]
         ]);
         $imageURL = substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'],'bhaktas/')).$bhakta->kep;
