@@ -21,7 +21,7 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('center_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('aktiv') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('active') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -31,7 +31,7 @@
                 <td><?= $this->Number->format($department->id) ?></td>
                 <td><?= $department->has('center') ? $this->Html->link($department->center->name, ['controller' => 'Centers', 'action' => 'view', $department->center->id]) : '' ?></td>
                 <td><?= h($department->name) ?></td>
-                <td><?= h($department->aktiv) ?></td>
+                <td><?= h($department->active) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $department->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $department->id]) ?>

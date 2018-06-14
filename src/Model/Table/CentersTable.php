@@ -65,4 +65,19 @@ class CentersTable extends Table
 
         return $validator;
     }
+
+    public function findAccessible(Query $query, array $options)
+    {
+        if ($options['is_superuser']) {
+            return $query;
+        }
+
+        return $query
+            ->innerJoinWith(
+                'AppUsers',
+                function ($q) use ($options) {
+                    return $q->where(['AppUsers.id' => $options['id']]);
+                }
+            );
+    }
 }

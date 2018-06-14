@@ -19,8 +19,28 @@ class DepartmentsController extends AppController
 
     public function members($date = null)
     {
-
-        $departments = $this->Departments->find('members', ['date' => $date]);
+        $departments = $this->Departments
+            ->find(
+                'members',
+                ['date' => $date]
+            )
+            ->innerJoinWith(                //TODO should be findAccessible here but causing SQL error
+                'Centers.AppUsers',
+                function ($q) {
+                    return $q->where(['AppUsers.id' => $this->Auth->user('id')]);
+                }
+            )
+            ->formatResults(
+                function (\Cake\Collection\CollectionInterface $results) {
+                    return $results->map(
+                        function ($row) {
+                            $row['manpower'] = count($row->services);
+                            return $row;
+                        }
+                    );
+                }
+            )
+            ->sortBy('manpower');
 
         $this->set(compact('departments'));
         $this->set('_serialize', ['departments']);

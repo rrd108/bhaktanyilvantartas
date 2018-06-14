@@ -75,7 +75,7 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
         echo $this->Form->control('csalad_hozzaallas');
         echo $this->Form->control('india');
         echo $this->Form->control('rs_szerz');
-        echo $this->Form->control('aktiv');
+        echo $this->Form->control('active');
         if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'igazgato'])) {
             echo $this->Form->control('bizalmas_info');
         }

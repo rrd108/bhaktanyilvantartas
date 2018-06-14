@@ -62,41 +62,37 @@ class DepartmentsTable extends Table
             ->notEmpty('name');
 
         $validator
-            ->boolean('aktiv')
-            ->requirePresence('aktiv', 'create')
-            ->notEmpty('aktiv');
+            ->boolean('active')
+            ->requirePresence('active', 'create')
+            ->notEmpty('active');
 
         return $validator;
     }
 
-    public function findMembers(Query $query, array $options = [])
+    public function findMembers(Query $query, array $options)
     {
         return $query
-            ->select(
+            ->select(['Departments.id', 'Departments.name',])
+            ->contain(
                 [
-                    'Departments.id', 'Departments.name',
+                    'Services' => function ($q) use ($options) {
+                        return $q->find('current', $options)
+                            ->contain(
+                                [
+                                    'Bhaktas' => function ($q) {
+                                        return $q->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
+                                    }
+                                ]
+                            )->order('Bhaktas.nev_avatott');
+                    }
                 ]
             )
-            ->contain(
-            [
-                'Services' => function ($q) use ($options) {
-                    return $q->find('current', $options)
-                        ->contain(
-                            [
-                                'Bhaktas' => function ($q) {
-                                    return $q->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
-                                    }
-                            ]
-                        )->order('Bhaktas.nev_avatott');
-                }
-            ]
-            )
-            ->formatResults(function (\Cake\Collection\CollectionInterface $results) {
+            /*->formatResults(function (\Cake\Collection\CollectionInterface $results) {
                 return $results->map(function ($row) {
                     $row['manpower'] = count($row->services);
                     return $row;
                 });
             })
-            ->sortBy('manpower');
+            ->sortBy('manpower')*/;
     }
 }

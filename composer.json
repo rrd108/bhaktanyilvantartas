@@ -10,11 +10,11 @@
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
-        "friendsofcake/search": "^3.1",
         "rrd108/cakephp-menulink": "^1.0",
         "xety/cake3-upload": "1.*",
         "needim/noty": "^3.1",
-        "cakedc/users": "^7.0"
+        "cakedc/users": "^7.0",
+        "friendsofcake/search": "^4.4"
     },
     "require-dev": {
         "psy/psysh": "@stable",

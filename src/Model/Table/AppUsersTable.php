@@ -13,6 +13,16 @@ use CakeDC\Users\Model\Table\UsersTable;
 
 class AppUsersTable extends UsersTable
 {
+    public function initialize(array $config)
+    {
+        parent::initialize($config);
+        $this->belongsToMany('Centers', [
+            'foreignKey' => 'user_id',
+            'targetForeignKey' => 'center_id',
+            'joinTable' => 'centers_users'
+        ]);
+    }
+
     public function findSuperUsers(Query $query, array $options)
     {
         return $query->select(['AppUsers.username', 'AppUsers.email'])

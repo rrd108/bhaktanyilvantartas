@@ -26,7 +26,7 @@
         <?php
             echo $this->Form->control('center_id', ['options' => $centers]);
             echo $this->Form->control('name');
-            echo $this->Form->control('aktiv');
+            echo $this->Form->control('active');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit'), ['class' => 'button']) ?>

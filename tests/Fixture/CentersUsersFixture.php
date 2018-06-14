@@ -17,8 +17,8 @@ class CentersUsersFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => 5, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'center_id' => ['type' => 'integer', 'length' => 5, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'id' => ['type' => 'smallinteger', 'length' => 5, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'center_id' => ['type' => 'smallinteger', 'length' => 5, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'user_id' => ['type' => 'uuid', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         '_indexes' => [
             'fk_users_has_centers_centers1_idx' => ['type' => 'index', 'columns' => ['center_id'], 'length' => []],
@@ -37,15 +37,24 @@ class CentersUsersFixture extends TestFixture
     // @codingStandardsIgnoreEnd
 
     /**
-     * Records
+     * Init method
      *
-     * @var array
+     * @return void
      */
-    public $records = [
-        [
-            'id' => 1,
-            'center_id' => 1,
-            'user_id' => '1037eaf7-5548-4477-bb31-f37b10ab8dfe'
-        ],
-    ];
+    public function init()
+    {
+        $this->records = [
+            [
+                'id' => 1,
+                'center_id' => 1,
+                'user_id' => '137bac75-6c1c-49e2-9aeb-8acfcbd48520' //is_superuser
+            ],
+            [
+                'id' => 2,
+                'center_id' => 2,
+                'user_id' => '999aaa77-6c1c-49e2-9aeb-8acfcbd48520'
+            ],
+        ];
+        parent::init();
+    }
 }

@@ -74,7 +74,7 @@
                 <th scope="col"><?= __('Csalad Hozzaallas') ?></th>
                 <th scope="col"><?= __('India') ?></th>
                 <th scope="col"><?= __('Rs Szerz') ?></th>
-                <th scope="col"><?= __('Aktiv') ?></th>
+                <th scope="col"><?= __('active') ?></th>
                 <th scope="col"><?= __('Bizalmas Info') ?></th>
                 <th scope="col"><?= __('Megjegyzes') ?></th>
                 <th scope="col"><?= __('Kep') ?></th>
@@ -125,7 +125,7 @@
                 <td><?= h($bhaktas->csalad_hozzaallas) ?></td>
                 <td><?= h($bhaktas->india) ?></td>
                 <td><?= h($bhaktas->rs_szerz) ?></td>
-                <td><?= h($bhaktas->aktiv) ?></td>
+                <td><?= h($bhaktas->active) ?></td>
                 <td><?= h($bhaktas->bizalmas_info) ?></td>
                 <td><?= h($bhaktas->megjegyzes) ?></td>
                 <td><?= h($bhaktas->kep) ?></td>

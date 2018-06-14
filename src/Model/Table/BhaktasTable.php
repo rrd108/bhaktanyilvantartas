@@ -264,9 +264,9 @@ class BhaktasTable extends Table
             ->notEmpty('rs_szerz');
 
         $validator
-            ->boolean('aktiv')
-            ->requirePresence('aktiv', 'create')
-            ->notEmpty('aktiv');
+            ->boolean('active')
+            ->requirePresence('active', 'create')
+            ->notEmpty('active');
 
         $validator
             ->requirePresence('bizalmas_info', 'create')

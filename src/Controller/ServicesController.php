@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Collection\Collection;
 use Cake\I18n\Date;
 use Cake\I18n\Time;
 
@@ -65,10 +66,33 @@ class ServicesController extends AppController
         }
         $bhaktas = $this->Services->Bhaktas->find('list', ['limit' => 200])
             ->where(['Bhaktas.communityrole_id IN' => [1,2]])
+            ->innerJoinWith(
+                'Services.Departments.Centers',
+                function ($q) {
+                    return $q->find('accessible', $this->Auth->user());
+                }
+            )
             ->order(['Bhaktas.nev_avatott']);
-        $departments = $this->Services->Departments->find('list', ['limit' => 200])
-            ->where(['Departments.aktiv' => 1])
-            ->order(['Departments.name']);
+
+        $departments = $this->Services->Departments->find()
+            ->contain(
+                'Centers',
+                function ($q) {
+                    return $q->find('accessible', $this->Auth->user());
+                }
+            )
+            ->order(['Departments.name'])
+            ->formatResults(
+                function ($results) {
+                    return $results->combine(
+                        'id',
+                        function ($row) {
+                            return $row->center->name . ' / ' . $row->name;
+                        }
+                    );
+                }
+            );
+
         $this->set(compact('service', 'bhaktas', 'departments'));
         $this->set('_serialize', ['service']);
     }

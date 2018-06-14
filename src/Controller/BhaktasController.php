@@ -37,9 +37,18 @@ class BhaktasController extends AppController
     public function index()
     {
         $bhaktas = $this->Bhaktas->find('search', ['search' => $this->request->getQuery()]);
+
         if (!$this->request->getQuery('q')) {
             $bhaktas->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
         }
+
+        $bhaktas = $bhaktas->leftJoinWith(
+            'Services.Departments.Centers',
+            function ($q) {
+                return $q->find('accessible', $this->Auth->user());
+            }
+        );
+
         $bhaktas = $this->paginate($bhaktas);
 
         $this->set(compact('bhaktas'));
@@ -65,7 +74,7 @@ class BhaktasController extends AppController
                 'Services' => [
                     'sort' => ['Services.szolgalat_kezdete']
                 ],
-                'Services.Departments'
+                'Services.Departments.Centers'
             ]
         ]);
         $imageURL = substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'],'bhaktas/')).$bhakta->kep;

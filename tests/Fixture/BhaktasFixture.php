@@ -62,7 +62,7 @@ class BhaktasFixture extends TestFixture
         'csalad_hozzaallas' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => null, 'collate' => 'utf8_hungarian_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'india' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => null, 'collate' => 'utf8_hungarian_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'rs_szerz' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => null, 'collate' => 'utf8_hungarian_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'aktiv' => ['type' => 'boolean', 'length' => null, 'null' => false, 'default' => '1', 'comment' => '', 'precision' => null],
+        'active' => ['type' => 'boolean', 'length' => null, 'null' => false, 'default' => '1', 'comment' => '', 'precision' => null],
         'bizalmas_info' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'collate' => 'utf8_hungarian_ci', 'comment' => '', 'precision' => null],
         'megjegyzes' => ['type' => 'text', 'length' => null, 'null' => true, 'default' => null, 'collate' => 'utf8_hungarian_ci', 'comment' => '', 'precision' => null],
         'kep' => ['type' => 'string', 'length' => 50, 'null' => true, 'default' => null, 'collate' => 'utf8_hungarian_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
@@ -136,7 +136,7 @@ class BhaktasFixture extends TestFixture
                 'csalad_hozzaallas' => '',
                 'india' => '2010, 2015',
                 'rs_szerz' => '',
-                'aktiv' => 1,
+                'active' => 1,
                 'bizalmas_info' => '',
                 'megjegyzes' => '',
                 'kep' => ''
@@ -148,7 +148,7 @@ class BhaktasFixture extends TestFixture
                 'nev_polgari' => 'Fekete Péterné',
                 'nev_avatott' => 'Radha Devi Dasi',
                 'eu_card_expiry' => (new Date())->modify('-3 months'),
-                'aktiv' => 1,
+                'active' => 1,
 
             ],
         ];

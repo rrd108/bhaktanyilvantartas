@@ -32,8 +32,8 @@
             <td><?= $this->Number->format($department->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Aktiv') ?></th>
-            <td><?= $department->aktiv ? __('Yes') : __('No'); ?></td>
+            <th scope="row"><?= __('active') ?></th>
+            <td><?= $department->active ? __('Yes') : __('No'); ?></td>
         </tr>
     </table>
     <div class="related">
