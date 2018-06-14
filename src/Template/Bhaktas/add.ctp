@@ -59,7 +59,7 @@
             echo $this->Form->control('csalad_hozzaallas');
             echo $this->Form->control('india');
             echo $this->Form->control('rs_szerz');
-            echo $this->Form->control('aktiv');
+            echo $this->Form->control('active');
             echo $this->Form->control('bizalmas_info');
             echo $this->Form->control('megjegyzes');
             echo $this->Form->control('kep');

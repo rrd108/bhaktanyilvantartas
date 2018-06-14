@@ -48,3 +48,6 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 INSERT INTO `centers` (`name`) VALUES ('NVD');
 UPDATE `departments` SET center_id = 1;
 INSERT INTO `centers_users` SELECT NULL, 1, id FROM users;
+
+ALTER TABLE `bhakta`.`departments` CHANGE COLUMN `active` `active` TINYINT(1) NOT NULL;
+ALTER TABLE `bhakta`.`bhaktas` CHANGE COLUMN `aktiv` `active` TINYINT(1) NOT NULL DEFAULT '1' ;

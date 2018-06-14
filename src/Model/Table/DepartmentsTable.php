@@ -62,9 +62,9 @@ class DepartmentsTable extends Table
             ->notEmpty('name');
 
         $validator
-            ->boolean('aktiv')
-            ->requirePresence('aktiv', 'create')
-            ->notEmpty('aktiv');
+            ->boolean('active')
+            ->requirePresence('active', 'create')
+            ->notEmpty('active');
 
         return $validator;
     }

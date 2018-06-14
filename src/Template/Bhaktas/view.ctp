@@ -199,8 +199,8 @@
             <td><?= $bhakta->neme ? __('Yes') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Aktiv') ?></th>
-            <td><?= $bhakta->aktiv ? __('Yes') : __('No'); ?></td>
+            <th scope="row"><?= __('active') ?></th>
+            <td><?= $bhakta->active ? __('Yes') : __('No'); ?></td>
         </tr>
     </table>
     <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'igazgato'])) : ?>

@@ -48,7 +48,7 @@ use Cake\ORM\Entity;
  * @property string $csalad_hozzaallas
  * @property string $india
  * @property string $rs_szerz
- * @property bool $aktiv
+ * @property bool $active
  * @property string $bizalmas_info
  * @property string $megjegyzes
  * @property string $kep

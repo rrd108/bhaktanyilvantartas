@@ -36,7 +36,7 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Center Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
-                <th scope="col"><?= __('Aktiv') ?></th>
+                <th scope="col"><?= __('active') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($center->departments as $departments): ?>
@@ -44,7 +44,7 @@
                 <td><?= h($departments->id) ?></td>
                 <td><?= h($departments->center_id) ?></td>
                 <td><?= h($departments->name) ?></td>
-                <td><?= h($departments->aktiv) ?></td>
+                <td><?= h($departments->active) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Departments', 'action' => 'view', $departments->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Departments', 'action' => 'edit', $departments->id]) ?>
