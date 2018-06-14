@@ -137,6 +137,5 @@ class ServicesTable extends Table
                 ]
             )->group(['Services.bhakta_id']);
         return $bhaktasLastServiceStarts;
-
     }
 }
