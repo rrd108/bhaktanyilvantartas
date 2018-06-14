@@ -44,3 +44,7 @@ ADD CONSTRAINT `fk_departments_centers1`
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `centers` (`name`) VALUES ('NVD');
+UPDATE `departments` SET center_id = 1;
+INSERT INTO `centers_users` SELECT NULL, 1, id FROM users;
