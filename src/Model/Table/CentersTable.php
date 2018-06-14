@@ -68,6 +68,10 @@ class CentersTable extends Table
 
     public function findAccessible(Query $query, array $options)
     {
+        if ($options['is_superuser']) {
+            return $query;
+        }
+
         return $query
             ->matching(
                 'AppUsers',

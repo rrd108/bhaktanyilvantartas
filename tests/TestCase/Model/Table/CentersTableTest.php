@@ -60,8 +60,24 @@ class CentersTableTest extends TestCase
      */
     public function testFindAccessible()
     {
-        $actual = $this->Centers->find('accessible', ['user_id' => '999aaa77-6c1c-49e2-9aeb-8acfcbd48520']);
+        $actual = $this->Centers->find(
+            'accessible',
+            [
+                'user_id' => '999aaa77-6c1c-49e2-9aeb-8acfcbd48520',
+                'is_superuser' => false
+            ]
+        );
         $expected = [2];
+        $this->assertEquals($expected, $actual->extract('id')->toArray());
+
+        $actual = $this->Centers->find(
+            'accessible',
+            [
+                'user_id' => '137bac75-6c1c-49e2-9aeb-8acfcbd48520',
+                'is_superuser' => true
+            ]
+        );
+        $expected = [1,2];
         $this->assertEquals($expected, $actual->extract('id')->toArray());
     }
 }
