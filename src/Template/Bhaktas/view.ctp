@@ -26,6 +26,10 @@
             <span class="dot">1</span>
             <table class="vertical-table">
                 <tr>
+                    <th scope="row"><?= 'Férfi' ?></th>
+                    <td><?= $bhakta->neme ? __('Yes') : __('No'); ?></td>
+                </tr>
+                <tr>
                     <th scope="row"><?= __('Nev Szuletesi') ?></th>
                     <td><?= h($bhakta->nev_szuletesi) ?></td>
                 </tr>
@@ -40,6 +44,14 @@
                 <tr>
                     <th scope="row"><?= __('Szul Hely') ?></th>
                     <td><?= h($bhakta->szul_hely) ?></td>
+                </tr>
+                <tr>
+                    <th scope="row"><?= __('Szul Date') ?></th>
+                    <td><?= h($bhakta->szul_date) ?></td>
+                </tr>
+                <tr>
+                    <th scope="row"><?= __('Szul Time') ?></th>
+                    <td><?= h($bhakta->szul_time) ?></td>
                 </tr>
                 <tr>
                     <th scope="row"><?= __('Allampolgarsag') ?></th>
@@ -71,6 +83,10 @@
             <span class="dot">2</span>
             <table class="vertical-table">
                 <tr>
+                    <th scope="row"><?= __('active') ?></th>
+                    <td><?= $bhakta->active ? __('Yes') : __('No'); ?></td>
+                </tr>
+                <tr>
                     <th scope="row"><?= __('Cim Allando') ?></th>
                     <td><?= h($bhakta->cim_allando) ?></td>
                 </tr>
@@ -81,22 +97,6 @@
                 <tr>
                     <th scope="row"><?= __('Cim Szallas') ?></th>
                     <td><?= h($bhakta->cim_szallas) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Szul Date') ?></th>
-                    <td><?= h($bhakta->szul_date) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Szul Time') ?></th>
-                    <td><?= h($bhakta->szul_time) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= 'Férfi' ?></th>
-                    <td><?= $bhakta->neme ? __('Yes') : __('No'); ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('active') ?></th>
-                    <td><?= $bhakta->active ? __('Yes') : __('No'); ?></td>
                 </tr>
                 <tr>
                     <th scope="row"><?= __('Csalad Nev Anya') ?></th>
@@ -167,12 +167,12 @@
                     <td><?= h($bhakta->rs_szerz) ?></td>
                 </tr>
                 <tr>
-                    <th scope="row"><?= __('Kep') ?></th>
-                    <td><?= h($bhakta->kep) ?></td>
-                </tr>
-                <tr>
                     <th scope="row"><?= __('Katonasag') ?></th>
                     <td><?= $this->Number->format($bhakta->katonasag) ?></td>
+                </tr>
+                <tr>
+                    <th scope="row"><?= __('Kep') ?></th>
+                    <td><?= h($bhakta->kep) ?></td>
                 </tr>
             </table>
         </div>

@@ -31,56 +31,95 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
 <div class="bhaktas form small-9 medium-10 large-10 columns content">
     <?= $this->Form->create($bhakta, ['type' => 'file', 'enctype' => 'multipart/form-data']) ?>
     <fieldset>
-        <legend><?= __('Edit Bhakta') ?></legend>
+        <legend><?= $bhakta->nev_avatott ?></legend>
+        <div class="row">
+            <div class="columns small-6">
+                <span class="dot">1</span>
+                <?php
+                echo $this->Form->control('neme', ['label' => 'férfi']);
+                echo $this->Form->control('nev_szuletesi');
+                echo $this->Form->control('nev_polgari');
+                echo $this->Form->control('nev_avatott');
+                echo $this->Form->control('szul_hely');
+                echo $this->Form->control('szul_date', ['empty' => true, 'minYear' => date('Y')-60, 'maxYear' => date('Y')]);
+                echo $this->Form->control('szul_time', ['empty' => true]);
+                echo $this->Form->control('allampolgarsag');
+                echo $this->Form->control('vegzettseg');
+                echo $this->Form->control('szakma');
+                echo $this->Form->control('nyelv');
+                echo $this->Form->control('asram_id', ['options' => $asrams]);
+                //echo $this->Form->control('hazastars_id');
+                ?>
+            </div>
+            <div class="columns small-6">
+                <span class="dot">2</span>
+                <?php
+                echo $this->Form->control('active');
+                echo $this->Form->control('cim_allando');
+                echo $this->Form->control('cim_ideiglenes');
+                echo $this->Form->control('cim_szallas');
+                echo $this->Form->control('csalad_nev_anya');
+                echo $this->Form->control('csalad_nev_apa');
+                echo $this->Form->control('csalad_hozzaallas');
+                ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="columns small-6">
+                <span class="dot">3</span>
+                <?php
+                echo $this->Form->control('szig');
+                echo $this->Form->control('utlevel');
+                echo $this->Form->control('adoazonosito');
+                echo $this->Form->control('taj');
+                ?>
+            </div>
+            <div class="columns small-6">
+                <span class="dot">4</span>
+                <?php
+                echo $this->Form->control('haziorvos_nev');
+                echo $this->Form->control('haziorvos_cim');
+                echo $this->Form->control('haziorvos_telefon');
+                echo $this->Form->control('vegakarat');
+                echo $this->Form->control('halalertesitendo');
+                echo $this->Form->control('india');
+                echo $this->Form->control('rs_szerz');
+                echo $this->Form->control('katonasag');
+                echo $this->Form->control('kep_file',['type'=>'file','label' => __('Kep')]);
+                ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="columns small-6">
+                <span class="dot">5</span>
+                <?php
+                echo $this->Form->control('guru_id', ['options' => $gurus]);
+                echo $this->Form->control('datum_elsotalalkozas');
+                echo $this->Form->control('datum_elfogadas');
+                echo $this->Form->control('datum_elsoavatas');
+                echo $this->Form->control('datum_masodikavatas');
+                echo $this->Form->control('bhsastri_datum');
+                echo $this->Form->control('bhsastri_eredmeny');
+                ?>
+            </div>
+            <div class="columns small-6">
+                <span class="dot">6</span>
+                <?php
+                echo $this->Form->control('tb_id', ['empty' => true]);
+                echo $this->Form->control('eu_card_expiry', ['empty' => true]);
+                echo $this->Form->control('legalstatus_id', ['empty' => true]);
+                echo $this->Form->control('communityrole_id', ['empty' => true]);
+                ?>
+            </div>
+        </div>
+
         <?php
-        echo $this->Form->control('neme', ['label' => 'férfi']);
-        echo $this->Form->control('nev_szuletesi');
-        echo $this->Form->control('nev_polgari');
-        echo $this->Form->control('nev_avatott');
-        echo $this->Form->control('guru_id', ['options' => $gurus]);
-        echo $this->Form->control('cim_allando');
-        echo $this->Form->control('cim_ideiglenes');
-        echo $this->Form->control('cim_szallas');
-        echo $this->Form->control('szig');
-        echo $this->Form->control('utlevel');
-        echo $this->Form->control('adoazonosito');
-        echo $this->Form->control('taj');
-        echo $this->Form->control('szul_hely');
-        echo $this->Form->control('szul_date', ['empty' => true, 'minYear' => date('Y')-60, 'maxYear' => date('Y')]);
-        echo $this->Form->control('szul_time', ['empty' => true]);
-        echo $this->Form->control('allampolgarsag');
-        echo $this->Form->control('katonasag');
-        echo $this->Form->control('haziorvos_nev');
-        echo $this->Form->control('haziorvos_cim');
-        echo $this->Form->control('haziorvos_telefon');
-        echo $this->Form->control('datum_elsotalalkozas');
-        echo $this->Form->control('datum_elfogadas');
-        echo $this->Form->control('datum_elsoavatas');
-        echo $this->Form->control('datum_masodikavatas');
-        echo $this->Form->control('asram_id', ['options' => $asrams]);
-        //echo $this->Form->control('hazastars_id');
-        echo $this->Form->control('tb_id', ['empty' => true]);
-        echo $this->Form->control('eu_card_expiry', ['empty' => true]);
-        echo $this->Form->control('legalstatus_id', ['empty' => true]);
-        echo $this->Form->control('communityrole_id', ['empty' => true]);
-        echo $this->Form->control('vegzettseg');
-        echo $this->Form->control('szakma');
-        echo $this->Form->control('vegakarat');
-        echo $this->Form->control('halalertesitendo');
-        echo $this->Form->control('bhsastri_datum');
-        echo $this->Form->control('bhsastri_eredmeny');
-        echo $this->Form->control('nyelv');
-        echo $this->Form->control('csalad_nev_anya');
-        echo $this->Form->control('csalad_nev_apa');
-        echo $this->Form->control('csalad_hozzaallas');
-        echo $this->Form->control('india');
-        echo $this->Form->control('rs_szerz');
-        echo $this->Form->control('active');
         if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'igazgato'])) {
             echo $this->Form->control('bizalmas_info');
         }
         echo $this->Form->control('megjegyzes');
-        echo $this->Form->control('kep_file',['type'=>'file','label' => __('Kep')]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit'), ['class' => 'button']) ?>
