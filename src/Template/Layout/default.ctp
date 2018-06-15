@@ -43,7 +43,7 @@
             <div class="top-bar" id="navbar" data-sticky data-options="marginTop:0;" style="width:100%">
                 <div class="top-bar-left">
                     <ul class="dropdown menu" data-dropdown-menu>
-                        <li class="menu-text"><?= $this->fetch('title') ?></li>
+                        <li class="menu-text"><?= $this->Html->image('logo-small.png', ['alt' => 'Logo']); ?></li>
                         <?php if ($this->request->session()->read('Auth.User')) : //TODO add .active to li?>
                             <li>
                                 <?= $this->Html->menuLink(
