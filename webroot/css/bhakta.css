@@ -18,6 +18,20 @@
     color: #060;
 }
 
+.dot {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #444;
+    background: #007000;
+    color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
 .input-group {
     width: auto;
     margin: 0 1em 0 0;
@@ -54,6 +68,10 @@ div.date select {
 
 .login.active {
     animation: popin 400ms ease-in-out forwards;
+}
+
+.bhaktas th {
+    text-align: left;
 }
 
 @keyframes popin {
