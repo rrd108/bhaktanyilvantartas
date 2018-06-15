@@ -46,7 +46,7 @@ echo $this->Html->script('bhaktas.edit.js', ['block' => true]);
         echo $this->Form->control('adoazonosito');
         echo $this->Form->control('taj');
         echo $this->Form->control('szul_hely');
-        echo $this->Form->control('szul_date', ['empty' => true]);
+        echo $this->Form->control('szul_date', ['empty' => true, 'minYear' => date('Y')-60, 'maxYear' => date('Y')]);
         echo $this->Form->control('szul_time', ['empty' => true]);
         echo $this->Form->control('allampolgarsag');
         echo $this->Form->control('katonasag');
