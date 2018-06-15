@@ -49,7 +49,7 @@ class BhaktasController extends AppController
             }
         );
 
-        $bhaktas = $this->paginate($bhaktas);
+        $bhaktas = $this->paginate($bhaktas->distinct());
 
         $this->set(compact('bhaktas'));
         $this->set('_serialize', ['bhaktas']);
