@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2018-06-19 16:50+0000\n"
-"PO-Revision-Date: 2018-06-19 19:08+0200\n"
+"PO-Revision-Date: 2018-06-19 19:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: hu_HU\n"
@@ -854,7 +854,7 @@ msgstr ""
 
 #: Template/Centers/index.ctp:17 Template/Layout/default.ctp:101
 msgid "Centers"
-msgstr ""
+msgstr "Központok"
 
 #: Template/Centers/view.ctp:10
 msgid "Delete Center"
@@ -1030,7 +1030,7 @@ msgstr "Törzsadatok"
 
 #: Template/Layout/default.ctp:111
 msgid "Users"
-msgstr "Felhasználókdepart"
+msgstr "Felhasználók"
 
 #: Template/Layout/error.ctp:35 Template/Error/error400.ctp:36
 #: Template/Error/error500.ctp:41
