@@ -83,7 +83,7 @@
                     <th scope="row"></th>
                     <td>
                         <?php if ($bhakta->kep != null): ?>
-                            <?= $this->Html->image('bhaktas/' . $bhakta->kep) ?>
+                            <?= $this->Html->image('bhaktas/' . $bhakta->kep, ['width' => 200]) ?>
                         <?php endif; ?>
                     </td>
                 </tr>
