@@ -77,9 +77,6 @@ class BhaktasController extends AppController
                 'Services.Departments.Centers'
             ]
         ]);
-        $imageURL = substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'],'bhaktas/')).$bhakta->kep;
-
-        $this->set('imageURL',$imageURL);
         $this->set('bhakta', $bhakta);
         $this->set('_serialize', ['bhakta']);
 

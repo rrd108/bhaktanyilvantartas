@@ -14,9 +14,6 @@
         <li><?= $this->Html->link(__('List Services'), ['controller' => 'Services', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Service'), ['controller' => 'Services', 'action' => 'add']) ?> </li>
     </ul>
-    <?php if ($bhakta->kep != null): ?>
-        <img src="<?= $imageURL ?>" alt="">
-    <?php endif; ?>
 </nav>
 <div class="bhaktas view small-9 medium-10 large-10 columns content">
     <h3><?= h($bhakta->nev_avatott) ?></h3>
@@ -82,6 +79,14 @@
         <div class="columns small-6">
             <span class="dot">2</span>
             <table class="vertical-table">
+                <tr>
+                    <th scope="row"></th>
+                    <td>
+                        <?php if ($bhakta->kep != null): ?>
+                            <?= $this->Html->image('bhaktas/' . $bhakta->kep) ?>
+                        <?php endif; ?>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row"><?= __('active') ?></th>
                     <td><?= $bhakta->active ? __('Yes') : __('No'); ?></td>
@@ -169,10 +174,6 @@
                 <tr>
                     <th scope="row"><?= __('Katonasag') ?></th>
                     <td><?= $this->Number->format($bhakta->katonasag) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Kep') ?></th>
-                    <td><?= h($bhakta->kep) ?></td>
                 </tr>
             </table>
         </div>
