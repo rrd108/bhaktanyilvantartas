@@ -1,0 +1,1714 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2018-06-19 16:50+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/AsramsController.php:55;80
+msgid "The asram has been saved."
+msgstr ""
+
+#: Controller/AsramsController.php:59;84
+msgid "The asram could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AsramsController.php:102
+msgid "The asram has been deleted."
+msgstr ""
+
+#: Controller/AsramsController.php:104
+msgid "The asram could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BhaktasController.php:98;137
+msgid "The bhakta has been saved."
+msgstr ""
+
+#: Controller/BhaktasController.php:102;141
+msgid "The bhakta could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BhaktasController.php:168
+msgid "The bhakta has been deleted."
+msgstr ""
+
+#: Controller/BhaktasController.php:170
+msgid "The bhakta could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CentersController.php:57;83
+msgid "The center has been saved."
+msgstr ""
+
+#: Controller/CentersController.php:61;87
+msgid "The center could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CentersController.php:106
+msgid "The center has been deleted."
+msgstr ""
+
+#: Controller/CentersController.php:108
+msgid "The center could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CommunityrolesController.php:55;80
+msgid "The communityrole has been saved."
+msgstr ""
+
+#: Controller/CommunityrolesController.php:59;84
+msgid "The communityrole could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CommunityrolesController.php:102
+msgid "The communityrole has been deleted."
+msgstr ""
+
+#: Controller/CommunityrolesController.php:104
+msgid "The communityrole could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/DepartmentsController.php:93;119
+msgid "The department has been saved."
+msgstr ""
+
+#: Controller/DepartmentsController.php:97;123
+msgid "The department could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/DepartmentsController.php:142
+msgid "The department has been deleted."
+msgstr ""
+
+#: Controller/DepartmentsController.php:144
+msgid "The department could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GurusController.php:55;80
+msgid "The gurus has been saved."
+msgstr ""
+
+#: Controller/GurusController.php:59;84
+msgid "The gurus could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GurusController.php:102
+msgid "The gurus has been deleted."
+msgstr ""
+
+#: Controller/GurusController.php:104
+msgid "The gurus could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/LegalstatusesController.php:55;80
+msgid "The legalstatus has been saved."
+msgstr ""
+
+#: Controller/LegalstatusesController.php:59;84
+msgid "The legalstatus could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/LegalstatusesController.php:102
+msgid "The legalstatus has been deleted."
+msgstr ""
+
+#: Controller/LegalstatusesController.php:104
+msgid "The legalstatus could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ServicesController.php:61;115
+msgid "The service has been saved."
+msgstr ""
+
+#: Controller/ServicesController.php:65;119
+msgid "The service could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ServicesController.php:139
+msgid "The service has been deleted."
+msgstr ""
+
+#: Controller/ServicesController.php:141
+msgid "The service could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TbsController.php:55;80
+msgid "The tb has been saved."
+msgstr ""
+
+#: Controller/TbsController.php:59;84
+msgid "The tb could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TbsController.php:102
+msgid "The tb has been deleted."
+msgstr ""
+
+#: Controller/TbsController.php:104
+msgid "The tb could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/Asrams/add.ctp:8
+#: Template/Asrams/edit.ctp:8
+#: Template/Asrams/index.ctp:8;21
+#: Template/Asrams/view.ctp:8;81
+#: Template/Bake/Element/form.ctp:30
+#: Template/Bake/Template/index.ctp:42;68
+#: Template/Bake/Template/view.ctp:63;159
+#: Template/Bhaktas/add.ctp:8
+#: Template/Bhaktas/edit.ctp:9
+#: Template/Bhaktas/index.ctp:8;33
+#: Template/Bhaktas/view.ctp:8;262
+#: Template/Centers/add.ctp:8
+#: Template/Centers/edit.ctp:8
+#: Template/Centers/index.ctp:8;23
+#: Template/Centers/view.ctp:8;40;81
+#: Template/Communityroles/add.ctp:8
+#: Template/Communityroles/edit.ctp:8
+#: Template/Communityroles/index.ctp:8;21
+#: Template/Communityroles/view.ctp:8;81
+#: Template/Departments/add.ctp:8
+#: Template/Departments/edit.ctp:8
+#: Template/Departments/index.ctp:8;25
+#: Template/Departments/view.ctp:8;51
+#: Template/Gurus/add.ctp:8
+#: Template/Gurus/edit.ctp:8
+#: Template/Gurus/index.ctp:8;20
+#: Template/Gurus/view.ctp:8
+#: Template/Legalstatuses/add.ctp:8
+#: Template/Legalstatuses/edit.ctp:8
+#: Template/Legalstatuses/index.ctp:8;21
+#: Template/Legalstatuses/view.ctp:8;81
+#: Template/Services/add.ctp:8
+#: Template/Services/edit.ctp:8
+#: Template/Services/index.ctp:8;26
+#: Template/Services/view.ctp:8
+#: Template/Tbs/add.ctp:8
+#: Template/Tbs/edit.ctp:8
+#: Template/Tbs/index.ctp:8;21
+#: Template/Tbs/view.ctp:8;81
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:13
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:16
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:13;25
+msgid "Actions"
+msgstr ""
+
+#: Template/Asrams/add.ctp:9
+#: Template/Asrams/edit.ctp:15
+#: Template/Asrams/view.ctp:11
+msgid "List Asrams"
+msgstr ""
+
+#: Template/Asrams/add.ctp:10
+#: Template/Asrams/edit.ctp:16
+#: Template/Asrams/index.ctp:10
+#: Template/Asrams/view.ctp:13
+#: Template/Bhaktas/add.ctp:9
+#: Template/Bhaktas/edit.ctp:10
+#: Template/Bhaktas/view.ctp:10
+#: Template/Communityroles/add.ctp:10
+#: Template/Communityroles/edit.ctp:16
+#: Template/Communityroles/index.ctp:10
+#: Template/Communityroles/view.ctp:13
+#: Template/Legalstatuses/add.ctp:10
+#: Template/Legalstatuses/edit.ctp:16
+#: Template/Legalstatuses/index.ctp:10
+#: Template/Legalstatuses/view.ctp:13
+#: Template/Services/add.ctp:10
+#: Template/Services/edit.ctp:16
+#: Template/Services/index.ctp:10
+#: Template/Services/view.ctp:13
+#: Template/Tbs/add.ctp:10
+#: Template/Tbs/edit.ctp:16
+#: Template/Tbs/index.ctp:10
+#: Template/Tbs/view.ctp:13
+msgid "List Bhaktas"
+msgstr ""
+
+#: Template/Asrams/add.ctp:11
+#: Template/Asrams/edit.ctp:17
+#: Template/Asrams/index.ctp:11
+#: Template/Asrams/view.ctp:14
+#: Template/Bhaktas/index.ctp:9
+#: Template/Bhaktas/view.ctp:11
+#: Template/Communityroles/add.ctp:11
+#: Template/Communityroles/edit.ctp:17
+#: Template/Communityroles/index.ctp:11
+#: Template/Communityroles/view.ctp:14
+#: Template/Legalstatuses/add.ctp:11
+#: Template/Legalstatuses/edit.ctp:17
+#: Template/Legalstatuses/index.ctp:11
+#: Template/Legalstatuses/view.ctp:14
+#: Template/Services/add.ctp:11
+#: Template/Services/edit.ctp:17
+#: Template/Services/index.ctp:11
+#: Template/Services/view.ctp:14
+#: Template/Tbs/add.ctp:11
+#: Template/Tbs/edit.ctp:17
+#: Template/Tbs/index.ctp:11
+#: Template/Tbs/view.ctp:14
+msgid "New Bhakta"
+msgstr ""
+
+#: Template/Asrams/add.ctp:17
+msgid "Add Asram"
+msgstr ""
+
+#: Template/Asrams/add.ctp:22
+#: Template/Asrams/edit.ctp:28
+#: Template/Bake/Element/form.ctp:102
+#: Template/Bhaktas/add.ctp:112
+#: Template/Bhaktas/edit.ctp:125
+#: Template/Centers/add.ctp:25
+#: Template/Centers/edit.ctp:31
+#: Template/Communityroles/add.ctp:22
+#: Template/Communityroles/edit.ctp:28
+#: Template/Departments/add.ctp:26
+#: Template/Departments/edit.ctp:32
+#: Template/Gurus/add.ctp:21
+#: Template/Gurus/edit.ctp:27
+#: Template/Legalstatuses/add.ctp:22
+#: Template/Legalstatuses/edit.ctp:28
+#: Template/Services/add.ctp:27
+#: Template/Services/edit.ctp:33
+#: Template/Tbs/add.ctp:22
+#: Template/Tbs/edit.ctp:28
+#: View/Helper/FormHelper.php:1986
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:33
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:48
+msgid "Submit"
+msgstr ""
+
+#: Template/Asrams/edit.ctp:10
+#: Template/Asrams/index.ctp:32
+#: Template/Asrams/view.ctp:135
+#: Template/Bake/Element/form.ctp:33
+#: Template/Bake/Template/index.ctp:105
+#: Template/Bake/Template/view.ctp:170
+#: Template/Bhaktas/index.ctp:56
+#: Template/Centers/edit.ctp:10
+#: Template/Centers/index.ctp:34
+#: Template/Centers/view.ctp:51;106
+#: Template/Communityroles/edit.ctp:10
+#: Template/Communityroles/index.ctp:32
+#: Template/Communityroles/view.ctp:135
+#: Template/Departments/edit.ctp:10
+#: Template/Departments/index.ctp:38
+#: Template/Departments/view.ctp:65
+#: Template/Gurus/edit.ctp:10
+#: Template/Gurus/index.ctp:32
+#: Template/Legalstatuses/edit.ctp:10
+#: Template/Legalstatuses/index.ctp:32
+#: Template/Legalstatuses/view.ctp:135
+#: Template/Services/edit.ctp:10
+#: Template/Services/index.ctp:42
+#: Template/Tbs/edit.ctp:10
+#: Template/Tbs/index.ctp:32
+#: Template/Tbs/view.ctp:135
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:21
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:38
+msgid "Delete"
+msgstr ""
+
+#: Template/Asrams/edit.ctp:12
+#: Template/Asrams/index.ctp:32
+#: Template/Asrams/view.ctp:10;135
+#: Template/Bake/Element/form.ctp:35
+#: Template/Bake/Template/index.ctp:105
+#: Template/Bake/Template/view.ctp:65;170
+#: Template/Bhaktas/index.ctp:56
+#: Template/Centers/edit.ctp:12
+#: Template/Centers/index.ctp:34
+#: Template/Centers/view.ctp:10;51;106
+#: Template/Communityroles/edit.ctp:12
+#: Template/Communityroles/index.ctp:32
+#: Template/Communityroles/view.ctp:10;135
+#: Template/Departments/edit.ctp:12
+#: Template/Departments/index.ctp:38
+#: Template/Departments/view.ctp:10;65
+#: Template/Gurus/edit.ctp:12
+#: Template/Gurus/index.ctp:32
+#: Template/Gurus/view.ctp:10
+#: Template/Legalstatuses/edit.ctp:12
+#: Template/Legalstatuses/index.ctp:32
+#: Template/Legalstatuses/view.ctp:10;135
+#: Template/Services/edit.ctp:12
+#: Template/Services/index.ctp:42
+#: Template/Services/view.ctp:10
+#: Template/Tbs/edit.ctp:12
+#: Template/Tbs/index.ctp:32
+#: Template/Tbs/view.ctp:10;135
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:23
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:38
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Asrams/edit.ctp:23
+#: Template/Asrams/view.ctp:9
+msgid "Edit Asram"
+msgstr ""
+
+#: Template/Asrams/index.ctp:9
+#: Template/Asrams/view.ctp:12
+msgid "New Asram"
+msgstr ""
+
+#: Template/Asrams/index.ctp:15
+msgid "Asrams"
+msgstr ""
+
+#: Template/Asrams/index.ctp:30
+#: Template/Asrams/view.ctp:133
+#: Template/Bake/Template/index.ctp:103
+#: Template/Bake/Template/view.ctp:168
+#: Template/Bhaktas/view.ctp:272
+#: Template/Centers/index.ctp:32
+#: Template/Centers/view.ctp:49;104
+#: Template/Communityroles/index.ctp:30
+#: Template/Communityroles/view.ctp:133
+#: Template/Departments/index.ctp:36
+#: Template/Departments/view.ctp:63
+#: Template/Gurus/index.ctp:30
+#: Template/Legalstatuses/index.ctp:30
+#: Template/Legalstatuses/view.ctp:133
+#: Template/Services/index.ctp:40
+#: Template/Tbs/index.ctp:30
+#: Template/Tbs/view.ctp:133
+#: View/Helper/PaginatorHelper.php:1212
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:35
+msgid "View"
+msgstr ""
+
+#: Template/Asrams/index.ctp:31
+#: Template/Asrams/view.ctp:134
+#: Template/Bake/Template/index.ctp:104
+#: Template/Bake/Template/view.ctp:169
+#: Template/Bhaktas/index.ctp:55
+#: Template/Bhaktas/view.ctp:274
+#: Template/Centers/index.ctp:33
+#: Template/Centers/view.ctp:50;105
+#: Template/Communityroles/index.ctp:31
+#: Template/Communityroles/view.ctp:134
+#: Template/Departments/index.ctp:37
+#: Template/Departments/view.ctp:64
+#: Template/Gurus/index.ctp:31
+#: Template/Legalstatuses/index.ctp:31
+#: Template/Legalstatuses/view.ctp:134
+#: Template/Services/index.ctp:41
+#: Template/Tbs/index.ctp:31
+#: Template/Tbs/view.ctp:134
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:37
+msgid "Edit"
+msgstr ""
+
+#: Template/Asrams/index.ctp:40
+#: Template/Bake/Template/index.ctp:113
+#: Template/Bhaktas/eucard.ctp:33
+#: Template/Bhaktas/index.ctp:64
+#: Template/Centers/index.ctp:42
+#: Template/Communityroles/index.ctp:40
+#: Template/Departments/index.ctp:46
+#: Template/Gurus/index.ctp:40
+#: Template/Legalstatuses/index.ctp:40
+#: Template/Services/index.ctp:50
+#: Template/Tbs/index.ctp:40
+msgid "first"
+msgstr ""
+
+#: Template/Asrams/index.ctp:41
+#: Template/Bake/Template/index.ctp:114
+#: Template/Bhaktas/eucard.ctp:34
+#: Template/Bhaktas/index.ctp:65
+#: Template/Centers/index.ctp:43
+#: Template/Communityroles/index.ctp:41
+#: Template/Departments/index.ctp:47
+#: Template/Gurus/index.ctp:41
+#: Template/Legalstatuses/index.ctp:41
+#: Template/Services/index.ctp:51
+#: Template/Tbs/index.ctp:41
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:47
+msgid "previous"
+msgstr ""
+
+#: Template/Asrams/index.ctp:43
+#: Template/Bake/Template/index.ctp:116
+#: Template/Bhaktas/eucard.ctp:36
+#: Template/Bhaktas/index.ctp:67
+#: Template/Centers/index.ctp:45
+#: Template/Communityroles/index.ctp:43
+#: Template/Departments/index.ctp:49
+#: Template/Gurus/index.ctp:43
+#: Template/Legalstatuses/index.ctp:43
+#: Template/Services/index.ctp:53
+#: Template/Tbs/index.ctp:43
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:49
+msgid "next"
+msgstr ""
+
+#: Template/Asrams/index.ctp:44
+#: Template/Bake/Template/index.ctp:117
+#: Template/Bhaktas/eucard.ctp:37
+#: Template/Bhaktas/index.ctp:68
+#: Template/Centers/index.ctp:46
+#: Template/Communityroles/index.ctp:44
+#: Template/Departments/index.ctp:50
+#: Template/Gurus/index.ctp:44
+#: Template/Legalstatuses/index.ctp:44
+#: Template/Services/index.ctp:54
+#: Template/Tbs/index.ctp:44
+msgid "last"
+msgstr ""
+
+#: Template/Asrams/index.ctp:46
+#: Template/Bake/Template/index.ctp:119
+#: Template/Bhaktas/eucard.ctp:39
+#: Template/Bhaktas/index.ctp:70
+#: Template/Centers/index.ctp:48
+#: Template/Communityroles/index.ctp:46
+#: Template/Departments/index.ctp:52
+#: Template/Gurus/index.ctp:46
+#: Template/Legalstatuses/index.ctp:46
+#: Template/Services/index.ctp:56
+#: Template/Tbs/index.ctp:46
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr ""
+
+#: Template/Asrams/view.ctp:10
+msgid "Delete Asram"
+msgstr ""
+
+#: Template/Asrams/view.ctp:21
+#: Template/Centers/view.ctp:23;38
+#: Template/Communityroles/view.ctp:21
+#: Template/Departments/view.ctp:27
+#: Template/Gurus/view.ctp:19
+#: Template/Legalstatuses/view.ctp:21
+#: Template/Tbs/view.ctp:21
+msgid "Name"
+msgstr ""
+
+#: Template/Asrams/view.ctp:25;34
+#: Template/Centers/view.ctp:27;36;63
+#: Template/Communityroles/view.ctp:25;34
+#: Template/Departments/view.ctp:31;44
+#: Template/Gurus/view.ctp:27
+#: Template/Legalstatuses/view.ctp:25;34
+#: Template/Services/view.ctp:33
+#: Template/Tbs/view.ctp:25;34
+msgid "Id"
+msgstr ""
+
+#: Template/Asrams/view.ctp:30
+#: Template/Communityroles/view.ctp:30
+#: Template/Legalstatuses/view.ctp:30
+#: Template/Tbs/view.ctp:30
+msgid "Related Bhaktas"
+msgstr ""
+
+#: Template/Asrams/view.ctp:36
+#: Template/Bhaktas/view.ctp:30
+#: Template/Communityroles/view.ctp:36
+#: Template/Legalstatuses/view.ctp:36
+#: Template/Tbs/view.ctp:36
+msgid "Nev Szuletesi"
+msgstr ""
+
+#: Template/Asrams/view.ctp:37
+#: Template/Bhaktas/view.ctp:34
+#: Template/Communityroles/view.ctp:37
+#: Template/Legalstatuses/view.ctp:37
+#: Template/Tbs/view.ctp:37
+msgid "Nev Polgari"
+msgstr ""
+
+#: Template/Asrams/view.ctp:38
+#: Template/Bhaktas/view.ctp:38
+#: Template/Communityroles/view.ctp:38
+#: Template/Legalstatuses/view.ctp:38
+#: Template/Tbs/view.ctp:38
+msgid "Nev Avatott"
+msgstr ""
+
+#: Template/Asrams/view.ctp:39
+#: Template/Communityroles/view.ctp:39
+#: Template/Legalstatuses/view.ctp:39
+#: Template/Tbs/view.ctp:39
+msgid "Guru Id"
+msgstr ""
+
+#: Template/Asrams/view.ctp:40
+#: Template/Bhaktas/view.ctp:95
+#: Template/Communityroles/view.ctp:40
+#: Template/Legalstatuses/view.ctp:40
+#: Template/Tbs/view.ctp:40
+msgid "Cim Allando"
+msgstr ""
+
+#: Template/Asrams/view.ctp:41
+#: Template/Bhaktas/view.ctp:99
+#: Template/Communityroles/view.ctp:41
+#: Template/Legalstatuses/view.ctp:41
+#: Template/Tbs/view.ctp:41
+msgid "Cim Ideiglenes"
+msgstr ""
+
+#: Template/Asrams/view.ctp:42
+#: Template/Bhaktas/view.ctp:103
+#: Template/Communityroles/view.ctp:42
+#: Template/Legalstatuses/view.ctp:42
+#: Template/Tbs/view.ctp:42
+msgid "Cim Szallas"
+msgstr ""
+
+#: Template/Asrams/view.ctp:43
+#: Template/Bhaktas/view.ctp:126
+#: Template/Communityroles/view.ctp:43
+#: Template/Legalstatuses/view.ctp:43
+#: Template/Tbs/view.ctp:43
+msgid "Szig"
+msgstr ""
+
+#: Template/Asrams/view.ctp:44
+#: Template/Bhaktas/view.ctp:130
+#: Template/Communityroles/view.ctp:44
+#: Template/Legalstatuses/view.ctp:44
+#: Template/Tbs/view.ctp:44
+msgid "Utlevel"
+msgstr ""
+
+#: Template/Asrams/view.ctp:45
+#: Template/Bhaktas/view.ctp:134
+#: Template/Communityroles/view.ctp:45
+#: Template/Legalstatuses/view.ctp:45
+#: Template/Tbs/view.ctp:45
+msgid "Adoazonosito"
+msgstr ""
+
+#: Template/Asrams/view.ctp:46
+#: Template/Bhaktas/view.ctp:138
+#: Template/Communityroles/view.ctp:46
+#: Template/Legalstatuses/view.ctp:46
+#: Template/Tbs/view.ctp:46
+msgid "Taj"
+msgstr ""
+
+#: Template/Asrams/view.ctp:47
+#: Template/Bhaktas/view.ctp:42
+#: Template/Communityroles/view.ctp:47
+#: Template/Legalstatuses/view.ctp:47
+#: Template/Tbs/view.ctp:47
+msgid "Szul Hely"
+msgstr ""
+
+#: Template/Asrams/view.ctp:48
+#: Template/Bhaktas/view.ctp:46
+#: Template/Communityroles/view.ctp:48
+#: Template/Legalstatuses/view.ctp:48
+#: Template/Tbs/view.ctp:48
+msgid "Szul Date"
+msgstr ""
+
+#: Template/Asrams/view.ctp:49
+#: Template/Bhaktas/view.ctp:50
+#: Template/Communityroles/view.ctp:49
+#: Template/Legalstatuses/view.ctp:49
+#: Template/Tbs/view.ctp:49
+msgid "Szul Time"
+msgstr ""
+
+#: Template/Asrams/view.ctp:50
+#: Template/Bhaktas/view.ctp:54
+#: Template/Communityroles/view.ctp:50
+#: Template/Legalstatuses/view.ctp:50
+#: Template/Tbs/view.ctp:50
+msgid "Allampolgarsag"
+msgstr ""
+
+#: Template/Asrams/view.ctp:51
+#: Template/Bhaktas/view.ctp:175
+#: Template/Communityroles/view.ctp:51
+#: Template/Legalstatuses/view.ctp:51
+#: Template/Tbs/view.ctp:51
+msgid "Katonasag"
+msgstr ""
+
+#: Template/Asrams/view.ctp:52
+#: Template/Bhaktas/view.ctp:147
+#: Template/Communityroles/view.ctp:52
+#: Template/Legalstatuses/view.ctp:52
+#: Template/Tbs/view.ctp:52
+msgid "Haziorvos Nev"
+msgstr ""
+
+#: Template/Asrams/view.ctp:53
+#: Template/Bhaktas/view.ctp:151
+#: Template/Communityroles/view.ctp:53
+#: Template/Legalstatuses/view.ctp:53
+#: Template/Tbs/view.ctp:53
+msgid "Haziorvos Cim"
+msgstr ""
+
+#: Template/Asrams/view.ctp:54
+#: Template/Bhaktas/view.ctp:155
+#: Template/Communityroles/view.ctp:54
+#: Template/Legalstatuses/view.ctp:54
+#: Template/Tbs/view.ctp:54
+msgid "Haziorvos Telefon"
+msgstr ""
+
+#: Template/Asrams/view.ctp:55
+#: Template/Bhaktas/view.ctp:191
+#: Template/Communityroles/view.ctp:55
+#: Template/Legalstatuses/view.ctp:55
+#: Template/Tbs/view.ctp:55
+msgid "Datum Elsotalalkozas"
+msgstr ""
+
+#: Template/Asrams/view.ctp:56
+#: Template/Bhaktas/view.ctp:195
+#: Template/Communityroles/view.ctp:56
+#: Template/Legalstatuses/view.ctp:56
+#: Template/Tbs/view.ctp:56
+msgid "Datum Elfogadas"
+msgstr ""
+
+#: Template/Asrams/view.ctp:57
+#: Template/Bhaktas/view.ctp:199
+#: Template/Communityroles/view.ctp:57
+#: Template/Legalstatuses/view.ctp:57
+#: Template/Tbs/view.ctp:57
+msgid "Datum Elsoavatas"
+msgstr ""
+
+#: Template/Asrams/view.ctp:58
+#: Template/Bhaktas/view.ctp:203
+#: Template/Communityroles/view.ctp:58
+#: Template/Legalstatuses/view.ctp:58
+#: Template/Tbs/view.ctp:58
+msgid "Datum Masodikavatas"
+msgstr ""
+
+#: Template/Asrams/view.ctp:59
+#: Template/Communityroles/view.ctp:59
+#: Template/Legalstatuses/view.ctp:59
+#: Template/Tbs/view.ctp:59
+msgid "Asram Id"
+msgstr ""
+
+#: Template/Asrams/view.ctp:60
+#: Template/Bhaktas/view.ctp:74
+#: Template/Communityroles/view.ctp:60
+#: Template/Legalstatuses/view.ctp:60
+#: Template/Tbs/view.ctp:60
+msgid "Hazastars Id"
+msgstr ""
+
+#: Template/Asrams/view.ctp:61
+#: Template/Communityroles/view.ctp:61
+#: Template/Legalstatuses/view.ctp:61
+#: Template/Tbs/view.ctp:61
+msgid "Tb Id"
+msgstr ""
+
+#: Template/Asrams/view.ctp:62
+#: Template/Communityroles/view.ctp:62
+#: Template/Legalstatuses/view.ctp:62
+#: Template/Tbs/view.ctp:62
+msgid "Eu Card Expiry"
+msgstr ""
+
+#: Template/Asrams/view.ctp:63
+#: Template/Communityroles/view.ctp:63
+#: Template/Legalstatuses/view.ctp:63
+#: Template/Tbs/view.ctp:63
+msgid "Legalstatus Id"
+msgstr ""
+
+#: Template/Asrams/view.ctp:64
+#: Template/Communityroles/view.ctp:64
+#: Template/Legalstatuses/view.ctp:64
+#: Template/Tbs/view.ctp:64
+msgid "Communityrole Id"
+msgstr ""
+
+#: Template/Asrams/view.ctp:65
+#: Template/Bhaktas/view.ctp:58
+#: Template/Communityroles/view.ctp:65
+#: Template/Legalstatuses/view.ctp:65
+#: Template/Tbs/view.ctp:65
+msgid "Vegzettseg"
+msgstr ""
+
+#: Template/Asrams/view.ctp:66
+#: Template/Bhaktas/view.ctp:62
+#: Template/Communityroles/view.ctp:66
+#: Template/Legalstatuses/view.ctp:66
+#: Template/Tbs/view.ctp:66
+msgid "Szakma"
+msgstr ""
+
+#: Template/Asrams/view.ctp:67
+#: Template/Bhaktas/view.ctp:159
+#: Template/Communityroles/view.ctp:67
+#: Template/Legalstatuses/view.ctp:67
+#: Template/Tbs/view.ctp:67
+msgid "Vegakarat"
+msgstr ""
+
+#: Template/Asrams/view.ctp:68
+#: Template/Bhaktas/view.ctp:163
+#: Template/Communityroles/view.ctp:68
+#: Template/Legalstatuses/view.ctp:68
+#: Template/Tbs/view.ctp:68
+msgid "Halalertesitendo"
+msgstr ""
+
+#: Template/Asrams/view.ctp:69
+#: Template/Bhaktas/view.ctp:207
+#: Template/Communityroles/view.ctp:69
+#: Template/Legalstatuses/view.ctp:69
+#: Template/Tbs/view.ctp:69
+msgid "Bhsastri Datum"
+msgstr ""
+
+#: Template/Asrams/view.ctp:70
+#: Template/Bhaktas/view.ctp:211
+#: Template/Communityroles/view.ctp:70
+#: Template/Legalstatuses/view.ctp:70
+#: Template/Tbs/view.ctp:70
+msgid "Bhsastri Eredmeny"
+msgstr ""
+
+#: Template/Asrams/view.ctp:71
+#: Template/Bhaktas/view.ctp:66
+#: Template/Communityroles/view.ctp:71
+#: Template/Legalstatuses/view.ctp:71
+#: Template/Tbs/view.ctp:71
+msgid "Nyelv"
+msgstr ""
+
+#: Template/Asrams/view.ctp:72
+#: Template/Bhaktas/view.ctp:107
+#: Template/Communityroles/view.ctp:72
+#: Template/Legalstatuses/view.ctp:72
+#: Template/Tbs/view.ctp:72
+msgid "Csalad Nev Anya"
+msgstr ""
+
+#: Template/Asrams/view.ctp:73
+#: Template/Bhaktas/view.ctp:111
+#: Template/Communityroles/view.ctp:73
+#: Template/Legalstatuses/view.ctp:73
+#: Template/Tbs/view.ctp:73
+msgid "Csalad Nev Apa"
+msgstr ""
+
+#: Template/Asrams/view.ctp:74
+#: Template/Bhaktas/view.ctp:115
+#: Template/Communityroles/view.ctp:74
+#: Template/Legalstatuses/view.ctp:74
+#: Template/Tbs/view.ctp:74
+msgid "Csalad Hozzaallas"
+msgstr ""
+
+#: Template/Asrams/view.ctp:75
+#: Template/Bhaktas/view.ctp:167
+#: Template/Communityroles/view.ctp:75
+#: Template/Legalstatuses/view.ctp:75
+#: Template/Tbs/view.ctp:75
+msgid "India"
+msgstr ""
+
+#: Template/Asrams/view.ctp:76
+#: Template/Bhaktas/view.ctp:171
+#: Template/Communityroles/view.ctp:76
+#: Template/Legalstatuses/view.ctp:76
+#: Template/Tbs/view.ctp:76
+msgid "Rs Szerz"
+msgstr ""
+
+#: Template/Asrams/view.ctp:77
+#: Template/Bhaktas/view.ctp:91
+#: Template/Centers/view.ctp:39
+#: Template/Communityroles/view.ctp:77
+#: Template/Departments/view.ctp:35
+#: Template/Legalstatuses/view.ctp:77
+#: Template/Tbs/view.ctp:77
+msgid "active"
+msgstr ""
+
+#: Template/Asrams/view.ctp:78
+#: Template/Bhaktas/view.ctp:244
+#: Template/Communityroles/view.ctp:78
+#: Template/Legalstatuses/view.ctp:78
+#: Template/Tbs/view.ctp:78
+msgid "Bizalmas Info"
+msgstr ""
+
+#: Template/Asrams/view.ctp:79
+#: Template/Bhaktas/view.ctp:249
+#: Template/Communityroles/view.ctp:79
+#: Template/Legalstatuses/view.ctp:79
+#: Template/Tbs/view.ctp:79
+msgid "Megjegyzes"
+msgstr ""
+
+#: Template/Asrams/view.ctp:80
+#: Template/Bhaktas/add.ctp:75
+#: Template/Bhaktas/edit.ctp:89
+#: Template/Communityroles/view.ctp:80
+#: Template/Legalstatuses/view.ctp:80
+#: Template/Tbs/view.ctp:80
+msgid "Kep"
+msgstr ""
+
+#: Template/Bake/Element/form.ctp:39
+#: Template/Bake/Template/view.ctp:66
+msgid "List <%= $pluralHumanName %>"
+msgstr ""
+
+#: Template/Bake/Element/form.ctp:46
+#: Template/Bake/Template/index.ctp:50
+#: Template/Bake/Template/view.ctp:74
+msgid "List <%= $this->_pluralHumanName($alias) %>"
+msgstr ""
+
+#: Template/Bake/Element/form.ctp:47
+#: Template/Bake/Template/index.ctp:51
+msgid "New <%= $this->_singularHumanName($alias) %>"
+msgstr ""
+
+#: Template/Bake/Element/form.ctp:59
+msgid "<%= Inflector::humanize($action) %> <%= $singularHumanName %>"
+msgstr ""
+
+#: Template/Bake/Template/index.ctp:43
+#: Template/Bake/Template/view.ctp:67
+msgid "New <%= $singularHumanName %>"
+msgstr ""
+
+#: Template/Bake/Template/index.ctp:61
+msgid "<%= $pluralHumanName %>"
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:64
+msgid "Edit <%= $singularHumanName %>"
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:65
+msgid "Delete <%= $singularHumanName %>"
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:75
+msgid "New <%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>"
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:93
+msgid "<%= Inflector::humanize($details["
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:98;115;131;140;157
+msgid "<%= Inflector::humanize($field) %>"
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:107
+msgid "<%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>"
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:132
+#: Template/Bhaktas/view.ctp:27;92
+#: Template/Departments/view.ctp:36
+msgid "Yes"
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:132
+#: Template/Bhaktas/view.ctp:27;92
+#: Template/Departments/view.ctp:36
+msgid "No"
+msgstr ""
+
+#: Template/Bake/Template/view.ctp:152
+msgid "Related <%= $otherPluralHumanName %>"
+msgstr ""
+
+#: Template/Bhaktas/add.ctp:10
+#: Template/Bhaktas/edit.ctp:11
+#: Template/Bhaktas/index.ctp:10
+#: Template/Bhaktas/view.ctp:12
+#: Template/Gurus/add.ctp:9
+#: Template/Gurus/edit.ctp:15
+#: Template/Gurus/view.ctp:11
+msgid "List Gurus"
+msgstr ""
+
+#: Template/Bhaktas/add.ctp:11
+#: Template/Bhaktas/edit.ctp:12
+#: Template/Bhaktas/index.ctp:11
+#: Template/Bhaktas/view.ctp:13
+#: Template/Gurus/index.ctp:9
+#: Template/Gurus/view.ctp:12
+msgid "New Gurus"
+msgstr ""
+
+#: Template/Bhaktas/add.ctp:12
+#: Template/Bhaktas/edit.ctp:13
+#: Template/Bhaktas/index.ctp:12
+#: Template/Bhaktas/view.ctp:14
+#: Template/Departments/add.ctp:12
+#: Template/Departments/edit.ctp:18
+#: Template/Departments/index.ctp:12
+#: Template/Departments/view.ctp:15
+#: Template/Services/add.ctp:9
+#: Template/Services/edit.ctp:15
+#: Template/Services/view.ctp:11
+msgid "List Services"
+msgstr ""
+
+#: Template/Bhaktas/add.ctp:13
+#: Template/Bhaktas/edit.ctp:14
+#: Template/Bhaktas/index.ctp:13
+#: Template/Bhaktas/view.ctp:15
+#: Template/Departments/add.ctp:13
+#: Template/Departments/edit.ctp:19
+#: Template/Departments/index.ctp:13
+#: Template/Departments/view.ctp:16
+#: Template/Services/index.ctp:9
+#: Template/Services/view.ctp:12
+msgid "New Service"
+msgstr ""
+
+#: Template/Bhaktas/add.ctp:19
+msgid "Add Bhakta"
+msgstr ""
+
+#: Template/Bhaktas/edit.ctp:26
+msgid "End volunteering"
+msgstr ""
+
+#: Template/Bhaktas/eucard.ctp:10
+#: Template/Bhaktas/index.ctp:18
+msgid "Bhaktas"
+msgstr ""
+
+#: Template/Bhaktas/eucard.ctp:14
+msgid "Név avatott"
+msgstr ""
+
+#: Template/Bhaktas/eucard.ctp:15
+msgid "Eu kárty lejárat"
+msgstr ""
+
+#: Template/Bhaktas/index.ctp:15
+msgid "Eu card expired"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:9
+msgid "Edit Bhakta"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:70
+msgid "asram_id"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:186
+#: Template/Gurus/index.ctp:13
+msgid "Gurus"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:220
+msgid "Tb"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:228
+msgid "Statusz Jogi"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:235
+msgid "Statusz Tagsag"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:259
+#: Template/Departments/view.ctp:48
+#: Template/Services/view.ctp:41
+msgid "Szolgalat Kezdete"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:260
+#: Template/Departments/view.ctp:49
+#: Template/Services/view.ctp:45
+msgid "Szolgalat Vege"
+msgstr ""
+
+#: Template/Bhaktas/view.ctp:261
+#: Template/Departments/view.ctp:50
+#: Template/Services/view.ctp:29
+msgid "Szolg Megjegyzes"
+msgstr ""
+
+#: Template/Centers/add.ctp:9
+#: Template/Centers/edit.ctp:15
+#: Template/Centers/view.ctp:11
+#: Template/Departments/add.ctp:10
+#: Template/Departments/edit.ctp:16
+#: Template/Departments/index.ctp:10
+#: Template/Departments/view.ctp:13
+msgid "List Centers"
+msgstr ""
+
+#: Template/Centers/add.ctp:10
+#: Template/Centers/edit.ctp:16
+#: Template/Centers/index.ctp:10
+#: Template/Centers/view.ctp:13
+#: Template/Departments/add.ctp:9
+#: Template/Departments/edit.ctp:15
+#: Template/Departments/view.ctp:11
+msgid "List Departments"
+msgstr ""
+
+#: Template/Centers/add.ctp:11
+#: Template/Centers/edit.ctp:17
+#: Template/Centers/index.ctp:11
+#: Template/Centers/view.ctp:14
+#: Template/Departments/index.ctp:9
+#: Template/Departments/view.ctp:12
+msgid "New Department"
+msgstr ""
+
+#: Template/Centers/add.ctp:12
+#: Template/Centers/edit.ctp:18
+#: Template/Centers/index.ctp:12
+#: Template/Centers/view.ctp:15
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:15
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:27
+msgid "List Users"
+msgstr ""
+
+#: Template/Centers/add.ctp:13
+#: Template/Centers/edit.ctp:19
+#: Template/Centers/index.ctp:13
+#: Template/Centers/view.ctp:16
+msgid "New User"
+msgstr ""
+
+#: Template/Centers/add.ctp:19
+msgid "Add Center"
+msgstr ""
+
+#: Template/Centers/edit.ctp:25
+#: Template/Centers/view.ctp:9
+msgid "Edit Center"
+msgstr ""
+
+#: Template/Centers/index.ctp:9
+#: Template/Centers/view.ctp:12
+#: Template/Departments/add.ctp:11
+#: Template/Departments/edit.ctp:17
+#: Template/Departments/index.ctp:11
+#: Template/Departments/view.ctp:14
+msgid "New Center"
+msgstr ""
+
+#: Template/Centers/index.ctp:17
+#: Template/Layout/default.ctp:101
+msgid "Centers"
+msgstr ""
+
+#: Template/Centers/view.ctp:10
+msgid "Delete Center"
+msgstr ""
+
+#: Template/Centers/view.ctp:32
+msgid "Related Departments"
+msgstr ""
+
+#: Template/Centers/view.ctp:37
+msgid "Center Id"
+msgstr ""
+
+#: Template/Centers/view.ctp:59
+msgid "Related Users"
+msgstr ""
+
+#: Template/Centers/view.ctp:64
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:23
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:35
+msgid "Username"
+msgstr ""
+
+#: Template/Centers/view.ctp:65
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:24
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:36
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:22
+msgid "Email"
+msgstr ""
+
+#: Template/Centers/view.ctp:66
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:25
+msgid "Password"
+msgstr ""
+
+#: Template/Centers/view.ctp:67
+msgid "First Name"
+msgstr ""
+
+#: Template/Centers/view.ctp:68
+msgid "Last Name"
+msgstr ""
+
+#: Template/Centers/view.ctp:69
+msgid "Token"
+msgstr ""
+
+#: Template/Centers/view.ctp:70
+msgid "Token Expires"
+msgstr ""
+
+#: Template/Centers/view.ctp:71
+msgid "Api Token"
+msgstr ""
+
+#: Template/Centers/view.ctp:72
+msgid "Activation Date"
+msgstr ""
+
+#: Template/Centers/view.ctp:73
+msgid "Secret"
+msgstr ""
+
+#: Template/Centers/view.ctp:74
+msgid "Secret Verified"
+msgstr ""
+
+#: Template/Centers/view.ctp:75
+msgid "Tos Date"
+msgstr ""
+
+#: Template/Centers/view.ctp:76
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:29
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:44
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:24
+msgid "Active"
+msgstr ""
+
+#: Template/Centers/view.ctp:77
+msgid "Is Superuser"
+msgstr ""
+
+#: Template/Centers/view.ctp:78
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:26
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:38;41
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:23
+msgid "Role"
+msgstr ""
+
+#: Template/Centers/view.ctp:79
+msgid "Created"
+msgstr ""
+
+#: Template/Centers/view.ctp:80
+msgid "Modified"
+msgstr ""
+
+#: Template/Communityroles/add.ctp:9
+#: Template/Communityroles/edit.ctp:15
+#: Template/Communityroles/view.ctp:11
+msgid "List Communityroles"
+msgstr ""
+
+#: Template/Communityroles/add.ctp:17
+msgid "Add Communityrole"
+msgstr ""
+
+#: Template/Communityroles/edit.ctp:23
+#: Template/Communityroles/view.ctp:9
+msgid "Edit Communityrole"
+msgstr ""
+
+#: Template/Communityroles/index.ctp:9
+#: Template/Communityroles/view.ctp:12
+msgid "New Communityrole"
+msgstr ""
+
+#: Template/Communityroles/index.ctp:15
+msgid "Communityroles"
+msgstr ""
+
+#: Template/Communityroles/view.ctp:10
+msgid "Delete Communityrole"
+msgstr ""
+
+#: Template/Departments/add.ctp:19
+msgid "Add Department"
+msgstr ""
+
+#: Template/Departments/edit.ctp:25
+#: Template/Departments/view.ctp:9
+msgid "Edit Department"
+msgstr ""
+
+#: Template/Departments/index.ctp:17
+#: Template/Layout/default.ctp:106
+msgid "Departments"
+msgstr ""
+
+#: Template/Departments/view.ctp:10
+msgid "Delete Department"
+msgstr ""
+
+#: Template/Departments/view.ctp:23
+msgid "Center"
+msgstr ""
+
+#: Template/Departments/view.ctp:40
+msgid "Related Services"
+msgstr ""
+
+#: Template/Departments/view.ctp:45
+msgid "Bhakta Id"
+msgstr ""
+
+#: Template/Departments/view.ctp:46
+msgid "Department Id"
+msgstr ""
+
+#: Template/Departments/view.ctp:47
+msgid "Szolgalat"
+msgstr ""
+
+#: Template/Gurus/add.ctp:15
+msgid "Add Gurus"
+msgstr ""
+
+#: Template/Gurus/edit.ctp:21
+#: Template/Gurus/view.ctp:9
+msgid "Edit Gurus"
+msgstr ""
+
+#: Template/Gurus/view.ctp:10
+msgid "Delete Gurus"
+msgstr ""
+
+#: Template/Gurus/view.ctp:23
+msgid "Nev Full"
+msgstr ""
+
+#: Template/Layout/default.ctp:95
+msgid "Main data"
+msgstr ""
+
+#: Template/Layout/default.ctp:111
+msgid "Users"
+msgstr ""
+
+#: Template/Layout/error.ctp:35
+#: Template/Error/error400.ctp:36
+#: Template/Error/error500.ctp:41
+msgid "Error"
+msgstr ""
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr ""
+
+#: Template/Legalstatuses/add.ctp:9
+#: Template/Legalstatuses/edit.ctp:15
+#: Template/Legalstatuses/view.ctp:11
+msgid "List Legalstatuses"
+msgstr ""
+
+#: Template/Legalstatuses/add.ctp:17
+msgid "Add Legalstatus"
+msgstr ""
+
+#: Template/Legalstatuses/edit.ctp:23
+#: Template/Legalstatuses/view.ctp:9
+msgid "Edit Legalstatus"
+msgstr ""
+
+#: Template/Legalstatuses/index.ctp:9
+#: Template/Legalstatuses/view.ctp:12
+msgid "New Legalstatus"
+msgstr ""
+
+#: Template/Legalstatuses/index.ctp:15
+msgid "Legalstatuses"
+msgstr ""
+
+#: Template/Legalstatuses/view.ctp:10
+msgid "Delete Legalstatus"
+msgstr ""
+
+#: Template/Services/add.ctp:17
+msgid "Add Service"
+msgstr ""
+
+#: Template/Services/edit.ctp:23
+#: Template/Services/view.ctp:9
+msgid "Edit Service"
+msgstr ""
+
+#: Template/Services/index.ctp:15
+msgid "Services"
+msgstr ""
+
+#: Template/Services/view.ctp:10
+msgid "Delete Service"
+msgstr ""
+
+#: Template/Services/view.ctp:21
+msgid "Bhakta"
+msgstr ""
+
+#: Template/Services/view.ctp:37
+msgid "Osztaly Id"
+msgstr ""
+
+#: Template/Tbs/add.ctp:9
+#: Template/Tbs/edit.ctp:15
+#: Template/Tbs/view.ctp:11
+msgid "List Tbs"
+msgstr ""
+
+#: Template/Tbs/add.ctp:17
+msgid "Add Tb"
+msgstr ""
+
+#: Template/Tbs/edit.ctp:23
+#: Template/Tbs/view.ctp:9
+msgid "Edit Tb"
+msgstr ""
+
+#: Template/Tbs/index.ctp:9
+#: Template/Tbs/view.ctp:12
+msgid "New Tb"
+msgstr ""
+
+#: Template/Tbs/index.ctp:15
+msgid "Tbs"
+msgstr ""
+
+#: Template/Tbs/view.ctp:10
+msgid "Delete Tb"
+msgstr ""
+
+#: Template/Error/error400.ctp:37
+msgid "The requested address {0} was not found on this server."
+msgstr ""
+
+#: Template/Error/error500.ctp:39
+msgid "An Internal Error Has Occurred"
+msgstr ""
+
+#: Controller/Component/AuthComponent.php:500
+msgid "You are not authorized to access that location."
+msgstr ""
+
+#: Controller/Component/CsrfComponent.php:162
+#: Http/Middleware/CsrfProtectionMiddleware.php:190
+msgid "Missing CSRF token cookie"
+msgstr ""
+
+#: Controller/Component/CsrfComponent.php:166
+#: Http/Middleware/CsrfProtectionMiddleware.php:194
+msgid "CSRF token mismatch."
+msgstr ""
+
+#: Error/ExceptionRenderer.php:262
+msgid "Not Found"
+msgstr ""
+
+#: Error/ExceptionRenderer.php:264
+msgid "An Internal Error Has Occurred."
+msgstr ""
+
+#: Http/Response.php:2603
+msgid "The requested file contains `..` and will not be read."
+msgstr ""
+
+#: Http/Response.php:2624
+msgid "The requested file was not found"
+msgstr ""
+
+#: I18n/Number.php:90
+msgid "{0,number,#,###.##} KB"
+msgstr ""
+
+#: I18n/Number.php:92
+msgid "{0,number,#,###.##} MB"
+msgstr ""
+
+#: I18n/Number.php:94
+msgid "{0,number,#,###.##} GB"
+msgstr ""
+
+#: I18n/Number.php:96
+msgid "{0,number,#,###.##} TB"
+msgstr ""
+
+#: I18n/Number.php:88
+msgid "{0,number,integer} Byte"
+msgid_plural "{0,number,integer} Bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:80
+msgid "{0} from now"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:80
+msgid "{0} ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:83
+msgid "{0} after"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:83
+msgid "{0} before"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:114
+msgid "just now"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:151
+msgid "about a second ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:152
+msgid "about a minute ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:153
+msgid "about an hour ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:154;332
+msgid "about a day ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:155;333
+msgid "about a week ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:156;334
+msgid "about a month ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:157;335
+msgid "about a year ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:168
+msgid "in about a second"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:169
+msgid "in about a minute"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:170
+msgid "in about an hour"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:171;346
+msgid "in about a day"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:172;347
+msgid "in about a week"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:173;348
+msgid "in about a month"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:174;349
+msgid "in about a year"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:304
+msgid "today"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:370
+msgid "%s ago"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:371
+msgid "on %s"
+msgstr ""
+
+#: I18n/RelativeTimeFormatter.php:47;126;316
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:51;129;319
+msgid "{0} month"
+msgid_plural "{0} months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:57;132;322
+msgid "{0} week"
+msgid_plural "{0} weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:59;135;325
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:64;138
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:68;141
+msgid "{0} minute"
+msgid_plural "{0} minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/RelativeTimeFormatter.php:72;144
+msgid "{0} second"
+msgid_plural "{0} seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ORM/RulesChecker.php:57
+msgid "This value is already in use"
+msgstr ""
+
+#: ORM/RulesChecker.php:104
+msgid "This value does not exist"
+msgstr ""
+
+#: ORM/RulesChecker.php:128
+msgid "The count does not match {0}{1}"
+msgstr ""
+
+#: Utility/Text.php:917
+msgid "and"
+msgstr ""
+
+#: Validation/Validator.php:111
+msgid "This field is required"
+msgstr ""
+
+#: Validation/Validator.php:112
+msgid "This field cannot be left empty"
+msgstr ""
+
+#: Validation/Validator.php:2054
+msgid "The provided value is invalid"
+msgstr ""
+
+#: View/Helper/FormHelper.php:1097
+msgid "Edit {0}"
+msgstr ""
+
+#: View/Helper/FormHelper.php:1099
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:15
+msgid "New {0}"
+msgstr ""
+
+#: View/Helper/HtmlHelper.php:815
+msgid "Home"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:540
+msgid "January"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:541
+msgid "February"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:542
+msgid "March"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:543
+msgid "April"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:544
+msgid "May"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:545
+msgid "June"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:546
+msgid "July"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:547
+msgid "August"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:548
+msgid "September"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:549
+msgid "October"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:550
+msgid "November"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:551
+msgid "December"
+msgstr ""
+
+#: Template/Plugin/CakeDC/Users/Users/add.ctp:21
+msgid "Add User"
+msgstr ""
+
+#: Template/Plugin/CakeDC/Users/Users/edit.ctp:33
+msgid "Edit User"
+msgstr ""
+
+#: Template/Plugin/CakeDC/Users/Users/index.ctp:36
+msgid "Change password"
+msgstr ""
+
+#: Template/Plugin/CakeDC/Users/Users/login.ctp:22
+msgid "Please enter your username and password"
+msgstr ""
+
+#: Template/Plugin/CakeDC/Users/Users/login.ctp:32
+msgid "Remember me"
+msgstr ""
+
+#: Template/Plugin/CakeDC/Users/Users/login.ctp:40
+msgid "Register"
+msgstr ""
+
+#: Template/Plugin/CakeDC/Users/Users/login.ctp:46
+msgid "Reset Password"
+msgstr ""
+
+#: Template/Plugin/CakeDC/Users/Users/login.ctp:51
+msgid "Login"
+msgstr ""
+
