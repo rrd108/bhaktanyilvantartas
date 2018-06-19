@@ -44,10 +44,10 @@
                 <div class="top-bar-left">
                     <ul class="dropdown menu" data-dropdown-menu>
                         <li class="menu-text"><?= $this->Html->image('logo-small.png', ['alt' => 'Logo']); ?></li>
-                        <?php if ($this->request->session()->read('Auth.User')) : //TODO add .active to li?>
+                        <?php if ($this->request->getSession()->read('Auth.User')) : //TODO add .active to li?>
                             <li>
                                 <?= $this->Html->menuLink(
-                                    '<i class="fi-torsos"></i> <span>Bhakták</span>',
+                                    '<i class="fi-torsos"></i> <span>' . __('Bhaktas') . '</span>',
                                     [
                                         'plugin' => false,
                                         'controller' => 'bhaktas',
@@ -74,7 +74,7 @@
                                             ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
                                             ['escape' => false]
                                         ) ?></li>
-                                    <?php if (in_array($this->request->session()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
+                                    <?php if (in_array($this->request->getSession()->read('Auth.User.role'), ['superuser', 'admin'])) : ?>
                                         <li><?= $this->Html->menuLink(
                                                 '<i class="fi-torso"></i> <span>Új bhakta</span>',
                                                 ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'add'],
@@ -88,27 +88,27 @@
                                     <?php endif; ?>
                                 </ul>
                             </li>
-                            <?php if ($this->request->session()->read('Auth.User.is_superuser')
-                                && $this->request->session()->read('Auth.User.role') == 'superuser') : ?>
+                            <?php if ($this->request->getSession()->read('Auth.User.is_superuser')
+                                && $this->request->getSession()->read('Auth.User.role') == 'superuser') : ?>
                                 <li>
                                     <?= $this->Html->menuLink(
-                                        '<i class="fi-widget"></i> <span>Main data</span>',
+                                        '<i class="fi-widget"></i> <span>' . __('Main data') . '</span>',
                                         ['plugin' => false, 'controller' => 'centers', 'action' => 'index'],
                                         ['escape' => false]
                                     ) ?>
                                     <ul class="nested vertical menu">
                                         <li><?= $this->Html->menuLink(
-                                                '<i class="fi-marker"></i> <span>Centers</span>',
+                                                '<i class="fi-marker"></i> <span>' . __('Centers') . '</span>',
                                                 ['plugin' => false, 'controller' => 'centers', 'action' => 'index'],
                                                 ['escape' => false]
                                             ) ?></li>
                                         <li><?= $this->Html->menuLink(
-                                                '<i class="fi-flag"></i> <span>Departments</span>',
+                                                '<i class="fi-flag"></i> <span>' . __('Departments') . '</span>',
                                                 ['plugin' => false, 'controller' => 'departments', 'action' => 'index'],
                                                 ['escape' => false]
                                             ) ?></li>
                                         <li><?= $this->Html->menuLink(
-                                                '<i class="fi-torso-business"></i> <span>Users</span>',
+                                                '<i class="fi-torso-business"></i> <span>' . __('Users') . '</span>',
                                                 ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
                                                 ['escape' => false]
                                             ) ?></li>
@@ -121,7 +121,7 @@
 
                 <div class="top-bar-right">
                     <ul class="menu">
-                        <?php if ($this->request->session()->read('Auth.User')) : ?>
+                        <?php if ($this->request->getSession()->read('Auth.User')) : ?>
                         <li class="input-group">
                             <span class="input-group-label fi-magnifying-glass"></span>
                             <?php
