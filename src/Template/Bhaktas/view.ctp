@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <th scope="row"><?= __('Szul Time') ?></th>
-                    <td><?= h($bhakta->szul_time->format('H:i')) ?></td>
+                    <td><?= $bhakta->szul_time ? h($bhakta->szul_time->format('H:i')) : '' ?></td>
                 </tr>
                 <tr>
                     <th scope="row"><?= __('Allampolgarsag') ?></th>
