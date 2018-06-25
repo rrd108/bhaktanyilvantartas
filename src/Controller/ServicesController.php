@@ -64,7 +64,7 @@ class ServicesController extends AppController
             }
             $this->Flash->error(__('The service could not be saved. Please, try again.'));
         }
-        $bhaktas = $this->Services->Bhaktas->find('list', ['limit' => 200])
+        $bhaktas = $this->Services->Bhaktas->find('list')
             ->where(['Bhaktas.communityrole_id IN' => [1,2]])
             ->innerJoinWith(
                 'Services.Departments.Centers',
