@@ -216,13 +216,13 @@ if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
 
+Plugin::load('Search');
+Plugin::load('MenuLink');
+Plugin::load('Xety/Cake3Upload');
+
 Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
 Configure::write('Users.config', ['users']);
 Configure::write('Users.Email.validate', false);
 Configure::write('Users.Registration.active', false);
 Configure::write('Users.Tos.required', false);
 Configure::write('Auth.authenticate.Form.fields.username', 'email');
-
-Plugin::load('Search');
-Plugin::load('MenuLink');
-Plugin::load('Xety/Cake3Upload');
