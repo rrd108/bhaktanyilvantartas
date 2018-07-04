@@ -13,8 +13,8 @@
         "rrd108/cakephp-menulink": "^1.0",
         "xety/cake3-upload": "1.*",
         "needim/noty": "^3.1",
-        "cakedc/users": "^7.0",
-        "friendsofcake/search": "^4.4"
+        "friendsofcake/search": "^4.4",
+        "cakedc/users": "^7.0"
     },
     "require-dev": {
         "psy/psysh": "@stable",
