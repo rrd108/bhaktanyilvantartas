@@ -20,7 +20,7 @@ return [
         [
             'role' => '*',
             'controller' => 'Bhaktas',
-            'action' => ['index', 'view'],
+            'action' => ['index', 'view', 'withoutService'],
         ],
         [
             'role' => 'admin',
@@ -31,6 +31,11 @@ return [
             'role' => 'admin',
             'controller' => 'Services',
             'action' => ['add', 'edit', 'view'],
+        ],
+        [
+            'role' => 'admin',
+            'controller' => 'Departments',
+            'action' => ['index', 'add', 'edit'],
         ],
     ]
 ];

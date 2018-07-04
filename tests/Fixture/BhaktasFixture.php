@@ -151,6 +151,13 @@ class BhaktasFixture extends TestFixture
                 'active' => 1,
 
             ],
+            [
+                'id' => 3,
+                'neme' => 0,
+                'nev_szuletesi' => 'Kovács János',
+                'nev_avatott' => 'Radha Das',
+                'active' => 1,
+            ],
         ];
     }
 }

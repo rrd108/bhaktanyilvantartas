@@ -70,6 +70,11 @@
                                             ]
                                         ) ?></li>
                                     <li><?= $this->Html->menuLink(
+                                            '<i class="fi-torsos-all"></i> <span>Szolgálat nélkül</span>',
+                                            ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'withoutService'],
+                                            ['escape' => false]
+                                        ) ?></li>
+                                    <li><?= $this->Html->menuLink(
                                             '<i class="fi-page-edit"></i> <span>Átírós lista</span>',
                                             ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
                                             ['escape' => false]
@@ -88,8 +93,7 @@
                                     <?php endif; ?>
                                 </ul>
                             </li>
-                            <?php if ($this->request->getSession()->read('Auth.User.is_superuser')
-                                && $this->request->getSession()->read('Auth.User.role') == 'superuser') : ?>
+                            <?php if ($this->request->getSession()->read('Auth.User')) : ?>
                                 <li>
                                     <?= $this->Html->menuLink(
                                         '<i class="fi-widget"></i> <span>' . __('Main data') . '</span>',
@@ -98,20 +102,22 @@
                                     ) ?>
                                     <ul class="nested vertical menu">
                                         <li><?= $this->Html->menuLink(
-                                                '<i class="fi-marker"></i> <span>' . __('Centers') . '</span>',
-                                                ['plugin' => false, 'controller' => 'centers', 'action' => 'index'],
-                                                ['escape' => false]
-                                            ) ?></li>
-                                        <li><?= $this->Html->menuLink(
                                                 '<i class="fi-flag"></i> <span>' . __('Departments') . '</span>',
                                                 ['plugin' => false, 'controller' => 'departments', 'action' => 'index'],
                                                 ['escape' => false]
                                             ) ?></li>
-                                        <li><?= $this->Html->menuLink(
-                                                '<i class="fi-torso-business"></i> <span>' . __('Users') . '</span>',
-                                                ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
-                                                ['escape' => false]
-                                            ) ?></li>
+                                        <?php if ($this->request->getSession()->read('Auth.User.is_superuser')) : ?>
+                                            <li><?= $this->Html->menuLink(
+                                                    '<i class="fi-marker"></i> <span>' . __('Centers') . '</span>',
+                                                    ['plugin' => false, 'controller' => 'centers', 'action' => 'index'],
+                                                    ['escape' => false]
+                                                ) ?></li>
+                                            <li><?= $this->Html->menuLink(
+                                                    '<i class="fi-torso-business"></i> <span>' . __('Users') . '</span>',
+                                                    ['plugin' => 'CakeDC/Users', 'controller' => 'users', 'action' => 'index'],
+                                                    ['escape' => false]
+                                                ) ?></li>
+                                        <?php endif; ?>
                                     </ul>
                                 </li>
                             <?php endif; ?>

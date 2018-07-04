@@ -27,6 +27,7 @@ class BhaktasTableTest extends TestCase
      */
     public $fixtures = [
         'app.bhaktas',
+        'app.services'
     ];
 
     /**
@@ -68,6 +69,13 @@ class BhaktasTableTest extends TestCase
             ['minDate' => Time::now(), 'maxDate' => (new Date())->modify('+5 months')]
         );
         $expected = [1];
+        $this->assertEquals($expected, $actual->extract('id')->toArray());
+    }
+
+    public function testFindWithoutService()
+    {
+        $actual = $this->Bhaktas->find('withoutService', []);
+        $expected = [3];
         $this->assertEquals($expected, $actual->extract('id')->toArray());
     }
 }

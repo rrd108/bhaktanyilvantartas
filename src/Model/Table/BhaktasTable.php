@@ -340,8 +340,28 @@ class BhaktasTable extends Table
      */
     public function findEuCardIsNull(Query $query, array $options)
     {
-        return $query->where(function ($exp, $q) {
-            return $exp->isNull('eu_card_expiry');
-        });
+        return $query->where(
+            function ($exp, $q) {
+                return $exp->isNull('eu_card_expiry');
+            }
+        );
+    }
+
+    /**
+     * Find bhaktas who has no service entry
+     *
+     * @param \Cake\ORM\Query $query
+     * @param array           $options
+     * @return \Cake\ORM\Query
+     */
+    public function findWithoutService(Query $query, array $options)
+    {
+        return $query->notMatching(
+            'Services',
+            function ($q) {
+                return $q->select('Services.bhakta_id')
+                    ->distinct('Services.bhakta_id');
+            }
+        );
     }
 }

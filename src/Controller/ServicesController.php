@@ -64,6 +64,8 @@ class ServicesController extends AppController
             }
             $this->Flash->error(__('The service could not be saved. Please, try again.'));
         }
+
+        //TODO join $this->Bhaktas->find('withoutService')
         $bhaktas = $this->Services->Bhaktas->find('list')
             ->where(['Bhaktas.communityrole_id IN' => [1,2]])
             ->innerJoinWith(
@@ -71,8 +73,8 @@ class ServicesController extends AppController
                 function ($q) {
                     return $q->find('accessible', $this->Auth->user());
                 }
-            )
-            ->order(['Bhaktas.nev_avatott']);
+            )->order(['Bhaktas.nev_avatott']);
+
 
         $departments = $this->Services->Departments->find()
             ->contain(

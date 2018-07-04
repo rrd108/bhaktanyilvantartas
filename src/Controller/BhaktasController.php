@@ -206,4 +206,12 @@ class BhaktasController extends AppController
         $this->set('_serialize', ['bhaktas']);
 
     }
+
+    public function withOutService()
+    {
+        $bhaktas = $this->paginate($this->Bhaktas->find('withoutService'));
+
+        $this->set(compact('bhaktas'));
+        $this->set('_serialize', ['bhaktas']);
+    }
 }
