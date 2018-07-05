@@ -56,7 +56,17 @@ class DepartmentsController extends AppController
         $this->paginate = [
             'contain' => ['Centers']
         ];
-        $departments = $this->paginate($this->Departments);
+        $departments = $this->paginate(
+            $this->Departments->find(
+                'inCenter',
+                [
+                    'centerId' => $this->Departments->Centers->find(
+                        'accessible',
+                        $this->Auth->user()
+                    )->select('Centers.id')
+                ]
+            )
+        );
 
         $this->set(compact('departments'));
         $this->set('_serialize', ['departments']);

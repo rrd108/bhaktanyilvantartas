@@ -59,13 +59,10 @@ class ServicesController extends AppController
             $service = $this->Services->patchEntity($service, $this->request->getData());
             if ($this->Services->save($service)) {
                 $this->Flash->success(__('The service has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The service could not be saved. Please, try again.'));
         }
 
-        //TODO join $this->Bhaktas->find('withoutService')
         $bhaktas = $this->Services->Bhaktas->find('list')
             ->where(['Bhaktas.communityrole_id IN' => [1,2]])
             ->innerJoinWith(
@@ -73,7 +70,9 @@ class ServicesController extends AppController
                 function ($q) {
                     return $q->find('accessible', $this->Auth->user());
                 }
-            )->order(['Bhaktas.nev_avatott']);
+            );
+        $bhaktas = $bhaktas->distinct()
+            ->union($this->Services->Bhaktas->find('withoutService')->find('list'));
 
 
         $departments = $this->Services->Departments->find()

@@ -57,4 +57,14 @@ class DepartmentsTableTest extends TestCase
         $expected = [1, 2];
         $this->assertEquals($expected, $actual->extract('id')->toArray());
     }
+
+    public function testFinInCenter()
+    {
+        $actual = $this->Departments->find(
+            'inCenter',
+            ['centerId' => 2]
+        );
+        $expected = [2];
+        $this->assertEquals($expected, $actual->extract('id')->toArray());
+    }
 }

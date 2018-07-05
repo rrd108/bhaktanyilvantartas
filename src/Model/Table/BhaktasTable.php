@@ -359,8 +359,7 @@ class BhaktasTable extends Table
         return $query->notMatching(
             'Services',
             function ($q) {
-                return $q->select('Services.bhakta_id')
-                    ->distinct('Services.bhakta_id');
+                return $q->distinct('Services.bhakta_id');
             }
         );
     }

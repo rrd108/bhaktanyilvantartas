@@ -70,11 +70,6 @@
                                             ]
                                         ) ?></li>
                                     <li><?= $this->Html->menuLink(
-                                            '<i class="fi-torsos-all"></i> <span>Szolgálat nélkül</span>',
-                                            ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'withoutService'],
-                                            ['escape' => false]
-                                        ) ?></li>
-                                    <li><?= $this->Html->menuLink(
                                             '<i class="fi-page-edit"></i> <span>Átírós lista</span>',
                                             ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
                                             ['escape' => false]

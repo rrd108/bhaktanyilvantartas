@@ -66,6 +66,13 @@ class CentersTable extends Table
         return $validator;
     }
 
+    /**
+     * Find accessible centers for the given user
+     *
+     * @param \Cake\ORM\Query $query
+     * @param array           $options  the user from Auth
+     * @return $this|\Cake\ORM\Query
+     */
     public function findAccessible(Query $query, array $options)
     {
         if ($options['is_superuser']) {

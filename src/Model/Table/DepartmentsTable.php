@@ -95,4 +95,16 @@ class DepartmentsTable extends Table
             })
             ->sortBy('manpower')*/;
     }
+
+    /**
+     * Find all departments in a center
+     *
+     * @param \Cake\ORM\Query $query
+     * @param array           $options
+     * @return \Cake\ORM\Query
+     */
+    public function findInCenter(Query $query, array $options)
+    {
+        return $query->where(['Departments.center_id IN' => $options['centerId']]);
+    }
 }
