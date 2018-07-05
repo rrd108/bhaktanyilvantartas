@@ -71,7 +71,7 @@ class ServicesController extends AppController
                     return $q->find('accessible', $this->Auth->user());
                 }
             );
-        $bhaktas = $bhaktas->distinct()
+        $bhaktas = $bhaktas->distinct()->order('Bhaktas.nev_avatott')
             ->union($this->Services->Bhaktas->find('withoutService')->find('list'));
 
 
