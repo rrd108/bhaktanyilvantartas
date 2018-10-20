@@ -298,18 +298,6 @@ class BhaktasTable extends Table
         return $rules;
     }
 
-    /*public function searchConfiguration()
-    {
-
-        $search = new Manager($this);
-        $search->like('nev_avatott')
-            ->like('nev_szuletesi')
-            ->like('nev_polgari');
-        return $search;
-
-    }*/
-
-
     /**
      * find Bhaktas whose eu card will expire / was expired in a given time
      *
