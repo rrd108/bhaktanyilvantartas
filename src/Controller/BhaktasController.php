@@ -185,7 +185,7 @@ class BhaktasController extends AppController
         $service = $this->Bhaktas->Services->get($service->service_id);
         $bhakta->communityrole_id = 4;
         $bhakta->legalstatus_id = null;
-        $service->szolgalat_vege = new Date($this->request->getData('endDate'));
+        $service->szolgalat_vege = $this->request->getData('endDate');
         $bhakta->services = [$service];
         if ($this->Bhaktas->save($bhakta)) {
             $status = 'success';

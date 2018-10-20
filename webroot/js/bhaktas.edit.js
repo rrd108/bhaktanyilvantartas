@@ -1,7 +1,7 @@
 var endvolunteer = function () {
     $("#endvolbtn").on('click', function () {
         var bhaktaId = $('input[name=bhakta_id]').val();
-        var endDate = new Date($('#szolgalat-vege').val());
+        var endDate = $('#szolgalat-vege').val();
         var host = $(location).attr('origin');
         var baseUrl = $($('script')[1]).attr('src').replace(/\/js\/.*/, '');
         var url = host + baseUrl + '/bhaktas/endvolunteer/' + bhaktaId + '.json';
