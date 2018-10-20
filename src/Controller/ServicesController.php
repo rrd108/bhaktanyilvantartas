@@ -109,7 +109,7 @@ class ServicesController extends AppController
     public function edit($id = null)
     {
         $service = $this->Services->get($id, [
-            'contain' => []
+            'contain' => ['Bhaktas', 'Departments']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $service = $this->Services->patchEntity($service, $this->request->getData());
@@ -120,9 +120,9 @@ class ServicesController extends AppController
             }
             $this->Flash->error(__('The service could not be saved. Please, try again.'));
         }
-        $bhaktas = $this->Services->Bhaktas->find('list', ['limit' => 200]);
-        $Departments = $this->Services->Departments->find('list', ['limit' => 200]);
-        $this->set(compact('service', 'bhaktas', 'Departments'));
+        $bhaktas = $this->Services->Bhaktas->find('list');
+        $departments = $this->Services->Departments->find('list');
+        $this->set(compact('service', 'bhaktas', 'departments'));
         $this->set('_serialize', ['service']);
     }
 
