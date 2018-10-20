@@ -209,4 +209,23 @@ class BhaktasController extends AppController
         $this->set('_serialize', ['bhaktas']);
 
     }
+
+    public function searchOnField()
+    {
+        if ($this->request->getQuery()) {
+            $bhaktas = $this->Bhaktas->find()
+                ->where(
+                    [
+                        $this->request->getQuery('field') . ' '
+                            . $this->request->getQuery('relation') => $this->request->getQuery('term')
+                    ]
+                );
+            $bhaktas = $this->paginate($bhaktas);
+        }
+        $this->set(compact('bhaktas'));
+        $columns = $this->Bhaktas->getSchema()->columns();
+        $columns = array_combine($columns, $columns);
+        $this->set('columns', $columns);
+        $this->set('_serialize', ['bhaktas', 'columns']);
+    }
 }

@@ -70,6 +70,17 @@
                                             ]
                                         ) ?></li>
                                     <li><?= $this->Html->menuLink(
+                                            '<i class="fi-magnifying-glass"></i> <span>Keresés</span>',
+                                            [
+                                                'plugin' => false,
+                                                'controller' => 'bhaktas',
+                                                'action' => 'searchOnField'
+                                            ],
+                                            [
+                                                'escape' => false
+                                            ]
+                                        ) ?></li>
+                                    <li><?= $this->Html->menuLink(
                                             '<i class="fi-page-edit"></i> <span>Átírós lista</span>',
                                             ['plugin' => false, 'controller' => 'departments', 'action' => 'members'],
                                             ['escape' => false]
