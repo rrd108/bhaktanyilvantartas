@@ -97,6 +97,11 @@
                                                 ['escape' => false]
                                             ) ?></li>
                                     <?php endif; ?>
+                                    <li><?= $this->Html->menuLink(
+                                            '<i class="fi-foot"></i> <span>Önkéntesek</span>',
+                                            ['plugin' => false, 'controller' => 'bhaktas', 'action' => 'volunteers'],
+                                            ['escape' => false]
+                                        ) ?></li>
                                 </ul>
                             </li>
                             <?php if ($this->request->getSession()->read('Auth.User')) : ?>

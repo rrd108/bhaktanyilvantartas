@@ -228,4 +228,31 @@ class BhaktasController extends AppController
         $this->set('columns', $columns);
         $this->set('_serialize', ['bhaktas', 'columns']);
     }
+
+    public function volunteers()
+    {
+        // TODO filter to the given center
+        $serviceStarts = $this->Bhaktas->Services->find()
+            ->select([
+                'bhaktaId' => 'Services.bhakta_id',
+                'start' => 'MIN(Services.szolgalat_kezdete)'
+            ])
+            ->group('Services.bhakta_id');
+        $bhaktas = $this->Bhaktas->find()
+            ->select(['Bhaktas.id', 'Bhaktas.nev_avatott', 'Bhaktas.nev_polgari', 'service.start'])
+            ->where([
+                'Bhaktas.communityrole_id' => 2,
+                'Bhaktas.szul_date <' => new Time('17 years ago')
+            ])
+            ->join([
+                'service' => [
+                    'table' => $serviceStarts,
+                    'type' => 'LEFT',
+                    'conditions' => 'Bhaktas.id = bhaktaId'
+                ]
+            ])
+            ->order('service.start');
+        $bhaktas = $this->paginate($bhaktas);
+        $this->set(compact('bhaktas'));
+    }
 }
