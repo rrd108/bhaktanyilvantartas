@@ -40,6 +40,7 @@ class BhaktasController extends AppController
 
         if (!$this->request->getQuery('q')) {
             $bhaktas->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
+			$bhaktas = $bhaktas->union($this->Bhaktas->find('withoutService'));
         }
 
         $bhaktas = $bhaktas->leftJoinWith(
@@ -51,7 +52,6 @@ class BhaktasController extends AppController
 
         $bhaktas = $this->paginate(
             $bhaktas->distinct()
-                ->union($this->Bhaktas->find('withoutService'))
         );
 
         $this->set(compact('bhaktas'));
