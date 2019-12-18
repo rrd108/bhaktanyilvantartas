@@ -12,7 +12,6 @@ class BhaktasCommand extends Command
 {
 	
 	Const ONKENTES_TAMOGATO = 2;
-	Const DATE_RANGE = '5 years ago';
 	/**
      * Initialize method
      *
@@ -26,37 +25,42 @@ class BhaktasCommand extends Command
     }
     public function execute(Arguments $args, ConsoleIo $io)
     {
-		$bhaktas = $this->Bhaktas->find()
-            ->select(['Bhaktas.id', 'Bhaktas.nev_szuletesi', 'services.szolgalat_kezdete'])
-            ->where([
-                'Bhaktas.communityrole_id' => BhaktasCommand::ONKENTES_TAMOGATO,
-                'services.szolgalat_kezdete <' => new Time(BhaktasCommand::DATE_RANGE)
-            ])
-            ->join([
-                    'table' => 'services',
-                    'type' => 'LEFT',
-                    'conditions' => 'Bhaktas.id = services.bhakta_id'
-            ])
-			->group('Bhaktas.nev_szuletesi')
-			->order('services.szolgalat_kezdete');
-			
-		// Create Email Body and Send in mailFunction
-		if(!$bhaktas->isEmpty()){
-			$message = '<html><body>';
-			$message .= '<h1 style="color:#f40;">Volunter List!</h1>';
-			foreach($bhaktas as $ba){
-				$message .= '<p style="color:#080;font-size:18px;">'.$ba->nev_szuletesi.'.'.$ba->services['szolgalat_kezdete'].'</p>';
+		$years = $io->ask('Insert the Years');
+		//check the INPUT validity
+		if(filter_var($years, FILTER_VALIDATE_INT) !== false){
+			$bhaktas = $this->Bhaktas->find()
+				->select(['Bhaktas.id', 'Bhaktas.nev_szuletesi', 'services.szolgalat_kezdete'])
+				->where([
+					'Bhaktas.communityrole_id' => BhaktasCommand::ONKENTES_TAMOGATO,
+					'services.szolgalat_kezdete <' => new Time($years.'years ago')
+				])
+				->join([
+						'table' => 'services',
+						'type' => 'LEFT',
+						'conditions' => 'Bhaktas.id = services.bhakta_id'
+				])
+				->group('Bhaktas.nev_szuletesi')
+				->order('services.szolgalat_kezdete');
+				
+			// Create Email Body and Send in mailFunction
+			if(!$bhaktas->isEmpty()){
+					$message = '<html><body>';
+					$message .= '<h1 style="color:#f40;">Volunter List!</h1>';
+					foreach($bhaktas as $ba){
+						$message .= '<p style="color:#080;font-size:18px;">'.$ba->nev_szuletesi.'.'.$ba->services['szolgalat_kezdete'].'</p>';
+					}
+					$message .= '</body></html>';
+					// Send Email to Concerned User
+					BhaktasCommand::mailFunction($message);	
+				}
+			else{
+					echo "Data Not Found!";
 			}
-			$message .= '</body></html>';
-			// Send Email to Concerned User
-			BhaktasCommand::mailFunction($message);	
 		}
 		else{
-			echo "Data Not Found!";
-		}
+				echo "Please Input the Integer Number!";
+			}
 			
-		
-		
     }
 	
 	protected function mailFunction($message = null){
