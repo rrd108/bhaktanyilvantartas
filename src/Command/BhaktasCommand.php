@@ -12,6 +12,7 @@ class BhaktasCommand extends Command
 {
 	
 	Const ONKENTES_TAMOGATO = 2;
+	Const DATE_RANGE = '5 years ago';
 	/**
      * Initialize method
      *
@@ -29,7 +30,7 @@ class BhaktasCommand extends Command
             ->select(['Bhaktas.id', 'Bhaktas.nev_szuletesi', 'services.szolgalat_kezdete'])
             ->where([
                 'Bhaktas.communityrole_id' => BhaktasCommand::ONKENTES_TAMOGATO,
-                'services.szolgalat_kezdete <' => new Time('5 years ago')
+                'services.szolgalat_kezdete <' => new Time(BhaktasCommand::DATE_RANGE)
             ])
             ->join([
                     'table' => 'services',
