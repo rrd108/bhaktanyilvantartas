@@ -7,6 +7,7 @@ use Cake\Console\ConsoleIo;
 use Cake\I18n\Time;
 use Cake\I18n\Date;
 use Cake\Mailer\Email;
+use Cake\Console\ConsoleOptionParser;
 
 class BhaktasCommand extends Command
 {
@@ -23,9 +24,20 @@ class BhaktasCommand extends Command
         parent::initialize();
         $this->loadModel('Bhaktas');
     }
+	public function getOptionParser()
+	{
+		$parser = parent::getOptionParser();
+		$parser->addArgument('year', [
+			'help' => 'Input The Year Here First.',
+			'required' => true
+		]);
+		$this->abc = $parser;
+		return $parser;
+	}
+
     public function execute(Arguments $args, ConsoleIo $io)
     {
-		$years = $io->ask('Insert the Years');
+		$years = $args->getArgument('year');
 		//check the INPUT validity
 		if(filter_var($years, FILTER_VALIDATE_INT) !== false){
 			$bhaktas = $this->Bhaktas->find()
