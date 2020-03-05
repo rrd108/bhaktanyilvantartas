@@ -42,7 +42,7 @@ class EuEmailShell extends Shell
         foreach ($bhaktas as $bhakta) {
             $message .= 'nev_szuletesi: ' . $bhakta->nev_szuletesi
                 . ', nev_avatott: ' . $bhakta->nev_avatott
-                . ', eu_card_expiry: ' . $bhakta->eu_card_expiry . '\n';
+                . ', eu_card_expiry: ' . $bhakta->eu_card_expiry . "\n";
         }
         $superusers = $this->AppUsers->find('superUsers')->select("email")->toArray();
         $email = new Email('default');
