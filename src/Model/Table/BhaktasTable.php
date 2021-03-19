@@ -82,6 +82,7 @@ class BhaktasTable extends Table
                 'wildcardOne' => '?',
                 'field' => ['nev_avatott', 'nev_szuletesi', 'nev_polgari']
             ]);
+            
         $this->addBehavior('Xety/Cake3Upload.Upload', [
                 'fields' => [
                     'kep' => [
