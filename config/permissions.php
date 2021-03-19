@@ -20,7 +20,7 @@ return [
         [
             'role' => '*',
             'controller' => 'Bhaktas',
-            'action' => ['index', 'view', 'withoutService'],
+            'action' => ['index', 'searchOnField', 'view', 'withoutService'],
         ],
         [
             'role' => 'admin',
