@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -16,6 +17,7 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +34,7 @@
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
 </head>
+
 <body>
     <nav>
         <div class="title-bar" data-responsive-toggle="navbar" data-hide-for="medium">
@@ -44,7 +47,8 @@
                 <div class="top-bar-left">
                     <ul class="dropdown menu" data-dropdown-menu>
                         <li class="menu-text"><?= $this->Html->image('logo-small.png', ['alt' => 'Logo']); ?></li>
-                        <?php if ($this->request->getSession()->read('Auth.User')) : //TODO add .active to li?>
+                        <?php if ($this->request->getSession()->read('Auth.User')) : //TODO add .active to li
+                        ?>
                             <li>
                                 <?= $this->Html->menuLink(
                                     '<i class="fi-torsos"></i> <span>' . __('Bhaktas') . '</span>',
@@ -139,21 +143,21 @@
                 <div class="top-bar-right">
                     <ul class="menu">
                         <?php if ($this->request->getSession()->read('Auth.User')) : ?>
-                        <li class="input-group">
-                            <span class="input-group-label fi-magnifying-glass"></span>
-                            <?php
-                            echo $this->Form->create('bhaktas', ['url' => ['controller' => 'bhaktas', 'action' => 'index']]);
-                            echo $this->Form->input(
-                                'q',
-                                [
-                                    'label' => false,
-                                    'class' => 'input-group-field',
-                                    'title' => 'Keresés avatott névre, polgári névre, születési névre'
-                                ]
-                            );
-                            echo $this->Form->end();
-                            ?>
-                        </li>
+                            <li class="input-group">
+                                <span class="input-group-label fi-magnifying-glass"></span>
+                                <?php
+                                echo $this->Form->create(null, ['url' => ['controller' => 'bhaktas', 'action' => 'index']]);
+                                echo $this->Form->control(
+                                    'q',
+                                    [
+                                        'label' => false,
+                                        'class' => 'input-group-field',
+                                        'title' => 'Keresés avatott névre, polgári névre, születési névre'
+                                    ]
+                                );
+                                echo $this->Form->end();
+                                ?>
+                            </li>
                         <?php endif; ?>
                         <li><?= $this->User->welcome() ?></li>
                         <li><?= $this->User->logout() ?></li>
@@ -179,4 +183,5 @@
     <?= $this->fetch('script') ?>
 
 </body>
+
 </html>
