@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     3.3.0
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App;
 
 use Cake\Core\Configure;
@@ -50,6 +52,7 @@ class Application extends BaseApplication
         }
 
         // Load more plugins here
+        $this->addPlugin('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
         $this->addPlugin('Search');
         $this->addPlugin('MenuLink');
         $this->addPlugin('Xety/Cake3Upload');
