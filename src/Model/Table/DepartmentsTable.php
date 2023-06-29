@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -80,7 +81,10 @@ class DepartmentsTable extends Table
                             ->contain(
                                 [
                                     'Bhaktas' => function ($q) {
-                                        return $q->where(['Bhaktas.communityrole_id IN' => [1, 2]]);
+                                        return $q->where([
+                                            'Bhaktas.active' => 1,
+                                            'Bhaktas.communityrole_id IN' => [1, 2]
+                                        ]);
                                     }
                                 ]
                             )->order('Bhaktas.nev_avatott');
