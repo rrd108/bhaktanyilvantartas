@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -12,10 +13,43 @@ use App\Controller\AppController;
  */
 class DepartmentsController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow('bhaktaList');
+    }
 
     public $paginate = [
         'order' => ['Departments.name' => 'asc'],
-        ];
+    ];
+
+    public function bhaktaList($date = null)
+    {
+        $departments = $this->Departments
+            ->find('members', ['date' => $date])
+            ->find('inCenter', ['centerId' => 1])
+            ->formatResults(
+                function (\Cake\Collection\CollectionInterface $results) {
+                    return $results->map(
+                        function ($department) {
+                            $department->department = $department->name;
+                            $department->bhaktas = collection($department->services)->map(
+                                function ($service) {
+                                    return $service->bhakta->nev_avatott;
+                                }
+                            );
+                            unset($department->services, $department->id, $department->name);
+                            return $department;
+                        }
+                    )->filter(function ($department) {
+                        return $department->bhaktas->count();
+                    });
+                }
+            )->toList();
+
+        $this->set(compact('departments'));
+        $this->set('_serialize', ['departments']);
+    }
 
     public function members($date = null)
     {

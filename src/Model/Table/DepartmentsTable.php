@@ -74,30 +74,21 @@ class DepartmentsTable extends Table
     {
         return $query
             ->select(['Departments.id', 'Departments.name',])
-            ->contain(
-                [
-                    'Services' => function ($q) use ($options) {
-                        return $q->find('current', $options)
-                            ->contain(
-                                [
-                                    'Bhaktas' => function ($q) {
-                                        return $q->where([
-                                            'Bhaktas.active' => 1,
-                                            'Bhaktas.communityrole_id IN' => [1, 2]
-                                        ]);
-                                    }
-                                ]
-                            )->order('Bhaktas.nev_avatott');
-                    }
-                ]
-            )
-            /*->formatResults(function (\Cake\Collection\CollectionInterface $results) {
-                return $results->map(function ($row) {
-                    $row['manpower'] = count($row->services);
-                    return $row;
-                });
-            })
-            ->sortBy('manpower')*/;
+            ->contain([
+                'Services' => function ($q) use ($options) {
+                    return $q->find('current', $options)
+                        ->contain(
+                            [
+                                'Bhaktas' => function ($q) {
+                                    return $q->where([
+                                        'Bhaktas.active' => 1,
+                                        'Bhaktas.communityrole_id IN' => [1, 2]
+                                    ]);
+                                }
+                            ]
+                        )->order('Bhaktas.nev_avatott');
+                }
+            ]);
     }
 
     /**
