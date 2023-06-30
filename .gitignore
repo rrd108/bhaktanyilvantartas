@@ -6,3 +6,4 @@
 /webroot/img/bhaktas
 /webroot/.htaccess
 .htaccess
+config/app_local.php
