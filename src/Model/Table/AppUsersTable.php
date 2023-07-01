@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: mihaly
@@ -9,6 +10,8 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
+use Cake\Core\Configure;
+use Cake\Validation\Validator;
 use CakeDC\Users\Model\Table\UsersTable;
 
 class AppUsersTable extends UsersTable
@@ -21,6 +24,18 @@ class AppUsersTable extends UsersTable
             'targetForeignKey' => 'center_id',
             'joinTable' => 'centers_users'
         ]);
+        $this->setDisplayField('email');
+    }
+
+    public function validationDefault(Validator $validator)
+    {
+        $validator = parent::validationDefault($validator);
+        $username = Configure::read('Auth.authenticate.Form.fields.username');
+        if ($username === 'email') {
+            $validator->remove('username');
+            $validator->allowEmptyString('username');
+        }
+        return $validator;
     }
 
     public function findSuperUsers(Query $query, array $options)

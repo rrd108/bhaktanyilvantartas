@@ -204,10 +204,3 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
-
-
-Configure::write('Users.config', ['users']);
-Configure::write('Users.Email.validate', false);
-Configure::write('Users.Registration.active', false);
-Configure::write('Users.Tos.required', false);
-Configure::write('Auth.authenticate.Form.fields.username', 'email');

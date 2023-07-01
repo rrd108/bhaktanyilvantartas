@@ -52,7 +52,7 @@ fi
 if [ $PREV_STEP -eq 1 ];then
 	echo $'\n' "Run composer install on server" $'\n'
 	ssh -i /home/rrd/.ssh/id_ed25519 -t $SSH_USER@$SSH_HOST "chmod 775 -R ${SSH_PATH}/"
-	ssh -i /home/rrd/.ssh/id_ed25519 -t $SSH_USER@$SSH_HOST "cd ${SSH_PATH}/ && /usr/bin/php7.3 /usr/local/bin/composer install --no-dev --no-interaction --optimize-autoloader"
+	ssh -i /home/rrd/.ssh/id_ed25519 -t $SSH_USER@$SSH_HOST "cd ${SSH_PATH}/ && /usr/bin/php7.4 /usr/local/bin/composer install --no-dev --no-interaction --optimize-autoloader"
 
 	echo $'\n' "Set permissions" $'\n'
 	ssh -i /home/rrd/.ssh/id_ed25519 -t $SSH_USER@$SSH_HOST "find ${SSH_PATH}/ -type f -exec chmod 644 {} \;"
@@ -69,7 +69,7 @@ fi
 
 if [ $PREV_STEP -eq 1 ];then
 	echo -e $'\n' "Clear all cache" $'\n'
-	ssh -i /home/rrd/.ssh/id_ed25519 -t $SSH_USER@$SSH_HOST "export PHP=/usr/bin/php7.3 && cd ${SSH_PATH}/ && bin/cake cache clear_all"
+	ssh -i /home/rrd/.ssh/id_ed25519 -t $SSH_USER@$SSH_HOST "export PHP=/usr/bin/php7.4 && cd ${SSH_PATH}/ && bin/cake cache clear_all"
 	if [ $? -eq 0 ]; then
 		echo -e $'\n' "${GREEN} \u2714 Cache cleared ${NC}" $'\n'
 	else

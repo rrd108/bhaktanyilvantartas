@@ -52,10 +52,32 @@ class Application extends BaseApplication
         }
 
         // Load more plugins here
+        Configure::write('Users.config', ['users']);
         $this->addPlugin('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
+        Configure::write('Auth.authenticate.Form.fields.username', 'email');
+        Configure::write('Users.Email.validate', false);
+        Configure::write('Users.Registration.active', false);
+        Configure::write('Users.Tos.required', false);
+
         $this->addPlugin('Search');
         $this->addPlugin('MenuLink');
         $this->addPlugin('Xety/Cake3Upload');
+    }
+
+    public function pluginBootstrap()
+    {
+        parent::pluginBootstrap();
+
+        Configure::write('Auth.authenticate', [
+            'all' => [
+                'finder' => 'auth',
+                'userModel' => Configure::read('Users.table')
+            ],
+            'Form'  => [
+                'fields' => ['username' => 'email']
+            ],
+            'CakeDC/Auth.RememberMe' => [],
+        ]);
     }
 
     /**
