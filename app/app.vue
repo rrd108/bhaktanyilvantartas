@@ -14,7 +14,12 @@ const links = computed(() => [
   { label: 'Átírós lista', to: '/departments/members', icon: 'i-lucide-arrow-left-right' },
   { label: 'Bhakták', to: '/', icon: 'i-lucide-users' },
   { label: 'Keresés', to: '/bhaktas/search', icon: 'i-lucide-search' },
-  ...(isAdmin.value ? [{ label: 'Törzsadatok', to: '/lookups/gurus', icon: 'i-lucide-database' }] : []),
+  ...(isAdmin.value
+    ? [
+        { label: 'Törzsadatok', to: '/lookups/gurus', icon: 'i-lucide-database' },
+        { label: 'Felhasználók', to: '/users', icon: 'i-lucide-users-round' },
+      ]
+    : []),
 ])
 
 async function doLogout() {

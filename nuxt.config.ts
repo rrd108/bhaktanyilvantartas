@@ -20,16 +20,17 @@ export default defineNuxtConfig({
         whitelist: ['/reset-password', '/departments/bhakta-list*'],
         permissions: {
           admin: ['*'],
+          // note: "/x/*" matches /x and everything below it, "/x*" only one path segment
           user: [
             '/',
-            '/bhaktas*',
-            '/departments*',
+            '/bhaktas/*',
+            '/departments/*',
             '/profile',
             { path: '/api/nuxt-users/password', methods: ['PATCH'] },
-            { path: '/api/bhaktas*', methods: ['GET'] },
-            { path: '/api/departments*', methods: ['GET'] },
-            { path: '/api/lookups*', methods: ['GET'] },
-            { path: '/api/photos*', methods: ['GET'] },
+            { path: '/api/bhaktas/*', methods: ['GET'] },
+            { path: '/api/departments/*', methods: ['GET'] },
+            { path: '/api/lookups/*', methods: ['GET'] },
+            { path: '/api/photos/*', methods: ['GET'] },
           ],
         },
       },
