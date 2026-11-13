@@ -27,7 +27,7 @@ const svc = ref<ReturnType<typeof blank> | null>(null)
 const deptOptions = computed(() => (departments.value ?? []).map(d => ({ label: `${d.center} / ${d.name}`, value: d.id })))
 async function saveService() {
   const s = svc.value!
-  if (!s.department_id) return toast.add({ title: 'Válassz részleget', color: 'error' })
+  if (!s.department_id) return toast.add({ title: 'Válassz osztályt', color: 'error' })
   const body = { ...s, bhakta_id: Number(id) }
   if (s.id) await $fetch(`/api/services/${s.id}`, { method: 'PUT', body })
   else await $fetch('/api/services', { method: 'POST', body })
@@ -116,7 +116,7 @@ async function upload(e: Event) {
         </div>
       </template>
       <table class="w-full text-sm">
-        <thead><tr class="text-left text-gray-500"><th>Központ / részleg</th><th>Szolgálat</th><th>Kezdete</th><th>Vége</th><th>Megjegyzés</th><th /></tr></thead>
+        <thead><tr class="text-left text-gray-500"><th>Központ / osztály</th><th>Szolgálat</th><th>Kezdete</th><th>Vége</th><th>Megjegyzés</th><th /></tr></thead>
         <tbody>
           <tr v-for="s in bhakta.services" :key="s.id" class="border-t">
             <td class="py-1">{{ s.center }} / {{ s.department }}</td>
@@ -133,7 +133,7 @@ async function upload(e: Event) {
     <UModal :open="!!svc" title="Szolgálat" @update:open="v => !v && (svc = null)">
       <template #body>
         <div v-if="svc" class="space-y-3">
-          <UFormField label="Részleg"><USelectMenu v-model="svc.department_id" :items="deptOptions" value-key="value" :search-input="{}" class="w-full" /></UFormField>
+          <UFormField label="Osztály"><USelectMenu v-model="svc.department_id" :items="deptOptions" value-key="value" :search-input="{}" class="w-full" /></UFormField>
           <UFormField label="Szolgálat"><UInput v-model="svc.szolgalat" class="w-full" /></UFormField>
           <div class="grid grid-cols-2 gap-3">
             <UFormField label="Kezdete"><UInput v-model="svc.szolgalat_kezdete" type="date" class="w-full" /></UFormField>

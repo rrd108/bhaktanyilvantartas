@@ -30,8 +30,8 @@ async function remove(d: any) {
 <template>
   <div>
     <div class="flex items-center mb-3">
-      <h1 class="text-xl font-semibold">Részlegek</h1>
-      <UButton class="ml-auto" icon="i-lucide-plus" label="Új részleg" @click="edit = { name: '', center_id: undefined, active: 1 }" />
+      <h1 class="text-xl font-semibold">Osztályok</h1>
+      <UButton class="ml-auto" icon="i-lucide-plus" label="Új osztály" @click="edit = { name: '', center_id: undefined, active: 1 }" />
     </div>
     <table class="w-full text-sm">
       <thead><tr class="text-left text-gray-500"><th>Név</th><th>Központ</th><th>Aktív</th><th /></tr></thead>
@@ -42,7 +42,7 @@ async function remove(d: any) {
         </tr>
       </tbody>
     </table>
-    <UModal :open="!!edit" title="Részleg" @update:open="v => !v && (edit = null)">
+    <UModal :open="!!edit" title="Osztály" @update:open="v => !v && (edit = null)">
       <template #body>
         <div v-if="edit" class="space-y-3">
           <UFormField label="Név"><UInput v-model="edit.name" class="w-full" /></UFormField>

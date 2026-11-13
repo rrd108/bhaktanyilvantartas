@@ -16,7 +16,8 @@ export default defineNuxtConfig({
       },
       auth: {
         // admin may do everything, user is read-only (see server/utils/access.ts for centre limits)
-        whitelist: ['/reset-password'],
+        // /departments/bhakta-list* is the legacy public JSON list (names only)
+        whitelist: ['/reset-password', '/departments/bhakta-list*'],
         permissions: {
           admin: ['*'],
           user: [

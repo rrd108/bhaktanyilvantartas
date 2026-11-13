@@ -35,7 +35,7 @@ async function remove(d: any) {
   <div>
     <div class="flex flex-wrap gap-1 mb-4">
       <UButton v-for="(l, key) in LOOKUPS" :key="key" :to="`/lookups/${key}`" :label="l.label" size="sm" :variant="key === table ? 'solid' : 'outline'" color="neutral" />
-      <UButton to="/departments" label="Részlegek" size="sm" variant="outline" color="neutral" />
+      <UButton to="/departments" label="Osztályok" size="sm" variant="outline" color="neutral" />
     </div>
     <div class="flex items-center mb-3">
       <h1 class="text-xl font-semibold">{{ cfg.label }}</h1>
