@@ -25,6 +25,7 @@ export default defineNuxtConfig({
             '/bhaktas*',
             '/departments*',
             '/profile',
+            { path: '/api/nuxt-users/password', methods: ['PATCH'] },
             { path: '/api/bhaktas*', methods: ['GET'] },
             { path: '/api/departments*', methods: ['GET'] },
             { path: '/api/lookups*', methods: ['GET'] },

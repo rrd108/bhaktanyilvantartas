@@ -33,7 +33,7 @@ async function doLogout() {
           <ClientOnly>
             <USelectMenu v-model="selectedCenter" :items="centerItems" value-key="value" size="sm" class="w-44" aria-label="Központ" />
           </ClientOnly>
-          <span class="text-sm text-gray-500">{{ user.email }}</span>
+          <NuxtLink to="/profile" class="text-sm text-gray-500 hover:text-primary underline-offset-2 hover:underline" title="Profil és jelszó módosítása">{{ user.email }}</NuxtLink>
           <UButton icon="i-lucide-log-out" label="Kilépés" color="neutral" variant="outline" size="sm" @click="doLogout" />
         </div>
       </div>
