@@ -11,11 +11,9 @@ const selectedCenter = computed({
 })
 
 const links = computed(() => [
+  { label: 'Átírós lista', to: '/departments/members', icon: 'i-lucide-arrow-left-right' },
   { label: 'Bhakták', to: '/', icon: 'i-lucide-users' },
   { label: 'Keresés', to: '/bhaktas/search', icon: 'i-lucide-search' },
-  { label: 'EU-kártya', to: '/bhaktas/eucard', icon: 'i-lucide-id-card' },
-  { label: 'Önkéntesek', to: '/bhaktas/volunteers', icon: 'i-lucide-hand-heart' },
-  { label: 'Átírós lista', to: '/departments/members', icon: 'i-lucide-arrow-left-right' },
   ...(isAdmin.value ? [{ label: 'Törzsadatok', to: '/lookups/gurus', icon: 'i-lucide-database' }] : []),
 ])
 
@@ -27,7 +25,7 @@ async function doLogout() {
 
 <template>
   <UApp>
-    <header v-if="user" class="border-b bg-white dark:bg-slate-900 sticky top-0 z-10">
+    <header v-if="user" class="print:hidden border-b bg-white dark:bg-slate-900 sticky top-0 z-10">
       <div class="max-w-7xl mx-auto px-3 py-2 flex flex-wrap items-center gap-2">
         <span class="font-semibold mr-2">Bhaktanyilvántartás</span>
         <UButton v-for="l in links" :key="l.to" :to="l.to" :icon="l.icon" :label="l.label" color="neutral" variant="ghost" size="sm" />
@@ -40,7 +38,7 @@ async function doLogout() {
         </div>
       </div>
     </header>
-    <main class="max-w-7xl mx-auto p-3">
+    <main class="max-w-7xl mx-auto p-3 print:max-w-none print:p-0">
       <NuxtPage />
     </main>
   </UApp>
