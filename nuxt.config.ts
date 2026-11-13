@@ -15,9 +15,9 @@ export default defineNuxtConfig({
         options: { path: process.env.NUXT_NUXT_USERS_CONNECTOR_OPTIONS_PATH || './data/bhakta.sqlite3' },
       },
       auth: {
-        // admin may do everything, user is read-only (see server/utils/access.ts for centre limits)
-        // /departments/bhakta-list* is the legacy public JSON list (names only)
-        whitelist: ['/reset-password', '/departments/bhakta-list*'],
+        // Nothing is public except what nuxt-users itself leaves open (login, logout, password reset),
+        // so no whitelist. admin may do everything, user is read-only (centre limits: server/utils/access.ts),
+        // api is a token-only account for other apps (Laksmi) that may read the bhakta name list.
         permissions: {
           admin: ['*'],
           // note: "/x/*" matches /x and everything below it, "/x*" only one path segment
@@ -26,11 +26,14 @@ export default defineNuxtConfig({
             '/bhaktas/*',
             '/departments/*',
             '/profile',
-            { path: '/api/nuxt-users/password', methods: ['PATCH'] },
             { path: '/api/bhaktas/*', methods: ['GET'] },
             { path: '/api/departments/*', methods: ['GET'] },
             { path: '/api/lookups/*', methods: ['GET'] },
             { path: '/api/photos/*', methods: ['GET'] },
+          ],
+          api: [
+            { path: '/api/departments/bhakta-list', methods: ['GET'] },
+            { path: '/api/departments/bhakta-list/*', methods: ['GET'] },
           ],
         },
       },

@@ -1,14 +1,20 @@
 import type { H3Event } from 'h3'
 
-/** Public, name-only list of the current members of centre 1 per department (legacy /departments/bhakta-list.json). */
+/**
+ * Name-only list of the current members per department, for other apps (Laksmi).
+ * The centres come from the caller's access (centers_users): an API/user account sees the centres assigned to it
+ * (none assigned = empty list), an admin sees all of them.
+ *
+ * Lives under /api/ on purpose: nuxt-users only enforces the login for /api/ routes
+ * (paths with a dot, like *.json, or non-API server routes would stay public).
+ */
 export async function bhaktaList(event: H3Event, rawDate?: string) {
-  const date = isoDate(rawDate?.replace(/\.json$/, '') || undefined)
-  const rows = await currentMembers(date, [1])
-  const byDepartment = new Map<number, { department: string; bhaktas: string[] }>()
+  const date = isoDate(rawDate || undefined)
+  const rows = await currentMembers(date, await accessibleCenterIds(event))
+  const byDepartment = new Map<number, { department: string; center: string; bhaktas: string[] }>()
   for (const r of rows) {
-    if (!byDepartment.has(r.department_id)) byDepartment.set(r.department_id, { department: r.department, bhaktas: [] })
+    if (!byDepartment.has(r.department_id)) byDepartment.set(r.department_id, { department: r.department, center: r.center, bhaktas: [] })
     byDepartment.get(r.department_id)!.bhaktas.push(r.name)
   }
-  setHeader(event, 'Content-Type', 'application/json; charset=utf-8')
   return { departments: [...byDepartment.values()] }
 }

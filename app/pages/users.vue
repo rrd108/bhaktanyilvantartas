@@ -9,8 +9,11 @@ const centerNames = (ids: number[]) => ids.map(id => centers.value?.find(c => c.
 const ROLES = [
   { label: 'Admin (mindent szerkeszthet)', value: 'admin' },
   { label: 'Felhasználó (csak olvasás, saját központok)', value: 'user' },
+  { label: 'API (csak token, csak a névlista; kézzel kezelve, lásd README)', value: 'api' },
 ]
-const roleLabel = (r: string) => (r === 'admin' ? 'Admin' : 'Felhasználó')
+// API accounts are created by hand in the DB, so the form offers that role only for existing API users
+const roleItems = computed(() => (edit.value?.role === 'api' ? ROLES : ROLES.filter(r => r.value !== 'api')))
+const roleLabel = (r: string) => ({ admin: 'Admin', api: 'API' })[r] ?? 'Felhasználó'
 
 const TRANSLATIONS: Record<string, string> = {
   'Email already exists.': 'Ez az e-mail cím már foglalt.',
@@ -45,11 +48,11 @@ async function save() {
   try {
     let id = f.id
     if (id) {
-      await $fetch(`/api/nuxt-users/${id}`, { method: 'PATCH', body: { name: f.name, email: f.email, role: f.role, ...(id === me.value?.id ? {} : { active: f.active }) } })
+      await $fetch(`/api/nuxt-users/${id}`, { method: 'PATCH', body: { name: f.name, email: f.email, role: f.role, ...(id === me.value?.id ? {} : { active: f.active ? 1 : 0 }) } })
     } else {
       const res = await $fetch<{ user: { id: number } }>('/api/nuxt-users', { method: 'POST', body: { name: f.name, email: f.email, role: f.role, password: f.password } })
       id = res.user.id
-      if (!f.active) await $fetch(`/api/nuxt-users/${id}`, { method: 'PATCH', body: { active: false } })
+      if (!f.active) await $fetch(`/api/nuxt-users/${id}`, { method: 'PATCH', body: { active: 0 } })
     }
     await $fetch(`/api/users/${id}/centers`, { method: 'PUT', body: { center_ids: f.role === 'admin' ? [] : f.center_ids } })
     edit.value = null
@@ -123,9 +126,9 @@ async function remove(u: any) {
           </UFormField>
           <UCheckbox v-if="!edit.id" v-model="showPw" label="Jelszó megjelenítése" />
           <UFormField label="Szerepkör">
-            <USelectMenu v-model="edit.role" :items="ROLES" value-key="value" :disabled="edit.id === me?.id" class="w-full" />
+            <USelectMenu v-model="edit.role" :items="roleItems" value-key="value" :disabled="edit.id === me?.id || edit.role === 'api'" class="w-full" />
           </UFormField>
-          <UFormField v-if="edit.role !== 'admin'" label="Központok" help="Csak ezeknek a központoknak az adatait látja.">
+          <UFormField v-if="edit.role !== 'admin'" label="Központok" :help="edit.role === 'api' ? 'Csak ezeknek a központoknak a névlistáját kapja meg.' : 'Csak ezeknek a központoknak az adatait látja.'">
             <USelectMenu v-model="edit.center_ids" :items="centerItems" value-key="value" multiple placeholder="Válassz központot…" class="w-full" />
           </UFormField>
           <UCheckbox v-model="edit.active" label="Aktív (be tud lépni)" :disabled="edit.id === me?.id" />
